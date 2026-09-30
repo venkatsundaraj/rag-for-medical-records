@@ -1,0 +1,1492 @@
+{
+  "config": {
+    "strategy": "fixed_c1000_o150",
+    "k": 5,
+    "mode": "full",
+    "golden_file": "data/golden/golden.jsonl",
+    "n_questions": 58,
+    "timestamp": "2026-09-26T12:26:07.279281+00:00"
+  },
+  "aggregates": {
+    "precision_at_k": 0.2549,
+    "recall_at_k": 0.9216,
+    "mrr": 0.7007,
+    "faithfulness": 0.95,
+    "relevance": 0.9448,
+    "citation_precision": 0.652,
+    "hallucinated_citation_rate": 0.0,
+    "correct_refusal_rate": 1.0
+  },
+  "questions": [
+    {
+      "qid": "q001",
+      "question": "What happens when I declare a path operation function with normal def instead of async def?",
+      "answerable": true,
+      "retrieved_ids": [
+        6137,
+        6139,
+        6113,
+        6112,
+        6136
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "When you declare a *path operation function* with normal `def` instead of `async def`, it is run in an external threadpool that is then awaited, instead of being called directly, as it would block the server. This means that for trivial compute-only *path operation functions*, it is generally better to use `async def` unless the function performs blocking I/O operations. In both cases, FastAPI will still be fast and may even outperform other frameworks [6137][6113].",
+      "cited_ids": [
+        6137,
+        6113
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q002",
+      "question": "What does async def do in Python?",
+      "answerable": true,
+      "retrieved_ids": [
+        6137,
+        6131,
+        6132,
+        6133,
+        6135
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "In Python, declaring a function with `async def` allows it to support asynchronous operations using the `await` keyword. This means that the function can pause its execution at certain points (where `await` is used) and allow other tasks to run in the meantime, making it suitable for handling I/O-bound operations without blocking the execution of the program. When you call an `async def` function, you must use `await` to get the result, as it returns a coroutine that needs to be awaited to execute properly [6131][6132].",
+      "cited_ids": [
+        6131,
+        6132
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 0.0,
+      "relevance": 1.0,
+      "unsupported_claims": [
+        "The reference to 'I/O-bound operations' may imply specific use cases not explicitly mentioned in the sources."
+      ]
+    },
+    {
+      "qid": "q003",
+      "question": "Can I call an async def function without await?",
+      "answerable": true,
+      "retrieved_ids": [
+        6139,
+        6132,
+        6137,
+        6131,
+        6133
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "No, you cannot call an `async def` function without using `await`. If you try to call it without `await`, it will not work as expected. For example, the following code will not work:\n\n```Python\nburgers = get_burgers(2)  # This won't work, because get_burgers was defined with: async def\n```\n\nYou must use `await` when calling an `async def` function inside another `async def` function, like this:\n\n```Python\nburgers = await get_burgers(2)\n```\n\nThis is necessary because `await` allows the program to pause the execution of the function until the awaited function completes, enabling other tasks to run in the meantime [6132][6131].",
+      "cited_ids": [
+        6132,
+        6131
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q004",
+      "question": "What async libraries are FastAPI and Starlette based on?",
+      "answerable": true,
+      "retrieved_ids": [
+        6098,
+        6097,
+        6072,
+        6096,
+        6088
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "answer": "FastAPI and Starlette are based on the ASGI (Asynchronous Server Gateway Interface) standard, which is being developed by members of the Django core team. ASGI improves interoperability among various tools in the Python ecosystem [6098]. Additionally, FastAPI uses Starlette as its foundation, which is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services [6097][6072].",
+      "cited_ids": [
+        6098,
+        6097,
+        6072
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.0,
+      "faithfulness": 0.0,
+      "relevance": 0.0,
+      "unsupported_claims": [
+        "FastAPI and Starlette are based on the ASGI standard.",
+        "ASGI is being developed by members of the Django core team.",
+        "ASGI improves interoperability among various tools in the Python ecosystem.",
+        "FastAPI uses Starlette as its foundation."
+      ]
+    },
+    {
+      "qid": "q005",
+      "question": "If my database library doesn't support await, how should I declare my path operation functions?",
+      "answerable": true,
+      "retrieved_ids": [
+        6113,
+        6112,
+        6137,
+        6139,
+        6132
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "If your database library doesn't support using `await`, you should declare your path operation functions normally, with just `def`, like this:\n\n```Python\n@app.get('/')\ndef results():\n    results = some_library()\n    return results\n```\n\nThis is because most database libraries currently do not support `await`, so using `def` is the appropriate choice in that case [6113][6112].",
+      "cited_ids": [
+        6113,
+        6112
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q006",
+      "question": "Does FastAPI change how my own utility functions are called?",
+      "answerable": true,
+      "retrieved_ids": [
+        6139,
+        6138,
+        6073,
+        6078,
+        6137
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "No, FastAPI does not change how your own utility functions are called. Any utility function that you create can be defined with either `def` or `async def`, and FastAPI will not affect the way you call it. If your utility function is a normal function with `def`, it will be called directly as you write it in your code. If it is created with `async def`, you should `await` that function when you call it in your code [6139][6138].",
+      "cited_ids": [
+        6139,
+        6138
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q007",
+      "question": "How can a path operation return 201 Created for new items but 200 OK for updates?",
+      "answerable": true,
+      "retrieved_ids": [
+        6046,
+        6042,
+        6248,
+        6265,
+        6246
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.25,
+      "answer": "To have a path operation that returns HTTP status codes of 200 \"OK\" when successful for updates, and 201 \"Created\" when new items are created, you can return a `Response` directly, such as a `JSONResponse`, and set the `status_code` accordingly. For example, you would check if the item existed before; if it did, return 200, and if it didn't, create the item and return 201. This can be achieved by importing `JSONResponse` and specifying the desired `status_code` in your response [6265].",
+      "cited_ids": [
+        6265
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q008",
+      "question": "Do additional status codes returned via a Response show up in the OpenAPI docs?",
+      "answerable": true,
+      "retrieved_ids": [
+        6267,
+        6265,
+        6266,
+        6255,
+        6252
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "No, additional status codes returned via a Response do not show up in the OpenAPI docs. FastAPI doesn't have a way to know beforehand what you are going to return, so these additional responses won't be included in the OpenAPI schema [6267][6266].",
+      "cited_ids": [
+        6267,
+        6266
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q009",
+      "question": "How can I create a parameterized dependency in FastAPI?",
+      "answerable": true,
+      "retrieved_ids": [
+        6287,
+        6288,
+        6138,
+        6263,
+        6090
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "To create a parameterized dependency in FastAPI, you can follow these steps:\n\n1. **Define a class with a `__call__` method**: This method will be used by FastAPI to check for additional parameters and sub-dependencies. The class itself should be callable by implementing the `__call__` method.\n\n2. **Use `__init__` to declare parameters**: You can declare the parameters of the instance in the `__init__` method, which allows you to \"parameterize\" the dependency.\n\n3. **Create an instance of the class**: You can create an instance of this class with the desired parameters.\n\n4. **Use the instance as a dependency**: Finally, you can use this instance in a `Depends()` call to utilize the parameterized dependency in your path operation function.\n\nFor example, you might have a class that checks if a query parameter contains some fixed content, and you can parameterize that content when creating an instance of the class [6287][6288].",
+      "cited_ids": [
+        6287,
+        6288
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q010",
+      "question": "What is the difference between Depends(scope=\"function\") and Depends(scope=\"request\") for dependencies with yield?",
+      "answerable": true,
+      "retrieved_ids": [
+        6291,
+        6290,
+        6295,
+        6296,
+        6293
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "The difference between `Depends(scope=\"function\")` and `Depends(scope=\"request\")` for dependencies with `yield` is in when the exit code after `yield` is executed. \n\n- When using `Depends(scope=\"function\")`, the exit code after `yield` is executed right after the *path operation function* is finished, before the response is sent back to the client [6291].\n- In contrast, when using `Depends(scope=\"request\")`, which is the default, the exit code after `yield` is executed after the response is sent [6291][6290]. \n\nThis distinction is important for managing resources effectively, especially in scenarios involving long-running responses like `StreamingResponse` [6291].",
+      "cited_ids": [
+        6291,
+        6290
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q011",
+      "question": "Why can't I use TestClient inside async test functions, and what should I use instead?",
+      "answerable": true,
+      "retrieved_ids": [
+        6107,
+        6108,
+        6110,
+        6109,
+        6111
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "You cannot use the `TestClient` inside asynchronous test functions because the `TestClient` is designed to work with synchronous test functions. When you run tests asynchronously, the magic that allows the `TestClient` to call the asynchronous FastAPI application does not function properly. Instead, you should use the `AsyncClient` from HTTPX to send asynchronous requests to your FastAPI application in your tests [6108][6110].",
+      "cited_ids": [
+        6108,
+        6110
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q012",
+      "question": "Does HTTPX AsyncClient trigger my app's lifespan events during tests?",
+      "answerable": true,
+      "retrieved_ids": [
+        6108,
+        6107,
+        6109,
+        6111,
+        6110
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2,
+      "answer": "No, the `AsyncClient` does not trigger lifespan events in your FastAPI application during tests. To ensure that lifespan events are triggered, you should use `LifespanManager` from the `florimondmanca/asgi-lifespan` package instead [6109][6110].",
+      "cited_ids": [
+        6109,
+        6110
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q013",
+      "question": "Why might updating an item with PUT unintentionally overwrite a stored field?",
+      "answerable": true,
+      "retrieved_ids": [
+        6042,
+        6045,
+        6044,
+        6043,
+        6046
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "Updating an item with `PUT` might unintentionally overwrite a stored field because `PUT` is used to replace the existing data entirely. If the request body does not include all the attributes of the item, any omitted attributes will take their default values. For example, if you update an item with a body that does not include the attribute `\"tax\"` and it has a default value of `10.5`, the stored value will be replaced with this default, leading to potential data loss for the omitted fields [6042][6043].",
+      "cited_ids": [
+        6042,
+        6043
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q014",
+      "question": "How do I apply a partial update to a stored Pydantic model?",
+      "answerable": true,
+      "retrieved_ids": [
+        6045,
+        6044,
+        6046,
+        6043,
+        6042
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "To apply a partial update to a stored Pydantic model, you would follow these steps:\n\n1. (Optionally) use `PATCH` instead of `PUT`.\n2. Retrieve the stored data.\n3. Put that data in a Pydantic model.\n4. Generate a `dict` without default values from the input model using `exclude_unset`. This can be done with `item.model_dump(exclude_unset=True)` to create a `dict` that includes only the data set by the user, omitting default values [6044].\n5. Create a copy of the stored model, updating its attributes with the received partial updates using the `update` parameter. This can be done with `stored_item_model.model_copy(update=update_data)` [6044].\n6. Convert the copied model to something that can be stored in your database, for example, using the `jsonable_encoder` [6045].\n7. Save the data to your database.\n8. Return the updated model [6046].\n\nThis process allows you to update only the values that were actually set by the user, rather than overriding existing values with defaults.",
+      "cited_ids": [
+        6045,
+        6044,
+        6046
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.3333333333333333,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q015",
+      "question": "How does FastAPI support standard Python dataclasses?",
+      "answerable": true,
+      "retrieved_ids": [
+        6140,
+        6144,
+        6142,
+        6143,
+        6141
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "FastAPI supports standard Python dataclasses by leveraging Pydantic, which has internal support for dataclasses. This allows FastAPI to convert standard dataclasses into Pydantic's own flavor of dataclasses, enabling features such as data validation, data serialization, and data documentation, similar to what is available with Pydantic models [6140][6141]. \n\nAdditionally, you can use dataclasses in the `response_model` parameter, and they will be automatically converted to Pydantic dataclasses, ensuring their schema appears in the API documentation [6141]. FastAPI also allows for the combination of dataclasses with other type annotations to create complex and nested data structures [6142][6143].",
+      "cited_ids": [
+        6140,
+        6142,
+        6143,
+        6141
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.25,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q016",
+      "question": "Since which FastAPI version are dataclasses supported?",
+      "answerable": true,
+      "retrieved_ids": [
+        6144,
+        6140,
+        6143,
+        6142,
+        6073
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "Dataclasses have been supported since FastAPI version `0.67.0` [6144].",
+      "cited_ids": [
+        6144
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q017",
+      "question": "How can I avoid regenerating a custom OpenAPI schema on every docs request?",
+      "answerable": true,
+      "retrieved_ids": [
+        6255,
+        6267,
+        6254,
+        6252,
+        6084
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "You can avoid regenerating a custom OpenAPI schema on every docs request by using the property `.openapi_schema` as a \"cache\" to store your generated schema. This way, your application will generate the schema only once, and the same cached schema will be used for subsequent requests [6255].",
+      "cited_ids": [
+        6255
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q018",
+      "question": "What are the differences between fastapi dev and fastapi run?",
+      "answerable": true,
+      "retrieved_ids": [
+        6282,
+        6277,
+        6284,
+        6280,
+        6073
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "The differences between `fastapi dev` and `fastapi run` are as follows:\n\n1. **Mode of Operation**:\n   - `fastapi dev` initiates development mode, which has auto-reload enabled by default. This means the server automatically reloads when changes are made to the code, although this can be resource-intensive and less stable [6282][6277].\n   - `fastapi run`, on the other hand, starts FastAPI in production mode, where auto-reload is disabled. This is the recommended way to run the application in a production environment [6284][6280].\n\n2. **Listening Address**:\n   - `fastapi dev` does not specify a default listening address, as it is primarily for local development [6282][6277].\n   - `fastapi run` listens on the IP address `0.0.0.0`, making the application publicly accessible to anyone that can communicate with the machine [6284].\n\n3. **Use Case**:\n   - `fastapi dev` is intended for development purposes, allowing for quick iterations and testing [6282][6277].\n   - `fastapi run` is intended for production use, where stability and performance are prioritized [6284][6280].\n\nIn summary, `fastapi dev` is for development with auto-reload, while `fastapi run` is for production without auto-reload and with public accessibility.",
+      "cited_ids": [
+        6282,
+        6277,
+        6284,
+        6280
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 0.8,
+      "relevance": 0.8,
+      "unsupported_claims": [
+        "`fastapi dev` does not specify a default listening address, as it is primarily for local development."
+      ]
+    },
+    {
+      "qid": "q019",
+      "question": "How does fastapi dev set FASTAPI_ENV, and does fastapi run set it?",
+      "answerable": true,
+      "retrieved_ids": [
+        6262,
+        6277,
+        6282,
+        6283,
+        6284
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.25,
+      "answer": "The `fastapi dev` command sets the `FASTAPI_ENV` environment variable to `development` before importing your app. If `FASTAPI_ENV` is already set, its existing value is preserved, allowing for app-specific environments like `staging` [6283]. \n\nOn the other hand, the `fastapi run` command does not set `FASTAPI_ENV`; it leaves it unchanged. Therefore, if your app needs to detect production mode, you should set it explicitly [6284].",
+      "cited_ids": [
+        6283,
+        6284
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q020",
+      "question": "What is the recommended way to tell the fastapi command where my app is?",
+      "answerable": true,
+      "retrieved_ids": [
+        6281,
+        6277,
+        6280,
+        6282,
+        6025
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.25,
+      "answer": "The recommended way to tell the `fastapi` command where your app is located is to configure the `entrypoint` in the `pyproject.toml` file. You can specify it like this:\n\n```toml\n[tool.fastapi]\nentrypoint = \"main:app\"\n```\n\nThis configuration will inform the `fastapi` command to import the app using:\n\n```python\nfrom main import app\n```\n\nIf your app is structured differently, such as in a `backend` directory, you would adjust the `entrypoint` accordingly:\n\n```toml\n[tool.fastapi]\nentrypoint = \"backend.main:app\"\n```\n\nThis setup is recommended because it allows other tools, like the VS Code Extension or FastAPI Cloud, to find your app more easily [6281][6282].",
+      "cited_ids": [
+        6281,
+        6282
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q021",
+      "question": "How do I deploy a FastAPI app to FastAPI Cloud?",
+      "answerable": true,
+      "retrieved_ids": [
+        6025,
+        6026,
+        6277,
+        6284,
+        6100
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "To deploy a FastAPI app to FastAPI Cloud, you can use the following command in your terminal:\n\n```console\n$ uv run fastapi deploy\n```\n\nThis command will automatically detect your FastAPI application and deploy it to the cloud. If you are not logged in, your browser will open to complete the authentication process. Once the deployment is successful, you can access your app at the provided URL, such as `https://myapp.fastapicloud.dev` [6025].",
+      "cited_ids": [
+        6025
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q022",
+      "question": "How do I serve a single-page app with client-side routing using app.frontend()?",
+      "answerable": true,
+      "retrieved_ids": [
+        6257,
+        6258,
+        6259,
+        6263,
+        6260
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "To serve a single-page app (SPA) with client-side routing using `app.frontend()`, you should configure it to handle requests for paths that are not real files by serving the `index.html` file. This allows the frontend framework to manage the client-side routing.\n\nYou can achieve this by using the `fallback=\"index.html\"` option when calling `app.frontend()`. This setup ensures that when a user accesses a URL directly (like `/dashboard/settings`), the backend serves the `index.html` file, allowing the frontend framework to take over routing from there.\n\nFastAPI uses this fallback only for `GET` and `HEAD` requests that explicitly accept HTML. Requests with other methods, such as `POST` or `PUT`, to paths that only match the frontend fallback will return a `404` error. Regular FastAPI path operations will still take precedence over frontend routes [6259][6260].",
+      "cited_ids": [
+        6259,
+        6260
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q023",
+      "question": "What happens if the frontend build directory passed to app.frontend() is missing?",
+      "answerable": true,
+      "retrieved_ids": [
+        6257,
+        6261,
+        6263,
+        6264,
+        6262
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "If the frontend build directory passed to `app.frontend()` is missing, the behavior depends on the environment variable `FASTAPI_ENV`. \n\n1. In a development environment (when `FASTAPI_ENV` is set to `development`), **FastAPI** will only show a warning if the frontend build output directory is missing [6262].\n2. In any other environment, **FastAPI** will raise an error when the app is created if the directory is missing, which helps catch configuration errors early [6262][6263]. \n\nAdditionally, if `check_dir` is set to `False`, **FastAPI** will not check the directory when the app is created, but it will raise an error if the directory is still missing when a request is handled [6262].",
+      "cited_ids": [
+        6263,
+        6262
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q024",
+      "question": "Which tool is recommended for generating a TypeScript client from a FastAPI app?",
+      "answerable": true,
+      "retrieved_ids": [
+        6242,
+        6241,
+        6243,
+        6086,
+        6073
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API. You can use it via npx with the following command:\n\n```sh\nnpx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client\n```\n\nThis will generate a TypeScript SDK in the `./src/client` directory [6243].",
+      "cited_ids": [
+        6243
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q025",
+      "question": "Why are generated client method names like createItemItemsPost, and how can I make them cleaner?",
+      "answerable": true,
+      "retrieved_ids": [
+        6248,
+        6245,
+        6249,
+        6250,
+        6244
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.5,
+      "answer": "Generated client method names like `createItemItemsPost` are structured this way because the client generator uses the OpenAPI internal **operation ID** for each *path operation*. OpenAPI requires that each operation ID is unique across all the *path operations*, which leads to this less clean naming convention [6245][6249].\n\nTo make these method names cleaner, you can preprocess the OpenAPI specification before generating the clients. This involves downloading the OpenAPI JSON to a file (e.g., `openapi.json`) and then removing the prefixed tag with a script. By doing this, the operation IDs can be renamed from formats like `items-get_items` to just `get_items`, allowing the client generator to produce simpler method names [6249][6250].",
+      "cited_ids": [
+        6245,
+        6249,
+        6250
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.3333333333333333,
+      "faithfulness": 1.0,
+      "relevance": 0.8,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q026",
+      "question": "Should I return or raise an HTTPException?",
+      "answerable": true,
+      "retrieved_ids": [
+        6299,
+        6300,
+        6298,
+        6304,
+        6307
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "You should raise an `HTTPException` instead of returning it. This is because `HTTPException` is a normal Python exception, and when you raise it, it will terminate the request immediately and send the HTTP error to the client. If you were to return it instead, the rest of the code in your path operation function would continue to run, which is not the desired behavior when handling errors [6299][6300].",
+      "cited_ids": [
+        6299,
+        6300
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q027",
+      "question": "Should I register my exception handler for FastAPI's HTTPException or Starlette's?",
+      "answerable": true,
+      "retrieved_ids": [
+        6307,
+        6308,
+        6303,
+        6302,
+        6301
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "You should register your exception handler for Starlette's `HTTPException`. This way, if any part of Starlette's internal code, or a Starlette extension or plug-in, raises a Starlette `HTTPException`, your handler will be able to catch and handle it. FastAPI's `HTTPException` is used normally in your code, but the handler should be for Starlette's version [6307].",
+      "cited_ids": [
+        6307
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q028",
+      "question": "How can one server with a single IP address serve HTTPS for multiple domains?",
+      "answerable": true,
+      "retrieved_ids": [
+        6196,
+        6195,
+        6205,
+        6207,
+        6206
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "One server with a single IP address can serve HTTPS for multiple domains by using a TLS extension called Server Name Indication (SNI). This allows a single server to have several HTTPS certificates and serve multiple HTTPS domains/applications. The server must have a single component (program) running that listens on the public IP address and manages all the HTTPS parts, including receiving encrypted HTTPS requests and sending decrypted HTTP requests to the actual application, such as a FastAPI application [6196][6195].",
+      "cited_ids": [
+        6196,
+        6195
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q029",
+      "question": "How do I make FastAPI CLI trust X-Forwarded headers from a TLS termination proxy?",
+      "answerable": true,
+      "retrieved_ids": [
+        6209,
+        6208,
+        6207,
+        6197,
+        6210
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "You can make FastAPI CLI trust the X-Forwarded headers from a TLS termination proxy by using the CLI option `--forwarded-allow-ips`. You can specify which IPs should be trusted to send those forwarded headers. For example, if the application server is only receiving communication from the trusted proxy, you can set it to `--forwarded-allow-ips=\"*\"` to trust all incoming IPs, as it will only receive requests from the proxy's IP. This configuration allows the application to know its own public URL, whether it is using HTTPS, the domain, etc., which is useful for handling redirects properly [6209][6208].",
+      "cited_ids": [
+        6209,
+        6208
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q030",
+      "question": "What type are values read from environment variables in Python?",
+      "answerable": true,
+      "retrieved_ids": [
+        6028,
+        6029,
+        6036,
+        6041,
+        6031
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "Values read from environment variables in Python will always be of type `str`, as they are external to Python and must be compatible with other programs and systems. Any conversion to a different type or validation has to be done in code [6029].",
+      "cited_ids": [
+        6029
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q031",
+      "question": "Why use @lru_cache on a get_settings dependency?",
+      "answerable": true,
+      "retrieved_ids": [
+        6041,
+        6038,
+        6037,
+        6034,
+        6035
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "Using `@lru_cache` on a `get_settings` dependency is beneficial because it allows the `Settings` object to be created only once, the first time the function is called. This avoids the costly operation of reading the `.env` file for each request, as subsequent calls to `get_settings()` will return the same `Settings` object without re-executing the internal code of the function. This improves performance by reducing unnecessary file reads and allows for easy overriding of the settings during testing [6041][6038][6037].",
+      "cited_ids": [
+        6041,
+        6038,
+        6037
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.6666666666666666,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q032",
+      "question": "Can FastAPI be faster than Starlette?",
+      "answerable": true,
+      "retrieved_ids": [
+        6072,
+        6098,
+        6097,
+        6100,
+        6073
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "No, FastAPI cannot be faster than Starlette because FastAPI uses Starlette as its foundation. Therefore, it cannot exceed the performance of Starlette, which is currently the fastest Python framework tested, only surpassed by Uvicorn [6072][6098].",
+      "cited_ids": [
+        6072,
+        6098
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q033",
+      "question": "What is the relationship between the FastAPI class and Starlette?",
+      "answerable": true,
+      "retrieved_ids": [
+        6072,
+        6098,
+        6096,
+        6307,
+        6095
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "answer": "**FastAPI** is built on top of **Starlette**, which means that it cannot be faster than Starlette since it relies on it for its core functionalities. FastAPI adds additional features to Starlette, such as automatic data validation, serialization, and documentation, which are essential for building APIs. These features are implemented using Python type hints and the Pydantic library, enhancing the development experience by providing automatic documentation without adding overhead to application performance [6072][6098]. \n\nFurthermore, FastAPI's `HTTPException` inherits from Starlette's `HTTPException`, with the main difference being that FastAPI's version can accept any JSON-able data for the `detail` field, while Starlette's version only accepts strings [6307]. \n\nIn summary, FastAPI extends Starlette's capabilities while relying on its performance and foundational features [6095].",
+      "cited_ids": [
+        6072,
+        6098,
+        6307,
+        6095
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.0,
+      "faithfulness": 0.8,
+      "relevance": 0.7,
+      "unsupported_claims": [
+        "FastAPI cannot be faster than Starlette since it relies on it for its core functionalities."
+      ]
+    },
+    {
+      "qid": "q034",
+      "question": "What is the keyboard shortcut for route search in the FastAPI VS Code extension?",
+      "answerable": true,
+      "retrieved_ids": [
+        6167,
+        6166,
+        6168,
+        6282,
+        6277
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "The keyboard shortcut for route search in the FastAPI VS Code extension is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> (on macOS: <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd) [6166].",
+      "cited_ids": [
+        6166
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q035",
+      "question": "What do I need to install to generate diagrams with python-statemachine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6285,
+        6286,
+        6104,
+        6211,
+        6222
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "To generate diagrams with python-statemachine, you need to install the `python-statemachine[diagrams]` extra, which requires `pydot`. Additionally, you will need to have the Graphviz system package installed [6285][6286].",
+      "cited_ids": [
+        6285,
+        6286
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q036",
+      "question": "How do I get type checking and autocompletion for sm.model in a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6238,
+        6237,
+        6268,
+        6239,
+        6185
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "To get type checking and autocompletion for `sm.model` in a `StateChart`, you need to declare your model class and pass it as a type parameter to `StateChart`. This allows type checkers (like mypy or pyright) and IDEs to infer the type of `sm.model`. For example:\n\n```python\nclass OrderWorkflow(StateChart[\"OrderModel\"]):\n    ...\n```\n\nWith this declaration, `sm.model` is typed as `OrderModel` instead of `Any`, enabling full autocompletion and type checking in your IDE for attributes and methods of the model, such as `sm.model.order_id`, `sm.model.total`, and `sm.model.confirm()` [6238][6239].",
+      "cited_ids": [
+        6238,
+        6239
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q037",
+      "question": "What does bind_events_as_methods do on MachineMixin?",
+      "answerable": true,
+      "retrieved_ids": [
+        6102,
+        6106,
+        6103,
+        6101,
+        6269
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "The `bind_events_as_methods` attribute in `MachineMixin` allows events to become methods on the model itself. When this attribute is set to `True`, you can call state machine events directly as methods of the model instance. For example, if you have a model that inherits from `MachineMixin`, you can call `model.produce()` to trigger the `produce` event, and the state of the model will update accordingly. This feature simplifies the interaction with the state machine by allowing method calls instead of needing to send events explicitly through the state machine instance [6101][6103].",
+      "cited_ids": [
+        6103,
+        6101
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q038",
+      "question": "What's the difference between putting a class and an instance in a StateChart's listeners attribute?",
+      "answerable": true,
+      "retrieved_ids": [
+        6169,
+        6170,
+        6066,
+        6268,
+        6185
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "citation_precision": 0.0,
+      "faithfulness": 1.0,
+      "relevance": 0.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q039",
+      "question": "Is a listener's setup() method called for shared listener instances?",
+      "answerable": true,
+      "retrieved_ids": [
+        6169,
+        6177,
+        6176,
+        6174,
+        6170
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "No, the `setup()` method is not called on shared listener instances (pre-built objects). It is only called on factory-created instances, which are callable entries in the `listeners` list. Shared instances are assumed to be already configured [6177].",
+      "cited_ids": [
+        6177
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q040",
+      "question": "What is the difference between send() and raise_() on a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6268,
+        6055,
+        6238,
+        6270,
+        6269
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2,
+      "answer": "The difference between `send()` and `raise_()` on a `StateChart` is in how they process events. \n\n- **`send(event, **kwargs)`** places the event on the **external queue**, which means that external events are processed after the current macrostep completes. For example, calling `sm.send(\"cycle\")` will trigger the event after the current operations are finished [6269].\n\n- **`raise_(event, **kwargs)`** places the event on the **internal queue**, which means that internal events are processed within the current macrostep, before any pending external events. This is useful for triggering follow-up transitions immediately within callbacks [6269]. \n\nIn summary, `send()` is for external events processed later, while `raise_()` is for internal events processed immediately.",
+      "cited_ids": [
+        6269
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q041",
+      "question": "What is the difference between allowed_events and enabled_events()?",
+      "answerable": true,
+      "retrieved_ids": [
+        6187,
+        6272,
+        6271,
+        6186,
+        6273
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "The difference between `allowed_events` and `enabled_events()` is as follows:\n\n- **`allowed_events`** returns events that have at least one transition from the current configuration, regardless of whether the conditions (guards) for those transitions are satisfied. It is a cheaper check that only considers the state topology [6271][6272].\n\n- **`enabled_events(**kwargs)`** is a subset of `allowed_events` where at least one transition's guards are satisfied given the provided arguments. This method evaluates the conditions for the transitions, making it useful when guards depend on runtime data [6272][6273]. \n\nIn summary, `allowed_events` checks the structure of the state machine, while `enabled_events()` checks both the structure and the conditions for transitions.",
+      "cited_ids": [
+        6272,
+        6271,
+        6273
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.6666666666666666,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q042",
+      "question": "Why does cond=lambda self: ... fail in python-statemachine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6184,
+        6193,
+        6183,
+        6180,
+        6102
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "The expression `cond=lambda self: ...` fails in python-statemachine because plain callables, like lambdas and functions defined outside the class body, are called **unbound**, meaning that `self` is not injected. Instead, you should use `machine` to receive the state machine instance. This is because `self` is only available when the callable resolves to a bound method, which occurs when it is an attribute of the state machine class, either referenced by name or defined in the class body and passed by reference [6184].",
+      "cited_ids": [
+        6184
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q043",
+      "question": "Are validator exceptions converted to error.execution events when catch_errors_as_events is True?",
+      "answerable": true,
+      "retrieved_ids": [
+        6190,
+        6191,
+        6189,
+        6232,
+        6188
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.3333333333333333,
+      "answer": "No, validator exceptions are **not** converted to `error.execution` events, even when `catch_errors_as_events = True`. The caller receives the exception directly and can handle it with `try`/`except` [6190].",
+      "cited_ids": [
+        6190
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q044",
+      "question": "What is the difference between a self-transition and an internal transition?",
+      "answerable": true,
+      "retrieved_ids": [
+        6047,
+        6053,
+        6054,
+        6055,
+        6048
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "answer": "A **self-transition** goes from a state back to itself, exiting and re-entering the state, which means it runs all exit and entry actions. This is useful when entering a state has side-effects, such as resetting a timer. In contrast, an **internal transition** stays in the same state without running exit or entry actions; only the `on` callback executes. This is useful for pure data updates that shouldn't re-trigger entry logic. The key difference is that self-transitions fire exit/enter callbacks, while internal transitions skip them [6053][6054].",
+      "cited_ids": [
+        6053,
+        6054
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q045",
+      "question": "When an event matches transitions at several levels of a compound state hierarchy, which one wins?",
+      "answerable": true,
+      "retrieved_ids": [
+        6058,
+        6059,
+        6052,
+        6180,
+        6057
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "When an event could match transitions at multiple levels of the state hierarchy, transitions from **descendant states take priority** over transitions from ancestor states. This follows the SCXML specification: the most specific (deepest) matching transition wins [6058].",
+      "cited_ids": [
+        6058
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q046",
+      "question": "What exception do python-statemachine validation errors raise?",
+      "answerable": true,
+      "retrieved_ids": [
+        6060,
+        6189,
+        6106,
+        6190,
+        6104
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "Python-statemachine validation errors raise `InvalidDefinition` exceptions [6060].",
+      "cited_ids": [
+        6060
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q047",
+      "question": "Are convention-based callbacks like on_enter_<state> validated when a statechart is instantiated?",
+      "answerable": true,
+      "retrieved_ids": [
+        6067,
+        6066,
+        6060,
+        6061,
+        6215
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "No, convention-based callbacks like `on_enter_<state>` are **not** validated when a statechart is instantiated. They are optional by design, and only explicitly declared callback names (passed as strings to `on`, `cond`, etc.) are checked [6067].",
+      "cited_ids": [
+        6067
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q048",
+      "question": "How do invoke handlers run on the sync engine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6145,
+        6157,
+        6156,
+        6146,
+        6155
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "Invoke handlers on the sync engine run in a **thread executor** using `loop.run_in_executor`, and they are wrapped in an `asyncio.Task`. This is necessary because blocking I/O operations, such as network calls or file access, would freeze the event loop if executed directly [6145][6156].",
+      "cited_ids": [
+        6145,
+        6156
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 0.5,
+      "relevance": 0.5,
+      "unsupported_claims": [
+        "Invoke handlers on the sync engine run in a **thread executor** using `loop.run_in_executor`."
+      ]
+    },
+    {
+      "qid": "q049",
+      "question": "How do I wait for multiple invoke handlers to all finish before transitioning?",
+      "answerable": true,
+      "retrieved_ids": [
+        6162,
+        6163,
+        6161,
+        6145,
+        6146
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "answer": "To wait for multiple invoke handlers to all finish before transitioning, you should use the `invoke_group` function. This allows you to run multiple callables concurrently and wait for all of them to complete before sending a single `done.invoke` event. Unlike independent invokes, where the transition fires after the first callable finishes, `invoke_group` ensures that the transition only fires after every callable has finished, and the `data` will be a list of results in the same order as the input callables [6163][6162].",
+      "cited_ids": [
+        6162,
+        6163
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 0.5,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q050",
+      "question": "How can a compound state resume the child that was active when it was exited?",
+      "answerable": true,
+      "retrieved_ids": [
+        6052,
+        6229,
+        6051,
+        6058,
+        6053
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.5,
+      "answer": "A compound state can resume the child that was active when it was exited by using a **HistoryState**. When a compound state is exited, the HistoryState remembers which child was active, allowing the workflow to return to that specific child state when the compound state is resumed. This is demonstrated in the `CoffeeOrder` example, where the `resume` transition goes back to the active child using `preparing.h`, which represents the history state [6229].",
+      "cited_ids": [
+        6229
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q051",
+      "question": "What happens when a callback raises an exception in a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6066,
+        6190,
+        6067,
+        6232,
+        6064
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.25,
+      "answer": "When a callback raises an exception in a StateChart, the runtime exceptions do not crash the machine. Instead, they become `error.execution` events that can be handled with regular transitions. This allows the StateChart to manage errors gracefully without stopping its operation [6232].",
+      "cited_ids": [
+        6232
+      ],
+      "hallucinated_ids": [],
+      "refused": false,
+      "citation_precision": 1.0,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q900",
+      "question": "How do I deploy FastAPI to Kubernetes?",
+      "answerable": false,
+      "retrieved_ids": [
+        6025,
+        6026,
+        6284,
+        6277,
+        6100
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q901",
+      "question": "How do I configure CORS middleware?",
+      "answerable": false,
+      "retrieved_ids": [
+        6263,
+        6258,
+        6209,
+        6208,
+        6259
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q902",
+      "question": "How do I add OAuth2 password flow authentication to a FastAPI app?",
+      "answerable": false,
+      "retrieved_ids": [
+        6025,
+        6077,
+        6240,
+        6073,
+        6079
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q903",
+      "question": "How do I configure rate limiting for FastAPI endpoints?",
+      "answerable": false,
+      "retrieved_ids": [
+        6284,
+        6240,
+        6073,
+        6077,
+        6100
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q904",
+      "question": "How do I run FastAPI with Gunicorn and multiple worker processes?",
+      "answerable": false,
+      "retrieved_ids": [
+        6100,
+        6280,
+        6284,
+        6025,
+        6277
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q905",
+      "question": "What license is python-statemachine released under?",
+      "answerable": false,
+      "retrieved_ids": [
+        6285,
+        6104,
+        6106,
+        6286,
+        6211
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    },
+    {
+      "qid": "q906",
+      "question": "How do I write a WebSocket endpoint in FastAPI?",
+      "answerable": false,
+      "retrieved_ids": [
+        6259,
+        6079,
+        6077,
+        6097,
+        6100
+      ],
+      "answer": "I don't know based on the provided sources.",
+      "cited_ids": [],
+      "hallucinated_ids": [],
+      "refused": true,
+      "correct_refusal": true,
+      "faithfulness": 1.0,
+      "relevance": 1.0,
+      "unsupported_claims": []
+    }
+  ]
+}

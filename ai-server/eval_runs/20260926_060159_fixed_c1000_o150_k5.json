@@ -1,0 +1,131 @@
+{
+  "config": {
+    "strategy": "fixed_c1000_o150",
+    "k": 5,
+    "mode": "retrieval_only",
+    "golden_file": "data/golden/golden.jsonl",
+    "n_questions": 8,
+    "timestamp": "2026-09-26T06:01:59.381322+00:00"
+  },
+  "aggregates": {
+    "precision_at_k": 0.2667,
+    "recall_at_k": 0.8333,
+    "mrr": 0.6667
+  },
+  "questions": [
+    {
+      "qid": "q001",
+      "question": "What happens when I declare a path operation function with normal def instead of async def?",
+      "answerable": true,
+      "retrieved_ids": [
+        5924,
+        5926,
+        5900,
+        5899,
+        5923
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q002",
+      "question": "What does async def do in Python?",
+      "answerable": true,
+      "retrieved_ids": [
+        5924,
+        5918,
+        5919,
+        5920,
+        5922
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q003",
+      "question": "Can I call an async def function without await?",
+      "answerable": true,
+      "retrieved_ids": [
+        5926,
+        5919,
+        5924,
+        5918,
+        5920
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q004",
+      "question": "What async libraries are FastAPI and Starlette based on?",
+      "answerable": true,
+      "retrieved_ids": [
+        5890,
+        5889,
+        5864,
+        5888,
+        5880
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "qid": "q005",
+      "question": "If my database library doesn't support await, how should I declare my path operation functions?",
+      "answerable": true,
+      "retrieved_ids": [
+        5900,
+        5899,
+        5924,
+        5926,
+        5919
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q006",
+      "question": "Does FastAPI change how my own utility functions are called?",
+      "answerable": true,
+      "retrieved_ids": [
+        5926,
+        5925,
+        5865,
+        5870,
+        5924
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q900",
+      "question": "How do I deploy FastAPI to Kubernetes?",
+      "answerable": false,
+      "retrieved_ids": [
+        6022,
+        6015,
+        5892,
+        5869,
+        5865
+      ]
+    },
+    {
+      "qid": "q901",
+      "question": "How do I configure CORS middleware?",
+      "answerable": false,
+      "retrieved_ids": [
+        6005,
+        6017,
+        5878,
+        5890,
+        6022
+      ]
+    }
+  ]
+}
