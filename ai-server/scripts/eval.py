@@ -12,11 +12,12 @@ import time
 import json
 import argparse
 from datetime import datetime, timezone
+from app.rag.rerank import search_hybrid
 from app.rag.chunking import FIXED_STRATEGY_LABEL
-from app.rag.hybrid import search_hybrid
+from app.rag.rerank import search_reranked
 
 
-SEARCHERS = {"vector": search, "hybrid": search_hybrid}
+SEARCHERS = {"vector": search, "hybrid": search_hybrid, "hybrid_rerank": search_reranked}
 REFUSAL_MARKER = "i don't know"
 
  
@@ -25,7 +26,7 @@ def _mean(xs: list[float]) -> float:
 
 
 async def run_eval(path:Path, strategy:str, k:int, full:bool, search_mode:str = "vector"):
-    print(strategy, search_mode)
+    
     questions = load_question(path)
     async with SessionLocal() as session:
         problems = await resolve_spans(session, questions)
@@ -59,7 +60,7 @@ async def run_eval(path:Path, strategy:str, k:int, full:bool, search_mode:str = 
             
 
             if full:
-                ans = await generate_res(session, q.question, k, strategy)
+                ans = await generate_res(session, q.question, k, strategy, search_mode)
                 refused = REFUSAL_MARKER in ans.answer.lower()
                 row["answer"] = ans.answer
                 row["cited_ids"] = [i.chunk_id for i in ans.cited_chunks]

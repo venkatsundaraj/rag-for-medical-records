@@ -8,10 +8,17 @@ from app.rag.retrieval import RetrieveChunk
 from dataclasses import dataclass
 from app.config import settings
 import re
+from app.rag.hybrid import search_hybrid
+from app.rag.rerank import search_reranked
+
 
 _client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY, max_retries=5)
 
 CHAT_MODEL = "gpt-4o-mini"
+
+
+SEARCHERS = {"vector": search, "hybrid": search_hybrid, "hybrid_rerank": search_reranked}
+
 
 _CITATION_RE = re.compile(r"\[(\d+)\]")
 
@@ -30,8 +37,11 @@ class AnswerResult:
     llm_ms: int
 
 
-async def generate_res( db:AsyncSession, query:str, k:int = 5, strategy:str = FIXED_STRATEGY_LABEL, model:str =CHAT_MODEL,) -> AnswerResult:
-    vectors = await search(db, query, k, strategy)
+async def generate_res( db:AsyncSession, query:str, k:int = 5, strategy:str = FIXED_STRATEGY_LABEL, model:str =CHAT_MODEL,search_mode:str = "vector") -> AnswerResult:
+
+    search_fn = SEARCHERS[search_mode]
+    vectors = await search_fn(db, query, k, strategy)
+
     messages = _build_message(query, vectors.chunks)
 
     t0 = time.perf_counter()

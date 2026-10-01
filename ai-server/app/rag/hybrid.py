@@ -80,8 +80,9 @@ async def search_hybrid(session:AsyncSession, query:str, k:int = 5, strategy:str
     for rank, row in enumerate(kw_rows, start=1):
         scores[row.id] = scores.get(row.id, 0.0) + 1.0 / (RRF_K + rank)
         row_by_id.setdefault(row.id, row)
- 
+   
     top_ids = sorted(scores, key=scores.__getitem__, reverse=True)[:k]
+    print(top_ids, "ids")
     search_ms = int((time.perf_counter() - t1) * 1000)
  
     max_score = scores[top_ids[0]] if top_ids else 1.0
