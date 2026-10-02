@@ -1,0 +1,866 @@
+{
+  "config": {
+    "strategy": "fixed_c1000_o150",
+    "k": 5,
+    "mode": "retrieval_only",
+    "golden_file": "data/golden/golden.jsonl",
+    "n_questions": 58,
+    "timestamp": "2026-10-02T04:31:39.116333+00:00"
+  },
+  "aggregates": {
+    "precision_at_k": 0.2431,
+    "recall_at_k": 0.9118,
+    "mrr": 0.8438
+  },
+  "questions": [
+    {
+      "qid": "q001",
+      "question": "What happens when I declare a path operation function with normal def instead of async def?",
+      "answerable": true,
+      "retrieved_ids": [
+        6137,
+        6113,
+        6112,
+        6139,
+        6136
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q002",
+      "question": "What does async def do in Python?",
+      "answerable": true,
+      "retrieved_ids": [
+        6132,
+        6112,
+        6109,
+        6155,
+        6113
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "qid": "q003",
+      "question": "Can I call an async def function without await?",
+      "answerable": true,
+      "retrieved_ids": [
+        6132,
+        6112,
+        6131,
+        6139,
+        6137
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q004",
+      "question": "What async libraries are FastAPI and Starlette based on?",
+      "answerable": true,
+      "retrieved_ids": [
+        6097,
+        6133,
+        6088,
+        6098,
+        6096
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q005",
+      "question": "If my database library doesn't support await, how should I declare my path operation functions?",
+      "answerable": true,
+      "retrieved_ids": [
+        6113,
+        6112,
+        6137,
+        6132,
+        6139
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q006",
+      "question": "Does FastAPI change how my own utility functions are called?",
+      "answerable": true,
+      "retrieved_ids": [
+        6139,
+        6138,
+        6133,
+        6254,
+        6137
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q007",
+      "question": "How can a path operation return 201 Created for new items but 200 OK for updates?",
+      "answerable": true,
+      "retrieved_ids": [
+        6265,
+        6042,
+        6046,
+        6113,
+        6043
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q008",
+      "question": "Do additional status codes returned via a Response show up in the OpenAPI docs?",
+      "answerable": true,
+      "retrieved_ids": [
+        6267,
+        6266,
+        6265,
+        6252,
+        6253
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q009",
+      "question": "How can I create a parameterized dependency in FastAPI?",
+      "answerable": true,
+      "retrieved_ids": [
+        6287,
+        6288,
+        6138,
+        6289,
+        6290
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q010",
+      "question": "What is the difference between Depends(scope=\"function\") and Depends(scope=\"request\") for dependencies with yield?",
+      "answerable": true,
+      "retrieved_ids": [
+        6291,
+        6290,
+        6289,
+        6293,
+        6295
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q011",
+      "question": "Why can't I use TestClient inside async test functions, and what should I use instead?",
+      "answerable": true,
+      "retrieved_ids": [
+        6108,
+        6107,
+        6109,
+        6110,
+        6111
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q012",
+      "question": "Does HTTPX AsyncClient trigger my app's lifespan events during tests?",
+      "answerable": true,
+      "retrieved_ids": [
+        6110,
+        6109,
+        6108,
+        6107,
+        6111
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q013",
+      "question": "Why might updating an item with PUT unintentionally overwrite a stored field?",
+      "answerable": true,
+      "retrieved_ids": [
+        6042,
+        6045,
+        6043,
+        6044,
+        6046
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q014",
+      "question": "How do I apply a partial update to a stored Pydantic model?",
+      "answerable": true,
+      "retrieved_ids": [
+        6044,
+        6045,
+        6043,
+        6046,
+        6042
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q015",
+      "question": "How does FastAPI support standard Python dataclasses?",
+      "answerable": true,
+      "retrieved_ids": [
+        6140,
+        6142,
+        6144,
+        6143,
+        6141
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q016",
+      "question": "Since which FastAPI version are dataclasses supported?",
+      "answerable": true,
+      "retrieved_ids": [
+        6144,
+        6140,
+        6142,
+        6141,
+        6143
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q017",
+      "question": "How can I avoid regenerating a custom OpenAPI schema on every docs request?",
+      "answerable": true,
+      "retrieved_ids": [
+        6255,
+        6254,
+        6252,
+        6080,
+        6242
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q018",
+      "question": "What are the differences between fastapi dev and fastapi run?",
+      "answerable": true,
+      "retrieved_ids": [
+        6078,
+        6097,
+        6072,
+        6262,
+        6138
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "qid": "q019",
+      "question": "How does fastapi dev set FASTAPI_ENV, and does fastapi run set it?",
+      "answerable": true,
+      "retrieved_ids": [
+        6283,
+        6277,
+        6284,
+        6262,
+        6138
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q020",
+      "question": "What is the recommended way to tell the fastapi command where my app is?",
+      "answerable": true,
+      "retrieved_ids": [
+        6281,
+        6280,
+        6262,
+        6277,
+        6282
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2
+    },
+    {
+      "qid": "q021",
+      "question": "How do I deploy a FastAPI app to FastAPI Cloud?",
+      "answerable": true,
+      "retrieved_ids": [
+        6025,
+        6168,
+        6026,
+        6280,
+        6166
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q022",
+      "question": "How do I serve a single-page app with client-side routing using app.frontend()?",
+      "answerable": true,
+      "retrieved_ids": [
+        6258,
+        6257,
+        6261,
+        6259,
+        6260
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q023",
+      "question": "What happens if the frontend build directory passed to app.frontend() is missing?",
+      "answerable": true,
+      "retrieved_ids": [
+        6261,
+        6262,
+        6260,
+        6263,
+        6257
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q024",
+      "question": "Which tool is recommended for generating a TypeScript client from a FastAPI app?",
+      "answerable": true,
+      "retrieved_ids": [
+        6241,
+        6243,
+        6242,
+        6245,
+        6086
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q025",
+      "question": "Why are generated client method names like createItemItemsPost, and how can I make them cleaner?",
+      "answerable": true,
+      "retrieved_ids": [
+        6245,
+        6248,
+        6249,
+        6250,
+        6244
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q026",
+      "question": "Should I return or raise an HTTPException?",
+      "answerable": true,
+      "retrieved_ids": [
+        6299,
+        6300,
+        6298,
+        6303,
+        6307
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q027",
+      "question": "Should I register my exception handler for FastAPI's HTTPException or Starlette's?",
+      "answerable": true,
+      "retrieved_ids": [
+        6307,
+        6308,
+        6303,
+        6302,
+        6301
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q028",
+      "question": "How can one server with a single IP address serve HTTPS for multiple domains?",
+      "answerable": true,
+      "retrieved_ids": [
+        6196,
+        6205,
+        6195,
+        6201,
+        6199
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q029",
+      "question": "How do I make FastAPI CLI trust X-Forwarded headers from a TLS termination proxy?",
+      "answerable": true,
+      "retrieved_ids": [
+        6209,
+        6208,
+        6207,
+        6203,
+        6197
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q030",
+      "question": "What type are values read from environment variables in Python?",
+      "answerable": true,
+      "retrieved_ids": [
+        6028,
+        6029,
+        6031,
+        6236,
+        6035
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q031",
+      "question": "Why use @lru_cache on a get_settings dependency?",
+      "answerable": true,
+      "retrieved_ids": [
+        6041,
+        6034,
+        6038,
+        6037,
+        6035
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "qid": "q032",
+      "question": "Can FastAPI be faster than Starlette?",
+      "answerable": true,
+      "retrieved_ids": [
+        6072,
+        6073,
+        6088,
+        6070,
+        6096
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q033",
+      "question": "What is the relationship between the FastAPI class and Starlette?",
+      "answerable": true,
+      "retrieved_ids": [
+        6072,
+        6071,
+        6097,
+        6098,
+        6307
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "qid": "q034",
+      "question": "What is the keyboard shortcut for route search in the FastAPI VS Code extension?",
+      "answerable": true,
+      "retrieved_ids": [
+        6167,
+        6166,
+        6280,
+        6078,
+        6277
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q035",
+      "question": "What do I need to install to generate diagrams with python-statemachine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6285,
+        6286,
+        6223,
+        6221,
+        6222
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q036",
+      "question": "How do I get type checking and autocompletion for sm.model in a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6239,
+        6238,
+        6067,
+        6268,
+        6185
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q037",
+      "question": "What does bind_events_as_methods do on MachineMixin?",
+      "answerable": true,
+      "retrieved_ids": [
+        6102,
+        6103,
+        6101,
+        6212,
+        6105
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q038",
+      "question": "What's the difference between putting a class and an instance in a StateChart's listeners attribute?",
+      "answerable": true,
+      "retrieved_ids": [
+        6066,
+        6171,
+        6268,
+        6185,
+        6220
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q039",
+      "question": "Is a listener's setup() method called for shared listener instances?",
+      "answerable": true,
+      "retrieved_ids": [
+        6177,
+        6176,
+        6172,
+        6220,
+        6175
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q040",
+      "question": "What is the difference between send() and raise_() on a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6269,
+        6216,
+        6189,
+        6226,
+        6270
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q041",
+      "question": "What is the difference between allowed_events and enabled_events()?",
+      "answerable": true,
+      "retrieved_ids": [
+        6272,
+        6271,
+        6187,
+        6186,
+        6179
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q042",
+      "question": "Why does cond=lambda self: ... fail in python-statemachine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6184,
+        6193,
+        6182,
+        6183,
+        6180
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q043",
+      "question": "Are validator exceptions converted to error.execution events when catch_errors_as_events is True?",
+      "answerable": true,
+      "retrieved_ids": [
+        6190,
+        6189,
+        6233,
+        6191,
+        6232
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q044",
+      "question": "What is the difference between a self-transition and an internal transition?",
+      "answerable": true,
+      "retrieved_ids": [
+        6054,
+        6053,
+        6052,
+        6064,
+        6048
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q045",
+      "question": "When an event matches transitions at several levels of a compound state hierarchy, which one wins?",
+      "answerable": true,
+      "retrieved_ids": [
+        6058,
+        6059,
+        6050,
+        6048,
+        6052
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q046",
+      "question": "What exception do python-statemachine validation errors raise?",
+      "answerable": true,
+      "retrieved_ids": [
+        6060,
+        6190,
+        6232,
+        6189,
+        6233
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q047",
+      "question": "Are convention-based callbacks like on_enter_<state> validated when a statechart is instantiated?",
+      "answerable": true,
+      "retrieved_ids": [
+        6067,
+        6066,
+        6169,
+        6268,
+        6215
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q048",
+      "question": "How do invoke handlers run on the sync engine?",
+      "answerable": true,
+      "retrieved_ids": [
+        6145,
+        6157,
+        6154,
+        6146,
+        6161
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q049",
+      "question": "How do I wait for multiple invoke handlers to all finish before transitioning?",
+      "answerable": true,
+      "retrieved_ids": [
+        6161,
+        6162,
+        6150,
+        6146,
+        6163
+      ],
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q050",
+      "question": "How can a compound state resume the child that was active when it was exited?",
+      "answerable": true,
+      "retrieved_ids": [
+        6229,
+        6051,
+        6225,
+        6058,
+        6164
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "qid": "q051",
+      "question": "What happens when a callback raises an exception in a StateChart?",
+      "answerable": true,
+      "retrieved_ids": [
+        6188,
+        6232,
+        6190,
+        6189,
+        6066
+      ],
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "qid": "q900",
+      "question": "How do I deploy FastAPI to Kubernetes?",
+      "answerable": false,
+      "retrieved_ids": [
+        6025,
+        6026,
+        6168,
+        6262,
+        6280
+      ]
+    },
+    {
+      "qid": "q901",
+      "question": "How do I configure CORS middleware?",
+      "answerable": false,
+      "retrieved_ids": [
+        6263,
+        6098,
+        6209,
+        6259,
+        6279
+      ]
+    },
+    {
+      "qid": "q902",
+      "question": "How do I add OAuth2 password flow authentication to a FastAPI app?",
+      "answerable": false,
+      "retrieved_ids": [
+        6278,
+        6025,
+        6277,
+        6263,
+        6078
+      ]
+    },
+    {
+      "qid": "q903",
+      "question": "How do I configure rate limiting for FastAPI endpoints?",
+      "answerable": false,
+      "retrieved_ids": [
+        6259,
+        6262,
+        6302,
+        6284,
+        6277
+      ]
+    },
+    {
+      "qid": "q904",
+      "question": "How do I run FastAPI with Gunicorn and multiple worker processes?",
+      "answerable": false,
+      "retrieved_ids": [
+        6280,
+        6100,
+        6129,
+        6277,
+        6281
+      ]
+    },
+    {
+      "qid": "q905",
+      "question": "What license is python-statemachine released under?",
+      "answerable": false,
+      "retrieved_ids": [
+        6285,
+        6286,
+        6224,
+        6211,
+        6102
+      ]
+    },
+    {
+      "qid": "q906",
+      "question": "How do I write a WebSocket endpoint in FastAPI?",
+      "answerable": false,
+      "retrieved_ids": [
+        6097,
+        6259,
+        6262,
+        6088,
+        6277
+      ]
+    }
+  ]
+}

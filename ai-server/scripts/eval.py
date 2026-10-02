@@ -60,7 +60,7 @@ async def run_eval(path:Path, strategy:str, k:int, full:bool, search_mode:str = 
             
 
             if full:
-                ans = await generate_res(session, q.question, k, strategy, search_mode)
+                ans = await generate_res(session, q.question, k=k, strategy=strategy, search_mode=search_mode)
                 refused = REFUSAL_MARKER in ans.answer.lower()
                 row["answer"] = ans.answer
                 row["cited_ids"] = [i.chunk_id for i in ans.cited_chunks]
@@ -117,6 +117,7 @@ async def run_eval(path:Path, strategy:str, k:int, full:bool, search_mode:str = 
     return {
         "config": {
             "strategy": strategy,
+            "search": search_mode, 
             "k": k,
             "mode": "full" if full else "retrieval_only",
             "golden_file": str(path),
@@ -153,7 +154,7 @@ async def main() -> None:
     out_dir = Path("eval_runs")
     out_dir.mkdir(exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    out_path = out_dir / f"{stamp}_{args.strategy}_k{args.k}.json"
+    out_path = out_dir / f"{stamp}_{args.strategy}_{args.search}_k{args.k}.json"
     out_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
  
     print(f"\n== {report['config']['mode']} | strategy={args.strategy} k={args.k} "

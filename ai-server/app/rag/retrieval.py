@@ -26,7 +26,7 @@ class RetrieveResult:
     chunks:list[RetrieveChunk]
     embed_ms:int
     search_ms:int
-    re_rank:int = 0
+    rerank_ms:int = 0
 
 
 async def search(session:AsyncSession, query:str, k:int = 5, strategy:str = FIXED_STRATEGY_LABEL)->RetrieveResult:
