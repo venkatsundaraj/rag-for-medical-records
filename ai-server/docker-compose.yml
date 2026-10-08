@@ -1,0 +1,43 @@
+services:
+  db:
+    # Plain postgres doesn't ship the vector extension; this image is
+    # postgres + pgvector preinstalled. Your Alembic migration's
+    # CREATE EXTENSION then just works.
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set it in .env}
+      POSTGRES_DB: rag
+    volumes:
+      # Named volume: the database (your 290 chunks + embeddings)
+      # survives `docker compose down`. Only `down -v` destroys it.
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # "Container started" is not "postgres ready to accept queries".
+      # Without this, the API races the db at startup and alembic dies
+      # with connection refused.
+      test: ["CMD-SHELL", "pg_isready -U rag -d rag"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+  api:
+    build: .
+    environment:
+      # Inside the compose network, the db's hostname is its service
+      # name "db" -- NOT localhost. localhost inside the api container
+      # is the api container itself. This is the #1 first-Docker bug.
+      DATABASE_URL: postgresql+asyncpg://rag:${POSTGRES_PASSWORD}@db:5432/rag
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?set it in .env}
+    volumes:
+      # Mount the run files read-only so the dashboard endpoints see them.
+      - ./eval_runs:/app/eval_runs:ro
+      - ./data:/app/data:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

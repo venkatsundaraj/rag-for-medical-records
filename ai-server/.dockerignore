@@ -1,0 +1,8 @@
+venv/
+client/
+__pycache__/
+*.pyc
+.env
+.git/
+eval_runs/
+data/
