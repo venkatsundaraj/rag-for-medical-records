@@ -9,23 +9,23 @@ from contextlib import asynccontextmanager
 from app.lib.db import create_pool, close_pool
 from app.lib.alchemy_db import engine
 
-# @asynccontextmanager
-# async def lifespan(app:FastAPI):
-#     print('lifespan started')
+@asynccontextmanager
+async def lifespan(app:FastAPI):
+    print('lifespan started')
 
-#     async with engine.connect() as conn:
-#         await conn.execute(text('SELECT 1'))
-#     print('db connected')
+    async with engine.connect() as conn:
+        await conn.execute(text('SELECT 1'))
+    print('db connected')
 
-#     yield
+    yield
 
-#     await engine.dispose()
-#     print("shutdown: engine disposed")
-
-
+    await engine.dispose()
+    print("shutdown: engine disposed")
 
 
-app = FastAPI(description="this is for ai applications",title=settings.APP_NAME, )
+
+
+app = FastAPI(description="this is for ai applications",title=settings.APP_NAME,lifespan=lifespan )
 
 app.add_middleware(CORSMiddleware, allow_headers=["*"],allow_origins=["http://localhost:3000"],  allow_methods=["*"], expose_headers=["*"])
 

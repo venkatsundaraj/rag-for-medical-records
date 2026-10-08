@@ -11,7 +11,8 @@ WORKDIR /app
 # long as requirements.txt is unchanged, rebuilds after a code edit skip
 # the slow pip install entirely. This ordering is THE Dockerfile idiom.
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu \
+ && pip install --no-cache-dir -r requirements.txt
 
 # Now the code. .dockerignore keeps venv/, eval_runs/, client/ out.
 COPY --chown=appuser:appuser . .

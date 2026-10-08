@@ -3,7 +3,7 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    APP_NAME:str = ""
+    APP_NAME:str = "My API"
     DATABASE_URL:str = ""
     OPENAI_API_KEY:str = ""
 
