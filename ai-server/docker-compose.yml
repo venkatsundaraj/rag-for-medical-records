@@ -34,8 +34,6 @@ services:
       - ./eval_runs:/app/eval_runs
       - ./data:/app/data:ro
       - hf_cache:/home/appuser/.cache/huggingface
-    ports:
-      - "8000:8000"
     depends_on:
       db:
         condition: service_healthy
