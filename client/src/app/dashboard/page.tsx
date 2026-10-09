@@ -58,7 +58,7 @@ export default function EvalDashboard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/eval/runs")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/eval/runs`)
       .then((r) => {
         if (!r.ok) throw new Error(`API returned ${r.status}`);
         return r.json();
