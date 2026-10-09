@@ -1,0 +1,12 @@
+# Local development overrides. Compose auto-merges this file with
+# docker-compose.yml when you run plain `docker compose up` on your Mac.
+# Coolify runs `-f docker-compose.yml` explicitly, so this file is
+# NEVER loaded on the server -- dev conveniences live here, production
+# truth lives in the base file.
+services:
+  api:
+    ports:
+      - "8000:8000" # direct access for curl/dashboard on the Mac
+    volumes:
+      - ./eval_runs:/app/eval_runs # live run files (eval writes appear instantly)
+      - ./data:/app/data:ro # live corpus/golden edits without rebuild

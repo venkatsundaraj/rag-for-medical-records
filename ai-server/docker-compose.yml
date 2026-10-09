@@ -31,8 +31,6 @@ services:
       OPENAI_API_KEY: ${OPENAI_API_KEY:?set it in .env}
     volumes:
       # Mount the run files read-only so the dashboard endpoints see them.
-      - ./eval_runs:/app/eval_runs
-      - ./data:/app/data:ro
       - hf_cache:/home/appuser/.cache/huggingface
     depends_on:
       db:
