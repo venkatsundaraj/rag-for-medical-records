@@ -27,7 +27,7 @@ async def lifespan(app:FastAPI):
 
 app = FastAPI(description="this is for ai applications",title=settings.APP_NAME,lifespan=lifespan )
 
-app.add_middleware(CORSMiddleware, allow_headers=["*"],allow_origins=["http://localhost:3000"],  allow_methods=["*"], expose_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_headers=["*"],allow_origins=["http://localhost:3000", "https://rag-for-medical-records.vercel.app"],  allow_methods=["*"], expose_headers=["*"])
 
 app.include_router(todo, prefix='/api',tags=["todo"] )
 app.include_router(rag_router, prefix='/api/rag',tags=["rag"] )
