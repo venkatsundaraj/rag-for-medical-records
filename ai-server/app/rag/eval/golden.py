@@ -56,7 +56,7 @@ async def resolve_spans(session:AsyncSession, questions:list[GoldQuestion])->lis
     sources = (e.source for q in questions for e in q.evidence)
    
     rows = (await session.execute(Select(Document.source, Document.content).where(Document.source.in_(sources)))).all()
-    print(list(rows))
+    
     sources_by_ids = {i.source:i.content for i in rows}
     problems = []
 
