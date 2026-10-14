@@ -41,7 +41,11 @@ if __name__ == "__main__":
         a = "hello world venkat"
         b = 'o world'
 
-        print(a.find(b))
+        # print(a.find(b))
+        def hello(a, b):
+            print(a>b, "filll")
+            return a>b
+        print(any(hello(i, 1) and  hello(i, 1) for i in range(4)))
 
         return
 

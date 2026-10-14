@@ -7,6 +7,7 @@
 
 import asyncio
 from pydantic import BaseModel
+from app.rag.eval.golden import chunk_is_relevant
 import json
 from pathlib import Path
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -15,6 +16,10 @@ from app.lib.alchemy_db import SessionLocal
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from app.models.pdf_schema import Document, Chunk
+from app.rag.chunking import FIXED_STRATEGY_LABEL
+from typing import List
+from app.rag.retrieval import search, RetrieveChunk
+
 
 
 class GoldenEvidence(BaseModel):
@@ -70,19 +75,56 @@ async def resolve_spans(session:AsyncSession, qns:list[GoldenQuestion]):
             return problems
 
 
+# helper functions
+def span_overlap(a_start:int, a_end:int, b_start:int, b_end:int):
+    return a_start < b_end and a_end > b_start
 
-    
-    
-    
+def is_chunk_relevant(chunk:RetrieveChunk, evidence:list[GoldenEvidence]):
+    return any(e.source == chunk.source and e.char_start > 0 and span_overlap(chunk.char_start, chunk.char_end, e.char_start, e.char_end)  for e in evidence)
 
+def precision_at_k(items:list[bool], k:int=5)->int:
+    rel = items[:k]
+    if not rel:
+        return 0.0
+    return sum(rel)/len(rel)
 
+def recall_at_k(evidence_found:list[bool])->float:
+    if not evidence_found:
+        return 0.0
+    return sum(evidence_found) / len(evidence_found)
 
+def relevance(chunks:list[RetrieveChunk], e:GoldenEvidence):
+    return any(
+            c.source == e.source
+            and e.char_start >= 0
+            and span_overlap(c.char_start, c.char_end, e.char_start, e.char_end)
+            for c in chunks
+        )
 
+def mrr(items:list[bool])->int:
+    for i, rel in enumerate(items):
+        if rel:
+            return 1.0 / (i+1)
+        return 0.0
+async def evals(session, questions:list[GoldenQuestion], strategy:str = FIXED_STRATEGY_LABEL, k:int = 5):
+    rows = []
+    for q in questions:
+        row:dict = {"qid":q.qid, "question":q.question, "answerable":q.answerable}
+        result = await search(session, q.question, k=k, strategy=strategy)
 
+        row["retrieved_ids"] = [i.chunk_id for i in result.chunks]
 
+        if q.answerable:
+            flags = [is_chunk_relevant(i, q.evidence) for i in result.chunks]
 
+            row["precision_k"] = precision_at_k(flags, k)
+            row["recall_k"] = recall_at_k([relevance(result.chunks, i) for i in q.evidence])
 
-async def evals(quesitions):
+            row["mrr"] = mrr(flags)
+
+            rows.append(row)
+
+    print(rows)           
     return True
 
 
@@ -91,7 +133,7 @@ async def main(path:Path):
     async with SessionLocal() as session:
         problems = await resolve_spans(session, qns)
 
-        print(qns)
+        hello = await evals(session, qns)
     return True
 
 
