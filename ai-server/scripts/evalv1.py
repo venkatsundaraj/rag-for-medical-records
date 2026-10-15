@@ -14,13 +14,15 @@ from sqlalchemy.ext.asyncio import AsyncSession
 import argparse
 from app.lib.alchemy_db import SessionLocal
 from sqlalchemy import select
+from app.rag.eval.judge import judge_response
 from sqlalchemy.dialects.postgresql import insert
 from app.models.pdf_schema import Document, Chunk
 from app.rag.chunking import FIXED_STRATEGY_LABEL
 from typing import List
 from app.rag.retrieval import search, RetrieveChunk
+from app.lib.deps.rag_deps import generate_res
 
-
+REFUSAL_MARKER = "I don't know"
 
 class GoldenEvidence(BaseModel):
     source:str
@@ -93,7 +95,7 @@ def recall_at_k(evidence_found:list[bool])->float:
         return 0.0
     return sum(evidence_found) / len(evidence_found)
 
-def relevance(chunks:list[RetrieveChunk], e:GoldenEvidence):
+def evidence_covered(chunks:list[RetrieveChunk], e:GoldenEvidence):
     return any(
             c.source == e.source
             and e.char_start >= 0
@@ -106,7 +108,7 @@ def mrr(items:list[bool])->int:
         if rel:
             return 1.0 / (i+1)
         return 0.0
-async def evals(session, questions:list[GoldenQuestion], strategy:str = FIXED_STRATEGY_LABEL, k:int = 5):
+async def evals(session, questions:list[GoldenQuestion], strategy:str = FIXED_STRATEGY_LABEL, k:int = 5, full:bool = False, search_mode:str="vector"):
     rows = []
     for q in questions:
         row:dict = {"qid":q.qid, "question":q.question, "answerable":q.answerable}
@@ -118,13 +120,37 @@ async def evals(session, questions:list[GoldenQuestion], strategy:str = FIXED_ST
             flags = [is_chunk_relevant(i, q.evidence) for i in result.chunks]
 
             row["precision_k"] = precision_at_k(flags, k)
-            row["recall_k"] = recall_at_k([relevance(result.chunks, i) for i in q.evidence])
+            row["recall_k"] = recall_at_k([evidence_covered(result.chunks, i) for i in q.evidence])
 
             row["mrr"] = mrr(flags)
 
-            rows.append(row)
+            
 
-    print(rows)           
+    if full:
+        ans = await generate_res(session, q.question, k, strategy, search_mode="vector")
+        refused = REFUSAL_MARKER in ans.answer.lower()
+        ans["answer"] = ans.answer
+        ans["cited_chunks"] = [c.chunk_id for c in ans.cited_chunks]
+        ans["hallucinated_ids"] = ans.hallucinated_ids
+        ans["refused"] = refused
+
+        if q.answerable:
+            row["citation_precision"] = precision_at_k([chunk_is_relevant(c, q.evidence) for c in ans.cited_chunks], len(ans.cited_chunks) or 1,) if ans.cited_chunks else 0.0
+
+        else:
+            row["correct_refusal"] = refused
+
+        j = await judge_response(q.question, ans.answer, [c.content for c in ans.retrieved], q.expected_answer)
+
+        row["faithfulness"] = j.faithfulness
+        row["relevance"] = j.relevance
+        row["unsupported_claims"] = j.unsupported_claims
+
+    rows.append(row)
+
+    
+    
+
     return True
 
 

@@ -45,7 +45,11 @@ if __name__ == "__main__":
         def hello(a, b):
             print(a>b, "filll")
             return a>b
-        print(any(hello(i, 1) and  hello(i, 1) for i in range(4)))
+        # print(any(hello(i, 1) and  hello(i, 1) for i in range(4)))
+
+        c = True
+        d = False
+        print(c or d)
 
         return
 

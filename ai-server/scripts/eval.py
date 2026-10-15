@@ -1,7 +1,6 @@
 from pathlib import Path
 import statistics
 from app.rag.eval.golden import resolve_spans, load_question, chunk_is_relevant, evidence_covered
-from app.rag.eval.judge import judge_response
 import asyncio
 from app.lib.alchemy_db import SessionLocal, engine
 from app.rag.retrieval import search
@@ -79,6 +78,7 @@ async def run_eval(path:Path, strategy:str, k:int, full:bool, search_mode:str = 
                     )
                 else:
                     row["correct_refusal"] = refused
+
                 j = await judge_response(
                     q.question,
                     ans.answer,
