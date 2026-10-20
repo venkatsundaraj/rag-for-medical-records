@@ -1,0 +1,1734 @@
+{
+  "config": {
+    "run_file": "eval_runs/20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json",
+    "match_threshold": 0.6,
+    "timestamp": "2026-10-17T04:25:01.104620+00:00"
+  },
+  "aggregates": {
+    "auto_coverage": 0.5185,
+    "borderline": 11,
+    "missed": 2,
+    "claims_per_answer": 6.56
+  },
+  "matches": [
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.6611570247933884,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.661
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.667
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.667
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.667
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.667
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "claim_id": "c001",
+      "score": 0.667
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.41237113402061853,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI is being developed by Django core team members.",
+      "claim_id": "c002",
+      "score": 0.412
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.22807017543859648,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.228
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.22807017543859648,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.228
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.3357664233576642,
+      "best_text": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.336
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.3357664233576642,
+      "best_text": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.336
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.3597122302158273,
+      "best_text": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.36
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.3597122302158273,
+      "best_text": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "claim_id": "c003",
+      "score": 0.36
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.5116279069767442,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "claim_id": "c004",
+      "score": 0.512
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.33112582781456956,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.331
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.40522875816993464,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.405
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.40522875816993464,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.405
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.40522875816993464,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.405
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.40522875816993464,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.405
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.40522875816993464,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "claim_id": "c005",
+      "score": 0.405
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.5581395348837209,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.558
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.5681818181818182,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.568
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.5681818181818182,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.568
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.5681818181818182,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.568
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.5681818181818182,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.568
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.5681818181818182,
+      "best_text": "Starlette is based on AnyIO as its async library.",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "claim_id": "c006",
+      "score": 0.568
+    },
+    {
+      "qid": "q004",
+      "cand": "FastAPI is based on AnyIO as its async library.",
+      "best_score": 0.44660194174757284,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.447
+    },
+    {
+      "qid": "q004",
+      "cand": "Starlette is based on AnyIO as its async library.",
+      "best_score": 0.44660194174757284,
+      "best_text": "FastAPI is based on AnyIO as its async library.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.447
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "best_score": 0.7301587301587301,
+      "best_text": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.73
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes FastAPI compatible with Trio.",
+      "best_score": 0.8247422680412371,
+      "best_text": "AnyIO makes FastAPI compatible with Trio.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.825
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "best_score": 0.8247422680412371,
+      "best_text": "AnyIO makes FastAPI compatible with Trio.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.825
+    },
+    {
+      "qid": "q004",
+      "cand": "AnyIO makes Starlette compatible with Trio.",
+      "best_score": 0.8247422680412371,
+      "best_text": "AnyIO makes FastAPI compatible with Trio.",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "claim_id": "c007",
+      "score": 0.825
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine run in a thread executor.",
+      "best_score": 0.8137931034482758,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "claim_id": "c008",
+      "score": 0.814
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "best_score": 0.8137931034482758,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "claim_id": "c008",
+      "score": 0.814
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "best_score": 0.8137931034482758,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "claim_id": "c008",
+      "score": 0.814
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "best_score": 0.8137931034482758,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "claim_id": "c008",
+      "score": 0.814
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "best_score": 0.8137931034482758,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "claim_id": "c008",
+      "score": 0.814
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine run in a thread executor.",
+      "best_score": 0.45161290322580644,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "claim_id": "c009",
+      "score": 0.452
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "best_score": 0.45161290322580644,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "claim_id": "c009",
+      "score": 0.452
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "best_score": 0.7538461538461538,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "claim_id": "c009",
+      "score": 0.754
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "best_score": 0.7538461538461538,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "claim_id": "c009",
+      "score": 0.754
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "best_score": 0.7538461538461538,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "claim_id": "c009",
+      "score": 0.754
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine run in a thread executor.",
+      "best_score": 0.45454545454545453,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "claim_id": "c010",
+      "score": 0.455
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "best_score": 0.5227272727272727,
+      "best_text": "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "claim_id": "c010",
+      "score": 0.523
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "best_score": 0.5384615384615384,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "claim_id": "c010",
+      "score": 0.538
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "best_score": 0.5384615384615384,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "claim_id": "c010",
+      "score": 0.538
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "best_score": 0.5384615384615384,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "claim_id": "c010",
+      "score": 0.538
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine run in a thread executor.",
+      "best_score": 0.22818791946308725,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "claim_id": "c011",
+      "score": 0.228
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "best_score": 0.22818791946308725,
+      "best_text": "Invoke handlers on the sync engine run in a thread executor.",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "claim_id": "c011",
+      "score": 0.228
+    },
+    {
+      "qid": "q048",
+      "cand": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "best_score": 0.2709677419354839,
+      "best_text": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "claim_id": "c011",
+      "score": 0.271
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "best_score": 0.6787878787878788,
+      "best_text": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "claim_id": "c011",
+      "score": 0.679
+    },
+    {
+      "qid": "q048",
+      "cand": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "best_score": 0.6787878787878788,
+      "best_text": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "claim_id": "c011",
+      "score": 0.679
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.6442307692307693,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "claim_id": "c012",
+      "score": 0.644
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.4639175257731959,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "claim_id": "c013",
+      "score": 0.464
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.6060606060606061,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "claim_id": "c014",
+      "score": 0.606
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.5073170731707317,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "claim_id": "c015",
+      "score": 0.507
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.45320197044334976,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.453
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.45320197044334976,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.453
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.5106382978723404,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.511
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.5106382978723404,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.511
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.5106382978723404,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.511
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.5106382978723404,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.511
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.6666666666666666,
+      "best_text": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "claim_id": "c016",
+      "score": 0.667
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "best_score": 0.19631901840490798,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.196
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "best_score": 0.19631901840490798,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.196
+    },
+    {
+      "qid": "q001",
+      "cand": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "best_score": 0.21621621621621623,
+      "best_text": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.216
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "best_score": 0.2732919254658385,
+      "best_text": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.273
+    },
+    {
+      "qid": "q001",
+      "cand": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "best_score": 0.32967032967032966,
+      "best_text": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.33
+    },
+    {
+      "qid": "q001",
+      "cand": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "best_score": 0.3937007874015748,
+      "best_text": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.394
+    },
+    {
+      "qid": "q001",
+      "cand": "Path operation functions that perform blocking I/O should use def instead of async def.",
+      "best_score": 0.3937007874015748,
+      "best_text": "In general, it's better to use async def for path operation functions in FastAPI.",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "claim_id": "c017",
+      "score": 0.394
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI is built on top of Starlette.",
+      "best_score": 0.5866666666666667,
+      "best_text": "FastAPI is built on top of Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 0.587
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI uses Starlette as its underlying web framework.",
+      "best_score": 0.5866666666666667,
+      "best_text": "FastAPI is built on top of Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 0.587
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI cannot be faster than Starlette.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI adds additional features on top of Starlette.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides essential functionalities for building APIs.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides data validation for building APIs.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides serialization for building APIs.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides automatic documentation for building APIs.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have data validation functionalities.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have serialization functionalities.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have automatic documentation functionalities.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI's HTTPException class inherits from Starlette's HTTPException.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI's HTTPException can accept any JSON-able data for the detail field.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette's HTTPException only accepts strings for the detail field.",
+      "best_score": 1.0,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "claim_id": "c023",
+      "score": 1.0
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI is built on top of Starlette.",
+      "best_score": 0.4,
+      "best_text": "FastAPI is built on top of Starlette.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.4
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI uses Starlette as its underlying web framework.",
+      "best_score": 0.4,
+      "best_text": "FastAPI is built on top of Starlette.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.4
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI cannot be faster than Starlette.",
+      "best_score": 0.42857142857142855,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.429
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI adds additional features on top of Starlette.",
+      "best_score": 0.42857142857142855,
+      "best_text": "FastAPI cannot be faster than Starlette.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.429
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides essential functionalities for building APIs.",
+      "best_score": 0.4369747899159664,
+      "best_text": "FastAPI provides essential functionalities for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.437
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides data validation for building APIs.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides serialization for building APIs.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI provides automatic documentation for building APIs.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have data validation functionalities.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have serialization functionalities.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette does not have automatic documentation functionalities.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI's HTTPException class inherits from Starlette's HTTPException.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "FastAPI's HTTPException can accept any JSON-able data for the detail field.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q033",
+      "cand": "Starlette's HTTPException only accepts strings for the detail field.",
+      "best_score": 0.5321100917431193,
+      "best_text": "FastAPI provides data validation for building APIs.",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "claim_id": "c024",
+      "score": 0.532
+    },
+    {
+      "qid": "q038",
+      "cand": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "best_score": 0.7544910179640718,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "claim_id": "c025",
+      "score": 0.754
+    },
+    {
+      "qid": "q038",
+      "cand": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "best_score": 0.48554913294797686,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.486
+    },
+    {
+      "qid": "q038",
+      "cand": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "best_score": 0.5206611570247934,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "claim_id": "c026",
+      "score": 0.521
+    },
+    {
+      "qid": "q038",
+      "cand": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "best_score": 0.43010752688172044,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.43
+    },
+    {
+      "qid": "q038",
+      "cand": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "best_score": 0.43010752688172044,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.43
+    },
+    {
+      "qid": "q038",
+      "cand": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "best_score": 0.43010752688172044,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.43
+    },
+    {
+      "qid": "q038",
+      "cand": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "best_score": 0.43010752688172044,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.43
+    },
+    {
+      "qid": "q038",
+      "cand": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "best_score": 0.5461254612546126,
+      "best_text": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.546
+    },
+    {
+      "qid": "q038",
+      "cand": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "best_score": 0.5461254612546126,
+      "best_text": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.546
+    },
+    {
+      "qid": "q038",
+      "cand": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "best_score": 0.5461254612546126,
+      "best_text": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.546
+    },
+    {
+      "qid": "q038",
+      "cand": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "best_score": 0.5461254612546126,
+      "best_text": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "claim_id": "c027",
+      "score": 0.546
+    },
+    {
+      "qid": "q038",
+      "cand": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "best_score": 0.5513513513513514,
+      "best_text": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.551
+    },
+    {
+      "qid": "q038",
+      "cand": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q038",
+      "cand": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "best_score": 0.7244094488188977,
+      "best_text": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "claim_id": "c028",
+      "score": 0.724
+    },
+    {
+      "qid": "q021",
+      "cand": "You can deploy your FastAPI app to FastAPI Cloud with one command.",
+      "best_score": 0.6814814814814815,
+      "best_text": "You can deploy your FastAPI app to FastAPI Cloud with one command.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.681
+    },
+    {
+      "qid": "q021",
+      "cand": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "best_score": 0.7074829931972789,
+      "best_text": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.707
+    },
+    {
+      "qid": "q021",
+      "cand": "The command '$ uv run fastapi deploy' will automatically detect your FastAPI application.",
+      "best_score": 0.7074829931972789,
+      "best_text": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.707
+    },
+    {
+      "qid": "q021",
+      "cand": "The command '$ uv run fastapi deploy' will deploy your FastAPI application to the cloud.",
+      "best_score": 0.7074829931972789,
+      "best_text": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.707
+    },
+    {
+      "qid": "q021",
+      "cand": "If you are not logged in, your browser will open to complete the authentication process.",
+      "best_score": 0.7074829931972789,
+      "best_text": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.707
+    },
+    {
+      "qid": "q021",
+      "cand": "Once deployed, you can access your FastAPI app at the provided URL.",
+      "best_score": 0.7074829931972789,
+      "best_text": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "claim_id": "c029",
+      "score": 0.707
+    },
+    {
+      "qid": "q025",
+      "cand": "Generated client method names like createItemItemsPost are structured this way because the client generator uses the OpenAPI internal operation ID for each path operation.",
+      "best_score": 0.36065573770491804,
+      "best_text": "Generated client method names like createItemItemsPost are structured this way because the client generator uses the OpenAPI internal operation ID for each path operation.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.361
+    },
+    {
+      "qid": "q025",
+      "cand": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "The requirement for unique operation IDs leads to the naming convention of generated client method names like createItemItemsPost.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "You can preprocess the OpenAPI specification before generating the clients to make the method names cleaner.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "Preprocessing the OpenAPI specification involves downloading the OpenAPI JSON to a file, such as openapi.json.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "You can modify the operation IDs in the OpenAPI specification to remove the prefixed tag.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "For instance, you could rename operation IDs from items-get_items to just get_items.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q025",
+      "cand": "Renaming operation IDs allows the client generator to produce simpler method names.",
+      "best_score": 0.92,
+      "best_text": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "claim_id": "c030",
+      "score": 0.92
+    },
+    {
+      "qid": "q035",
+      "cand": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "best_score": 0.6285714285714286,
+      "best_text": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "claim_id": "c031",
+      "score": 0.629
+    },
+    {
+      "qid": "q035",
+      "cand": "You can install the diagrams extra for python-statemachine using the command 'python3 -m pip install \"python-statemachine[diagrams]\"'.",
+      "best_score": 0.6285714285714286,
+      "best_text": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "claim_id": "c031",
+      "score": 0.629
+    },
+    {
+      "qid": "q035",
+      "cand": "You need to have the Graphviz system package installed to generate diagrams with python-statemachine.",
+      "best_score": 0.6285714285714286,
+      "best_text": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "claim_id": "c031",
+      "score": 0.629
+    },
+    {
+      "qid": "q035",
+      "cand": "Graphviz is required for diagram generation with python-statemachine.",
+      "best_score": 0.6285714285714286,
+      "best_text": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "claim_id": "c031",
+      "score": 0.629
+    },
+    {
+      "qid": "q051",
+      "cand": "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "best_score": 0.4322033898305085,
+      "best_text": "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.432
+    },
+    {
+      "qid": "q051",
+      "cand": "When a callback raises an exception in a StateChart, the runtime exception becomes an error.execution event.",
+      "best_score": 0.4322033898305085,
+      "best_text": "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.432
+    },
+    {
+      "qid": "q051",
+      "cand": "The error.execution event can be handled with regular transitions in a StateChart.",
+      "best_score": 0.4423963133640553,
+      "best_text": "The error.execution event can be handled with regular transitions in a StateChart.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.442
+    },
+    {
+      "qid": "q051",
+      "cand": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    },
+    {
+      "qid": "q051",
+      "cand": "The error can be processed in an on_enter method for the error state in a StateChart.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    },
+    {
+      "qid": "q051",
+      "cand": "If a validator raises an exception in a StateChart, this exception is not converted to an error.execution event.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    },
+    {
+      "qid": "q051",
+      "cand": "If a validator raises an exception in a StateChart, it does not trigger error.execution transitions.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    },
+    {
+      "qid": "q051",
+      "cand": "If a validator raises an exception in a StateChart, the exception is propagated directly to the caller.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    },
+    {
+      "qid": "q051",
+      "cand": "The caller can handle the propagated exception from a validator with a try/except block.",
+      "best_score": 0.5502183406113537,
+      "best_text": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "claim_id": "c032",
+      "score": 0.55
+    }
+  ]
+}

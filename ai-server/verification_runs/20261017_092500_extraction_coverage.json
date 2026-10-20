@@ -1,0 +1,309 @@
+{
+  "config": {
+    "run_files": [
+      "eval_runs/20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json",
+      "eval_runs/20261002_044015_fixed_c1000_o150_k5.json",
+      "eval_runs/20260930_114006_recursive_c1000_o150_k5.json",
+      "eval_runs/20260930_153706_recursive_c1000_o150_k5.json",
+      "eval_runs/20260930_113450_fixed_c1000_o150_k5.json"
+    ],
+    "match_threshold": 0.6,
+    "recall_threshold": 0.8,
+    "timestamp": "2026-10-17T09:25:00.736874+00:00"
+  },
+  "aggregates": {
+    "auto_coverage": 0.8438,
+    "borderline": 5,
+    "missed": 0
+  },
+  "matches": [
+    {
+      "claim_id": "c001",
+      "qid": "q004",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "best_match": "Starlette is based on AnyIO as its async library.",
+      "score": 0.667,
+      "token_recall": 0.875,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c002",
+      "qid": "q004",
+      "gold": "ASGI is being developed by Django core team members.",
+      "best_match": "The ASGI standard is being developed by members of the Django core team.",
+      "score": 0.705,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c003",
+      "qid": "q004",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "best_match": "ASGI improves interoperability among various tools in the Python ecosystem.",
+      "score": 0.873,
+      "token_recall": 0.857,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c004",
+      "qid": "q004",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "best_match": "FastAPI uses Starlette as its foundation.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c005",
+      "qid": "q004",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "best_match": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c006",
+      "qid": "q004",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "best_match": "FastAPI uses Starlette as its foundation.",
+      "score": 0.6,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c007",
+      "qid": "q004",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "best_match": "AnyIO makes FastAPI compatible with Trio.",
+      "score": 0.825,
+      "token_recall": 0.857,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c008",
+      "qid": "q048",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "best_match": "Invoke handlers on the sync engine run in a thread executor.",
+      "score": 0.814,
+      "token_recall": 0.889,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c009",
+      "qid": "q048",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "best_match": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "score": 0.754,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c010",
+      "qid": "q048",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "best_match": "loop.run_in_executor is wrapped in an asyncio.Task.",
+      "score": 0.563,
+      "token_recall": 0.846,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c011",
+      "qid": "q048",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "best_match": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "score": 0.679,
+      "token_recall": 0.857,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c012",
+      "qid": "q001",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "best_match": "When you declare a path operation function with def instead of async def, it will not be run in a threadpool.",
+      "score": 0.65,
+      "token_recall": 1.0,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c013",
+      "qid": "q001",
+      "gold": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "best_match": "When you declare a path operation function with def instead of async def, it will not be run in a threadpool.",
+      "score": 0.495,
+      "token_recall": 0.75,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c014",
+      "qid": "q001",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "best_match": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "score": 0.606,
+      "token_recall": 0.889,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c015",
+      "qid": "q001",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "best_match": "When you declare a path operation function with def instead of async def, it will not be run in a threadpool.",
+      "score": 0.569,
+      "token_recall": 0.909,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c016",
+      "qid": "q001",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "best_match": "If a path operation function declared with def performs blocking I/O operations, it could potentially block the event loop.",
+      "score": 0.699,
+      "token_recall": 0.923,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c017",
+      "qid": "q001",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "best_match": "FastAPI is optimized for asynchronous operations.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c018",
+      "qid": "q018",
+      "gold": "fastapi dev does not specify a default listening address.",
+      "best_match": "fastapi dev does not specify a default listening address.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c019",
+      "qid": "q018",
+      "gold": "fastapi dev listens on 127.0.0.1 by default.",
+      "best_match": "`fastapi dev` listens on the IP address `127.0.0.1`.",
+      "score": 0.711,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c020",
+      "qid": "q018",
+      "gold": "fastapi run listens on 0.0.0.0, making the app reachable on all available IP addresses.",
+      "best_match": "fastapi run listens on the IP address 0.0.0.0.",
+      "score": 0.569,
+      "token_recall": 0.545,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c021",
+      "qid": "q018",
+      "gold": "Both fastapi dev and fastapi run use Uvicorn as the underlying server.",
+      "best_match": "Both `fastapi dev` and `fastapi run` utilize Uvicorn as the underlying server.",
+      "score": 0.958,
+      "token_recall": 1.0,
+      "best_run": "20261002_044015_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c022",
+      "qid": "q018",
+      "gold": "Auto-reload is resource-intensive and should only be used for development.",
+      "best_match": "The auto-reload feature in `fastapi dev` should only be used for development.",
+      "score": 0.789,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c023",
+      "qid": "q033",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "best_match": "FastAPI cannot be faster than Starlette.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c024",
+      "qid": "q033",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "best_match": "FastAPI utilizes the Pydantic library for handling data validation and serialization.",
+      "score": 0.811,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c025",
+      "qid": "q038",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "best_match": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "score": 0.754,
+      "token_recall": 0.889,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c026",
+      "qid": "q038",
+      "gold": "A listener instance placed in the listeners attribute cannot be reused across different state machines.",
+      "best_match": "In a StateChart, putting an instance in the listeners attribute means that a specific object will be registered as a listener.",
+      "score": 0.558,
+      "token_recall": 0.727,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c027",
+      "qid": "q038",
+      "gold": "Passing a pre-built listener instance is preferable for stateful listeners because the instance keeps its own state.",
+      "best_match": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "score": 0.546,
+      "token_recall": 0.583,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c028",
+      "qid": "q038",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "best_match": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "score": 0.724,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c029",
+      "qid": "q021",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "best_match": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "score": 0.707,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c030",
+      "qid": "q025",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "best_match": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "score": 0.92,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c031",
+      "qid": "q035",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "best_match": "The python-statemachine[diagrams] extra requires pydot.",
+      "score": 0.642,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c032",
+      "qid": "q051",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "best_match": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "score": 0.55,
+      "token_recall": 0.7,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    }
+  ]
+}

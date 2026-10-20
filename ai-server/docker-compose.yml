@@ -8,6 +8,7 @@ services:
       POSTGRES_USER: rag
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set it in .env}
       POSTGRES_DB: rag
+
     volumes:
       # Named volume: the database (your 290 chunks + embeddings)
       # survives `docker compose down`. Only `down -v` destroys it.
