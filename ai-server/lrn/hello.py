@@ -15,7 +15,7 @@ class Hello:
 if __name__ == "__main__":
 
      item = [False, True, True, True, False] 
-     
+     asyncio.run(main())
     # print(sum(item))
     # item1 = "# Concurrency and async / await { #concurrency-and-async-await }"
     # for i, it in enumerate(list(item1[0:50])):
@@ -45,6 +45,21 @@ if __name__ == "__main__":
          
      
      ev = Hello(name=hello["name"], age=hello['age'])
+
+     c = {"hello", "hi", "hello"}
+    #  print(c)
+     ans_value:dict[tuple[str, str], tuple[str, str]] = {('a','b'):('c','d'),('e','f'):('g','h')}
+
+    #  for k,i in enumerate(ans_value):
+    #     #  print(i)
+    #      print(i[k], ans_value[i])
+
+     h = [1, 2, 3]
+     f = (1, 2, 3)
+     c = " "
+    #  print(1 in h, "hello" in c, "name" in hello, 2 in f, bool(c))
+    #  print(h.extend([2]))
+
      
 
     #  print(hello.name, hello['name'], hello.get('name', "ddd"))

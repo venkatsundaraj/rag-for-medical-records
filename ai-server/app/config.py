@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     APP_NAME:str = "My API"
     DATABASE_URL:str = ""
     OPENAI_API_KEY:str = ""
+    ANTHROPIC_API_KEY:str = ""
 
     model_config = SettingsConfigDict(
         env_file=".env",
