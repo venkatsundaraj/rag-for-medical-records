@@ -35,11 +35,31 @@ def load_claims():
 async def golden_chunk_list(session:AsyncSession, claims:list[dict], strategy:str = FIXED_STRATEGY_LABEL):
     rows:dict[tuple[str, str], tuple[str, str]] = {}
 
-    for c in claims:
-        for e in c['evidence']:
-            rows[(c["claim_id"], c["source_qid"])] = (e['source'], e["quote"])
+    soruced_by_ids = {e["source"] for s in claims for e in s['evidence']}
 
-    print(rows)
+    rows = (await session.execute(select(Document.source, Document.content, Document.id).where(Document.source.in_(soruced_by_ids)))).all()
+
+    ids_with_content = {r.source: r for r in rows}
+
+    result:dict[str, list[int]] = {}
+    for c in claims:
+        chunk_ids = []
+        for e in c['evidence']:
+            d = ids_with_content.get(e['source'])
+            if d is None:
+                continue
+            idx = d.content.find(e['quote'])
+            if idx == -1:
+                continue
+
+            chunks = (await session.execute(select(Chunk.id).where(Chunk.document_id == d.id, Chunk.strategy == strategy, Chunk.char_start < idx + len(e['quote']), Chunk.char_end > idx))).all()
+            chunk_ids.extend(r.id for r in chunks if r.id not in chunk_ids)
+            # hello.extend(r.id for r in chunk if r.id no)
+        result[c['claim_id']] = chunk_ids
+
+    print(result)
+
+
 async def main():
     ps = argparse.ArgumentParser()
     ps.add_argument('--evidence-run', type=Path)
@@ -55,7 +75,7 @@ async def main():
     retrieved_ids = {r['claim_id']: r['retrieved_ids'] for r in rows if r['claim_id'] in golden_ids}
 
     async with SessionLocal() as session:
-        await golden_chunk_list(session, claims)
+        gold_ids = await golden_chunk_list(session, claims)
 
 
 

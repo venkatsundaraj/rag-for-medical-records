@@ -46,7 +46,7 @@ if __name__ == "__main__":
      
      ev = Hello(name=hello["name"], age=hello['age'])
 
-     c = {"hello", "hi", "hello"}
+     c = {"hello", "hi", "hello", "hi"}
     #  print(c)
      ans_value:dict[tuple[str, str], tuple[str, str]] = {('a','b'):('c','d'),('e','f'):('g','h')}
 
@@ -54,11 +54,15 @@ if __name__ == "__main__":
     #     #  print(i)
     #      print(i[k], ans_value[i])
 
-     h = [1, 2, 3]
-     f = (1, 2, 3)
-     c = " "
+     l = [1, 2, 3, 2, 2, 3]
+     f = (1, 2, 3, 1)
+     e = hello.update({"name":"venddkat", 'hi':True})
+     print(hello)
+    #  c = " "
+    #  print(isinstance(h, tuple), isinstance(l, list), isinstance(c, set), isinstance(hello, dict))
     #  print(1 in h, "hello" in c, "name" in hello, 2 in f, bool(c))
     #  print(h.extend([2]))
+     print(f.count(2))
 
      
 

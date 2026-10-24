@@ -138,7 +138,7 @@ async def main() -> None:
             chunk_by_id = await fetch_chunks(session, all_ids)  
     finally:
         await engine.dispose()
-
+    # gold_ids, retrieved_ids are two different evidence ids created from two different channel
     pairs, used = [], []
     for c in claims:
         ids = retrieved_ids.get(c["claim_id"], [])
