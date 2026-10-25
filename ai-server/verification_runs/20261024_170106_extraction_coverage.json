@@ -1,0 +1,2165 @@
+{
+  "config": {
+    "run_files": [
+      "eval_runs/20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json",
+      "eval_runs/20261002_044015_fixed_c1000_o150_k5.json",
+      "eval_runs/20260930_114006_recursive_c1000_o150_k5.json",
+      "eval_runs/20260930_153706_recursive_c1000_o150_k5.json",
+      "eval_runs/20260930_113450_fixed_c1000_o150_k5.json"
+    ],
+    "match_threshold": 0.6,
+    "recall_threshold": 0.8,
+    "timestamp": "2026-10-24T17:01:06.376270+00:00"
+  },
+  "aggregates": {
+    "auto_coverage": 0.9355,
+    "borderline": 2,
+    "missed": 0
+  },
+  "matches": [
+    {
+      "claim_id": "c001",
+      "qid": "q004",
+      "gold": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "best_match": "Starlette is based on AnyIO as its async library.",
+      "score": 0.667,
+      "token_recall": 0.875,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c002",
+      "qid": "q004",
+      "gold": "ASGI is being developed by Django core team members.",
+      "best_match": "The ASGI standard is being developed by members of the Django core team.",
+      "score": 0.705,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c003",
+      "qid": "q004",
+      "gold": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "best_match": "The ASGI standard is being developed by members of the Django core team.",
+      "score": 0.432,
+      "token_recall": 0.143,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c004",
+      "qid": "q004",
+      "gold": "FastAPI uses Starlette as its foundation.",
+      "best_match": "FastAPI uses Starlette as its foundation.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c005",
+      "qid": "q004",
+      "gold": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "best_match": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c006",
+      "qid": "q004",
+      "gold": "FastAPI and Starlette are based on AnyIO.",
+      "best_match": "FastAPI uses Starlette as its foundation.",
+      "score": 0.6,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c007",
+      "qid": "q004",
+      "gold": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "best_match": "AnyIO makes FastAPI compatible with Trio.",
+      "score": 0.825,
+      "token_recall": 0.857,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c008",
+      "qid": "q048",
+      "gold": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "best_match": "Invoke handlers on the sync engine run in a thread executor.",
+      "score": 0.814,
+      "token_recall": 0.889,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c009",
+      "qid": "q048",
+      "gold": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "best_match": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "score": 0.754,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c010",
+      "qid": "q048",
+      "gold": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "best_match": "The thread executor is wrapped in an asyncio.Task.",
+      "score": 0.578,
+      "token_recall": 0.846,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c011",
+      "qid": "q048",
+      "gold": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "best_match": "Blocking I/O operations would freeze the event loop if run directly.",
+      "score": 0.713,
+      "token_recall": 0.857,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c012",
+      "qid": "q001",
+      "gold": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "best_match": "A path operation function declared with def is called directly as written in the code.",
+      "score": 0.854,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c014",
+      "qid": "q001",
+      "gold": "A def path operation function is run in an external threadpool that is then awaited.",
+      "best_match": "A path operation function declared with def instead of async def is run in an external threadpool in FastAPI.",
+      "score": 0.681,
+      "token_recall": 0.889,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c015",
+      "qid": "q001",
+      "gold": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "best_match": "A path operation function declared with def instead of async def is awaited in FastAPI.",
+      "score": 0.614,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c016",
+      "qid": "q001",
+      "gold": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "best_match": "If a path operation function declared with def performs blocking I/O operations, it could potentially block the event loop.",
+      "score": 0.699,
+      "token_recall": 0.923,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c017",
+      "qid": "q001",
+      "gold": "FastAPI is optimized for asynchronous operations.",
+      "best_match": "FastAPI is optimized for asynchronous operations.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c018",
+      "qid": "q018",
+      "gold": "fastapi dev does not specify a default listening address.",
+      "best_match": "FastAPI dev does not specify a default listening address.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c019",
+      "qid": "q018",
+      "gold": "fastapi dev listens on 127.0.0.1 by default.",
+      "best_match": "FastAPI dev listens on the IP address 127.0.0.1.",
+      "score": 0.711,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c020",
+      "qid": "q018",
+      "gold": "fastapi run listens on 0.0.0.0, making the application publicly accessible to anyone that can communicate with the machine.",
+      "best_match": "FastAPI run makes the application publicly accessible to anyone that can communicate with the machine.",
+      "score": 0.892,
+      "token_recall": 0.909,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c021",
+      "qid": "q018",
+      "gold": "Both fastapi dev and fastapi run use Uvicorn as the underlying server.",
+      "best_match": "Both 'fastapi dev' and 'fastapi run' commands utilize Uvicorn as the underlying server.",
+      "score": 0.901,
+      "token_recall": 0.875,
+      "best_run": "20261002_044015_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c022",
+      "qid": "q018",
+      "gold": "Auto-reload is resource-intensive and should only be used for development.",
+      "best_match": "Auto-reload is resource-intensive and should only be used for development.",
+      "score": 1.0,
+      "token_recall": 1.0,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c023",
+      "qid": "q033",
+      "gold": "FastAPI cannot be faster than Starlette.",
+      "best_match": "FastAPI cannot be faster than Starlette itself.",
+      "score": 0.918,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c024",
+      "qid": "q033",
+      "gold": "FastAPI uses Pydantic for data validation and serialization.",
+      "best_match": "FastAPI utilizes the Pydantic library for handling serialization.",
+      "score": 0.683,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c025",
+      "qid": "q038",
+      "gold": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "best_match": "In a StateChart, putting a class in the listeners attribute registers the class itself as a listener.",
+      "score": 0.831,
+      "token_recall": 1.0,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c026",
+      "qid": "q038",
+      "gold": "A listener defined by an instance in the listeners attribute is tied to that specific instance and cannot be reused in the same way as a class.",
+      "best_match": "Using an instance as a listener in a StateChart ties the behavior to that specific instance and does not allow for reuse in the same way as a class.",
+      "score": 0.713,
+      "token_recall": 0.75,
+      "best_run": "20260930_114006_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c027",
+      "qid": "q038",
+      "gold": "A pre-built listener instance in the listeners attribute maintains its own state, which allows more tailored behavior.",
+      "best_match": "In a StateChart, putting an instance in the listeners attribute means that a specific object with its own state and behavior will be registered as a listener.",
+      "score": 0.544,
+      "token_recall": 0.714,
+      "best_run": "20260930_153706_recursive_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c028",
+      "qid": "q038",
+      "gold": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "best_match": "A class in a StateChart's listeners attribute creates a fresh instance of the listener class for each state machine instance.",
+      "score": 0.756,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c029",
+      "qid": "q021",
+      "gold": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "best_match": "The command to deploy a FastAPI app to FastAPI Cloud is 'uv run fastapi deploy'.",
+      "score": 0.707,
+      "token_recall": 1.0,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    },
+    {
+      "claim_id": "c030",
+      "qid": "q025",
+      "gold": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "best_match": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "score": 0.92,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c031",
+      "qid": "q035",
+      "gold": "The diagrams extra of python-statemachine installs pydot.",
+      "best_match": "The 'python-statemachine[diagrams]' extra requires 'pydot'.",
+      "score": 0.642,
+      "token_recall": 1.0,
+      "best_run": "20260930_113450_fixed_c1000_o150_k5.json"
+    },
+    {
+      "claim_id": "c032",
+      "qid": "q051",
+      "gold": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "best_match": "In a StateChart, if a callback raises a RuntimeError, the machine transitions to an error state.",
+      "score": 0.638,
+      "token_recall": 0.7,
+      "best_run": "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json"
+    }
+  ],
+  "extractions": {
+    "20260930_113450_fixed_c1000_o150_k5.json::q001": [
+      "A path operation function declared with def instead of async def is run in an external threadpool in FastAPI.",
+      "A path operation function declared with def instead of async def is awaited in FastAPI.",
+      "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "Using def for path operation functions that perform blocking I/O operations may lead to worse performance in FastAPI compared to using async def.",
+      "It is generally better to use async def for path operation functions in FastAPI unless the functions are using code that performs blocking I/O."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q002": [
+      "In Python, declaring a function with 'async def' allows it to support asynchronous operations.",
+      "In Python, a function declared with 'async def' can use the 'await' keyword.",
+      "In Python, a function declared with 'async def' can pause its execution at certain points where 'await' is used.",
+      "In Python, a function declared with 'async def' allows other tasks to run while it is paused.",
+      "In Python, functions declared with 'async def' are suitable for handling I/O-bound operations without blocking the execution of the program.",
+      "In Python, when you call a function declared with 'async def', you must use 'await' to properly execute it.",
+      "In Python, a function declared with 'async def' returns a coroutine that needs to be awaited to get the result."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q003": [
+      "You cannot call an async def function without using await.",
+      "If you try to call an async def function without await, it will not work as expected.",
+      "You must use await when calling an async def function to ensure it executes properly within an asynchronous context."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q004": [
+      "FastAPI is based on the ASGI (Asynchronous Server Gateway Interface) standard as its async library.",
+      "Starlette is based on the ASGI (Asynchronous Server Gateway Interface) standard as its async library.",
+      "The ASGI standard is being developed by members of the Django core team.",
+      "FastAPI uses Starlette as its foundation.",
+      "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q005": [
+      "If a database library doesn't support using 'await', path operation functions should be declared with 'def'.",
+      "Most database libraries currently do not support 'await'."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q006": [
+      "FastAPI does not change how utility functions are called.",
+      "Utility functions in FastAPI can be defined with either 'def' or 'async def'.",
+      "FastAPI does not affect the way utility functions are called.",
+      "A utility function defined with 'def' in FastAPI will be called directly as written in the code.",
+      "A utility function created with 'async def' in FastAPI should be awaited when called in the code."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q007": [
+      "A path operation can return HTTP status code 200 'OK' for successful updates.",
+      "A path operation can return HTTP status code 201 'Created' when new items are created.",
+      "You can return a 'Response' directly, such as a 'JSONResponse', to set the status code in a path operation.",
+      "The status code in a path operation can be set to 200 for updates.",
+      "The status code in a path operation can be set to 201 for new item creation.",
+      "To determine the appropriate status code, you would check if the item existed before.",
+      "The approach of setting status codes allows handling both updates and new item creation within the same path operation."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q008": [
+      "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "FastAPI doesn't have a way to know beforehand what status codes you are going to return.",
+      "Additional responses won't be included in the OpenAPI schema in FastAPI."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q009": [
+      "To create a parameterized dependency in FastAPI, you need to define a class with a __call__ method.",
+      "The __call__ method in the class is used by FastAPI to check for additional parameters and sub-dependencies.",
+      "The class should be callable by implementing the __call__ method.",
+      "You can declare the parameters of the instance in the __init__ method of the class.",
+      "Declaring parameters in the __init__ method allows you to parameterize the dependency.",
+      "You can create an instance of the class with the desired parameters.",
+      "The instance of the class can be used as a dependency in a Depends() call in FastAPI.",
+      "Using an instance of the class as a dependency allows for a flexible dependency that can be configured with different parameters.",
+      "This approach avoids the need to declare multiple functions or classes for different configurations."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q010": [
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code after yield right after the path operation function is finished.",
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code before the response is sent back to the client.",
+      "In FastAPI, using Depends(scope='request') for dependencies with yield executes the exit code after the response is sent back to the client.",
+      "In FastAPI, Depends(scope='request') is the default scope for dependencies with yield."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q011": [
+      "The TestClient is designed to work with synchronous functions in FastAPI.",
+      "The TestClient does not function properly when used in asynchronous test functions.",
+      "The TestClient cannot call the asynchronous FastAPI application properly when used in asynchronous test functions.",
+      "The AsyncClient from HTTPX should be used to send asynchronous requests to a FastAPI application in tests."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q012": [
+      "The AsyncClient does not trigger lifespan events in a FastAPI application during tests.",
+      "To trigger lifespan events in a FastAPI application during tests, you should use LifespanManager from the florimondmanca/asgi-lifespan package."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q013": [
+      "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "If the request body does not include all the attributes of the existing model, any omitted attributes will take their default values.",
+      "For example, if you update an item with a body that does not include the 'tax' attribute, it will be set to its default value instead of retaining the previously stored value.",
+      "This can lead to unintended changes in the data.",
+      "In the example, the 'tax' attribute is set to 10.5 when omitted from the update."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q014": [
+      "To apply a partial update to a stored Pydantic model, you can use the PATCH method instead of PUT.",
+      "To apply a partial update to a stored Pydantic model, you need to retrieve the stored data.",
+      "To apply a partial update to a stored Pydantic model, you should put the retrieved data into a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, you can generate a dictionary without default values from the input model using the exclude_unset parameter.",
+      "The exclude_unset parameter in Pydantic can be used to create a dictionary with only the data that was set when creating the model, excluding default values.",
+      "To apply a partial update to a stored Pydantic model, you can create a copy of the stored model and update its attributes with the received partial updates using the update parameter.",
+      "The update parameter in Pydantic can be used to update a model's attributes with received partial updates.",
+      "To apply a partial update to a stored Pydantic model, you can convert the copied model to a format that can be stored in a database using the jsonable_encoder.",
+      "To apply a partial update to a stored Pydantic model, you need to save the updated data to your database.",
+      "To apply a partial update to a stored Pydantic model, you should return the updated model.",
+      "The process of applying a partial update to a stored Pydantic model allows updating only the values that the user has set, without overriding existing values not included in the update request."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q015": [
+      "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "Pydantic has internal support for dataclasses.",
+      "FastAPI can convert standard dataclasses into Pydantic's own flavor of dataclasses.",
+      "FastAPI enables features such as data validation, serialization, and documentation for dataclasses, similar to what is available with Pydantic models.",
+      "FastAPI allows the use of dataclasses in the response_model parameter.",
+      "Dataclasses used in the response_model parameter are automatically converted to Pydantic dataclasses in FastAPI.",
+      "The schema of dataclasses used in the response_model parameter appears in the API documentation in FastAPI.",
+      "FastAPI supports combining dataclasses with other type annotations to create complex and nested data structures."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q016": [
+      "Dataclasses have been supported in FastAPI since version 0.67.0."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q017": [
+      "Using the property `.openapi_schema` can help avoid regenerating a custom OpenAPI schema on every docs request.",
+      "The `.openapi_schema` property acts as a cache to store the generated OpenAPI schema.",
+      "By caching the schema, the application generates the OpenAPI schema only once.",
+      "The cached OpenAPI schema is used for subsequent requests instead of regenerating it each time."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q018": [
+      "FastAPI dev initiates development mode with auto-reload enabled.",
+      "Auto-reload in FastAPI dev means the server automatically reloads when changes are made to the code.",
+      "Auto-reload in FastAPI dev can be resource-intensive and less stable.",
+      "FastAPI run starts FastAPI in production mode with auto-reload disabled.",
+      "FastAPI run is the recommended way to run the application in a production environment.",
+      "FastAPI dev does not specify a default listening address.",
+      "FastAPI dev is primarily for local development.",
+      "FastAPI run listens on the IP address 0.0.0.0.",
+      "FastAPI run makes the application publicly accessible to anyone that can communicate with the machine.",
+      "FastAPI dev is intended for development purposes, allowing for quick iterations and testing.",
+      "FastAPI run is intended for production deployment, where stability and performance are prioritized.",
+      "FastAPI dev is for development with auto-reload.",
+      "FastAPI run is for production without auto-reload and with public accessibility."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q019": [
+      "The 'fastapi dev' command sets the 'FASTAPI_ENV' environment variable to 'development' before importing the app.",
+      "If 'FASTAPI_ENV' is already set, the 'fastapi dev' command preserves its existing value.",
+      "The preservation of 'FASTAPI_ENV' allows for app-specific environments like 'staging'.",
+      "The 'fastapi run' command does not set the 'FASTAPI_ENV' variable.",
+      "The 'fastapi run' command leaves the 'FASTAPI_ENV' variable unchanged.",
+      "You need to set the 'FASTAPI_ENV' variable explicitly if your app requires detection of production mode when using 'fastapi run'."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q020": [
+      "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in the pyproject.toml file.",
+      "You can specify the entrypoint in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "This configuration will inform the fastapi command to import the app using: from main import app.",
+      "An example of adjusting the entrypoint for an app in a subdirectory is: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "The entrypoint \"backend.main:app\" tells the fastapi command to import the app from backend.main."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q021": [
+      "To deploy a FastAPI app to FastAPI Cloud, you can use the command 'uv run fastapi deploy' in your terminal.",
+      "The command 'uv run fastapi deploy' will automatically detect your FastAPI application and deploy it to the cloud.",
+      "If you are not logged in, your browser will open to complete the authentication process during deployment to FastAPI Cloud.",
+      "Once the deployment is successful, you can access your FastAPI app at a provided URL such as 'https://myapp.fastapicloud.dev'."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q022": [
+      "To serve a single-page app (SPA) with client-side routing using app.frontend(), configure it to handle requests for paths that are not real files by serving the index.html file.",
+      "Using the fallback=\"index.html\" option in app.frontend() allows the frontend framework to manage client-side routing.",
+      "When a user accesses a URL directly, such as /dashboard/settings, the backend serves the index.html file, allowing the frontend framework to take over routing.",
+      "FastAPI uses the fallback only for GET and HEAD requests that explicitly accept HTML.",
+      "Requests with methods other than GET or HEAD, such as POST or PUT, to paths that only match the frontend fallback will return a 404 error.",
+      "Regular FastAPI path operations take precedence over frontend routes when using app.frontend()."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q023": [
+      "If the frontend build directory passed to app.frontend() is missing in a development environment, FastAPI will only show a warning.",
+      "In environments other than development, FastAPI will raise an error if the frontend build directory is missing when the app is created.",
+      "Raising an error for a missing frontend build directory in non-development environments helps catch configuration errors early.",
+      "If check_dir=False is set, FastAPI will not check the frontend build directory when the app is created.",
+      "FastAPI will raise an error if the frontend build directory is missing when a request is handled, even if check_dir=False is set."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q024": [
+      "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API.",
+      "Hey API can be used via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client.",
+      "The command npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client will generate a TypeScript SDK in the specified directory."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q025": [
+      "Generated client method names like 'createItemItemsPost' are structured based on the OpenAPI internal operation ID for each path operation.",
+      "OpenAPI requires that each operation ID is unique across all path operations.",
+      "The uniqueness requirement for operation IDs in OpenAPI leads to less clean naming conventions for generated client method names.",
+      "To make method names cleaner, you can preprocess the OpenAPI specification before generating the clients.",
+      "Preprocessing the OpenAPI specification involves downloading the OpenAPI JSON to a file, such as 'openapi.json'.",
+      "A script can be used to remove the prefixed tag from the operation IDs in the OpenAPI specification.",
+      "Renaming operation IDs from 'items-get_items' to 'get_items' can allow the client generator to produce simpler method names."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q026": [
+      "Raising an HTTPException will terminate the request immediately.",
+      "Raising an HTTPException sends the HTTP error to the client.",
+      "Returning an HTTPException allows the rest of the code in the path operation function to continue running.",
+      "Raising an HTTPException is the desired behavior when handling errors in a path operation function."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q027": [
+      "You should register your exception handler for Starlette's HTTPException.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by Starlette's internal code.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by a Starlette extension or plug-in.",
+      "FastAPI's HTTPException is normally used in your code.",
+      "The exception handler should be registered for Starlette's version of HTTPException."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q028": [
+      "A server with a single IP address can serve HTTPS for multiple domains using the TLS extension called Server Name Indication (SNI).",
+      "Server Name Indication (SNI) allows a server to have several HTTPS certificates.",
+      "Server Name Indication (SNI) enables a server to serve multiple HTTPS domains or applications.",
+      "A single component running on the server must manage all the HTTPS parts when using SNI.",
+      "The component managing HTTPS parts receives encrypted HTTPS requests and sends decrypted HTTP requests to the actual application.",
+      "A TLS Termination Proxy can handle HTTPS and certificates for multiple domains.",
+      "A TLS Termination Proxy can transmit requests to the appropriate application.",
+      "Using a TLS Termination Proxy allows for efficient management of certificates and requests without requiring multiple IP addresses."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q029": [
+      "FastAPI CLI can be configured to trust X-Forwarded headers from a TLS termination proxy.",
+      "The CLI option '--forwarded-allow-ips' is used to specify which IPs should be trusted to send forwarded headers in FastAPI.",
+      "Setting '--forwarded-allow-ips=\"*\"' in FastAPI trusts all incoming IPs to send forwarded headers.",
+      "When the application server only receives communication from a trusted proxy, it is safe to set '--forwarded-allow-ips=\"*\"'.",
+      "Configuring FastAPI to trust X-Forwarded headers allows the application to know its own public URL.",
+      "Knowing its own public URL helps FastAPI handle redirects properly."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q030": [
+      "Values read from environment variables in Python are always of type 'str'.",
+      "Environment variables are external to Python.",
+      "Environment variables must be compatible with other programs and systems.",
+      "Any conversion of environment variable values to a different type must be done in code.",
+      "Validation of environment variable values must be done in code."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q031": [
+      "Using @lru_cache on a get_settings dependency allows the Settings object to be created only once.",
+      "The Settings object is created the first time the get_settings function is called when using @lru_cache.",
+      "Using @lru_cache on get_settings avoids the costly operation of reading the .env file for each request.",
+      "Subsequent calls to get_settings will return the same Settings object without re-executing the internal code of the function when using @lru_cache.",
+      "Using @lru_cache on get_settings improves performance by preventing unnecessary file reads.",
+      "Using @lru_cache on get_settings allows for easy overriding of the settings during testing."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q032": [
+      "FastAPI uses Starlette as its foundation.",
+      "FastAPI cannot exceed the performance of Starlette.",
+      "Starlette is currently the fastest Python framework tested.",
+      "Starlette is only surpassed by Uvicorn in performance."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q033": [
+      "FastAPI is built on top of Starlette.",
+      "FastAPI cannot be faster than Starlette because it relies on Starlette for its core functionalities.",
+      "FastAPI adds additional features to Starlette, such as automatic data validation, serialization, and documentation.",
+      "FastAPI's additional features are essential for building APIs.",
+      "FastAPI implements additional features using Python type hints and the Pydantic library.",
+      "The use of Python type hints and the Pydantic library enhances the usability and performance of FastAPI compared to using Starlette directly.",
+      "FastAPI's HTTPException inherits from Starlette's HTTPException.",
+      "FastAPI's HTTPException can accept any JSON-able data for the detail field.",
+      "Starlette's HTTPException only accepts strings for the detail field.",
+      "FastAPI extends Starlette by providing more features tailored for API development.",
+      "FastAPI is dependent on Starlette's underlying framework."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q034": [
+      "The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E.",
+      "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is Cmd + Shift + E."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q035": [
+      "To generate diagrams with python-statemachine, you need to install the 'python-statemachine[diagrams]' extra.",
+      "The 'python-statemachine[diagrams]' extra requires 'pydot'.",
+      "You will need to have the Graphviz system package installed to generate diagrams with python-statemachine."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q036": [
+      "To get type checking and autocompletion for sm.model in a StateChart, you need to declare your model class and pass it as a type parameter to the StateChart.",
+      "You can define your model class and then use it as a type parameter in a StateChart.",
+      "In the example provided, the model class is named OrderModel.",
+      "The OrderModel class has an attribute order_id of type string initialized to an empty string.",
+      "The OrderModel class has an attribute total of type float initialized to 0.0.",
+      "The OrderModel class has a method confirm that returns a formatted string with the order_id and total.",
+      "The StateChart is named OrderWorkflow and uses OrderModel as its type parameter.",
+      "The OrderWorkflow StateChart has a state named draft marked as initial.",
+      "The OrderWorkflow StateChart has a state named confirmed marked as final.",
+      "The OrderWorkflow StateChart has a transition named confirm from the draft state to the confirmed state triggered by the event on_confirm.",
+      "The on_confirm method in the OrderWorkflow StateChart returns the result of the confirm method from the model.",
+      "By declaring the model class and using it as a type parameter, sm.model will be typed as OrderModel instead of Any.",
+      "Typing sm.model as OrderModel allows for full autocompletion and type checking in your IDE."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q037": [
+      "The bind_events_as_methods attribute is part of MachineMixin.",
+      "The bind_events_as_methods attribute allows events to become methods on the model itself when set to True.",
+      "When bind_events_as_methods is set to True, you can call state machine events directly as methods of the model instance.",
+      "If a model inherits from MachineMixin, you can call model.produce() to trigger the produce event.",
+      "When the produce event is triggered, the state of the model updates accordingly.",
+      "The bind_events_as_methods feature simplifies interaction with the state machine by allowing method calls instead of sending events explicitly."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q039": [
+      "The setup() method is not called on shared listener instances.",
+      "Shared listener instances are pre-built objects.",
+      "The setup() method is only called on factory-created instances.",
+      "Factory-created instances are callable entries in the listeners list.",
+      "Shared listener instances are assumed to be already configured."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q040": [
+      "In a StateChart, the send() function places an event on the external queue.",
+      "In a StateChart, events placed on the external queue by send() are processed after the current macrostep completes.",
+      "In a StateChart, calling sm.send(\"cycle\") will trigger the event after the current operations are finished.",
+      "In a StateChart, the raise_() function places an event on the internal queue.",
+      "In a StateChart, events placed on the internal queue by raise_() are processed within the current macrostep.",
+      "In a StateChart, internal events processed by raise_() occur before any pending external events.",
+      "In a StateChart, raise_() is useful for triggering follow-up transitions immediately within callbacks.",
+      "In a StateChart, send() is used for external events processed later.",
+      "In a StateChart, raise_() is used for internal events processed immediately."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q041": [
+      "The `allowed_events` function returns events that have at least one transition from the current configuration.",
+      "The `allowed_events` function does not consider whether the conditions (guards) for transitions are satisfied.",
+      "The `allowed_events` function is a cheaper check that only considers the state topology.",
+      "The `enabled_events(**kwargs)` function is a subset of `allowed_events`.",
+      "The `enabled_events(**kwargs)` function includes events where at least one transition's guards are satisfied given the provided arguments.",
+      "The `enabled_events(**kwargs)` function evaluates the conditions for transitions.",
+      "The `enabled_events(**kwargs)` function is useful when guards depend on runtime data.",
+      "The `allowed_events` function checks the structure of the state machine.",
+      "The `enabled_events(**kwargs)` function checks both the structure and the conditions for transitions."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q042": [
+      "The expression 'cond=lambda self: ...' fails in python-statemachine because plain callables are called unbound.",
+      "Plain callables, like lambdas and functions defined outside the class body, are called unbound in python-statemachine.",
+      "In python-statemachine, 'self' is not injected into plain callables like lambdas.",
+      "In python-statemachine, you should use 'machine' to receive the state machine instance instead of 'self'.",
+      "In python-statemachine, 'self' is only available when the callable resolves to a bound method.",
+      "A callable resolves to a bound method in python-statemachine when it is an attribute of the state machine class.",
+      "A callable resolves to a bound method in python-statemachine when it is either referenced by name or defined in the class body and passed by reference."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q043": [
+      "Validator exceptions are not converted to error.execution events when catch_errors_as_events is set to True.",
+      "When catch_errors_as_events is set to True, the caller receives the validator exception directly.",
+      "The caller can handle the validator exception with try/except blocks."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q044": [
+      "A self-transition goes from a state back to itself.",
+      "A self-transition involves exiting and re-entering the state.",
+      "A self-transition runs all exit and entry actions.",
+      "A self-transition is useful when entering a state has side-effects, such as resetting a timer.",
+      "An internal transition stays in the same state without running exit or entry actions.",
+      "In an internal transition, only the 'on' callback executes.",
+      "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "The key difference between self-transitions and internal transitions is that self-transitions fire exit/enter callbacks, while internal transitions skip them."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q045": [
+      "When an event matches transitions at several levels of a compound state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "The SCXML specification states that the most specific (deepest) matching transition wins when an event matches transitions at multiple levels of the state hierarchy."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q046": [
+      "Python-statemachine validation errors raise InvalidDefinition exceptions."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q047": [
+      "Convention-based callbacks like on_enter_<state> are not validated when a statechart is instantiated.",
+      "Convention-based callbacks like on_enter_<state> are optional by design in a statechart.",
+      "Only explicitly declared callback names passed as strings to on, cond, etc., are checked during validation in a statechart."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q048": [
+      "Invoke handlers on the sync engine run in a thread executor.",
+      "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "Blocking I/O operations, such as network calls or file access, would freeze the event loop if executed directly."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q049": [
+      "To wait for multiple invoke handlers to all finish before transitioning, you should use the 'invoke_group' function.",
+      "The 'invoke_group' function allows you to run multiple callables concurrently.",
+      "The 'invoke_group' function waits for all callables to complete before sending a single 'done.invoke' event.",
+      "Unlike independent invokes, where the transition fires after the first callable finishes, 'invoke_group' ensures that the transition only fires after every callable has finished.",
+      "The 'data' from 'invoke_group' will be a list of results in the same order as the input callables."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q050": [
+      "A compound state can resume the child that was active when it was exited by using a HistoryState.",
+      "The HistoryState remembers which child was active when the compound state is exited.",
+      "The workflow can return to a specific child state when the compound state is resumed using the HistoryState.",
+      "In the CoffeeOrder example, the resume transition goes back to the active child using the history state h defined within the compound state preparing."
+    ],
+    "20260930_113450_fixed_c1000_o150_k5.json::q051": [
+      "When a callback raises an exception in a StateChart, the runtime exceptions do not crash the machine.",
+      "When a callback raises an exception in a StateChart, the exceptions become `error.execution` events.",
+      "`error.execution` events in a StateChart can be handled with regular transitions.",
+      "Handling exceptions as `error.execution` events allows the StateChart to manage errors gracefully without stopping its operation."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q001": [
+      "A path operation function declared with def is called directly as written in the code.",
+      "A path operation function declared with def is not called in a threadpool.",
+      "If a path operation function does not need to use await, it can be defined with def.",
+      "If a path operation function needs to call another function defined with async def, you need to await that function when calling it.",
+      "If using a third-party library that does not support await, path operation functions should be declared with def.",
+      "In FastAPI, if a path operation function does not perform blocking I/O operations, it is better to use async def for better performance.",
+      "FastAPI is optimized for asynchronous operations."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q002": [
+      "In Python, 'async def' defines an asynchronous function.",
+      "An asynchronous function in Python allows the use of 'await' expressions within it.",
+      "When an asynchronous function is called in Python, Python can 'pause' its execution to perform other tasks while waiting for the awaited operation to complete.",
+      "Asynchronous functions in Python are particularly useful for operations that require waiting, such as I/O-bound tasks.",
+      "Asynchronous functions in Python enable better concurrency by allowing other operations to run while waiting for an awaited operation to complete.",
+      "To call an asynchronous function defined with 'async def' in Python, you must use the 'await' keyword.",
+      "The 'await' keyword in Python tells Python to wait for the asynchronous function to finish before proceeding.",
+      "If you try to call an asynchronous function defined with 'async def' in Python without 'await', it will not work as expected."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q003": [
+      "You cannot call an async def function without using await in Python.",
+      "Calling an async def function directly without await will not work as expected in Python.",
+      "Using await is necessary to properly call an async def function in Python.",
+      "Await tells Python to wait for an async def function to complete before proceeding."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q004": [
+      "FastAPI is based on AnyIO as its async library.",
+      "Starlette is based on AnyIO as its async library.",
+      "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "AnyIO makes FastAPI compatible with Trio.",
+      "AnyIO makes Starlette compatible with Trio."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q005": [
+      "If a database library does not support 'await', path operation functions should be declared using the 'def' syntax.",
+      "Most database libraries currently do not support using 'await'."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q006": [
+      "FastAPI does not change how utility functions are called.",
+      "Utility functions can be created with either 'def' or 'async def'.",
+      "FastAPI does not affect the way you call utility functions directly.",
+      "FastAPI calls path operation functions for you.",
+      "FastAPI calls dependencies for you."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q007": [
+      "A path operation can return a 201 'Created' status code for new items.",
+      "A path operation can return a 200 'OK' status code for updates.",
+      "You can return a JSONResponse directly to set the desired status code in a path operation.",
+      "In a path operation, you can implement logic to check if an item exists.",
+      "If an item exists, the path operation can return the item with a 200 status code.",
+      "If an item does not exist, the path operation can create the item and return it with a 201 status code.",
+      "This approach allows handling both new item creation and updates within the same path operation."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q008": [
+      "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "FastAPI does not have a way to know beforehand what status codes you are going to return.",
+      "Responses that are not predefined won't be included in the OpenAPI schema.",
+      "You can document additional status codes in your code using Additional Responses."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q009": [
+      "To create a parameterized dependency in FastAPI, you can define a class with a __call__ method.",
+      "An instance of a class with a __call__ method is callable in FastAPI.",
+      "FastAPI can check for additional parameters and sub-dependencies when using a class with a __call__ method.",
+      "The __init__ method can be used to declare parameters for an instance of a class in FastAPI.",
+      "Parameters declared in the __init__ method can be used to parameterize a dependency in FastAPI.",
+      "You can create an instance of a class with desired parameters for use in FastAPI.",
+      "An instance of a class can be used in a Depends call in FastAPI instead of the class itself.",
+      "In FastAPI, you can create an instance of a class that checks for specific content in a query parameter.",
+      "An instance of a class that checks for specific content in a query parameter can be used as a dependency in a path operation function in FastAPI."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q010": [
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code after yield right after the path operation function is finished.",
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code before the response is sent back to the client.",
+      "In FastAPI, using Depends(scope='request') for dependencies with yield executes the exit code after the response is sent to the client.",
+      "In FastAPI, Depends(scope='request') is the default behavior for dependencies with yield.",
+      "In FastAPI, when using Depends(scope='request'), resources held by the dependency remain available until the response is fully processed and sent to the client."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q011": [
+      "The TestClient is designed to work with synchronous test functions in FastAPI.",
+      "The TestClient relies on internal mechanisms to call the asynchronous FastAPI application when used in normal def test functions.",
+      "The internal mechanisms of TestClient do not work in asynchronous contexts.",
+      "You should use the AsyncClient from HTTPX to test your FastAPI application asynchronously."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q012": [
+      "The AsyncClient does not trigger lifespan events in an application during tests.",
+      "To trigger lifespan events in an application during tests, you should use LifespanManager from the florimondmanca/asgi-lifespan package."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q013": [
+      "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "If the request body of a PUT operation does not include all the attributes of the existing item, any omitted attributes will take their default values as defined in the model.",
+      "For example, if an item has a stored attribute 'tax' with a value of 20.2 and the PUT request only includes 'name' and 'price', the 'tax' attribute will be set to its default value.",
+      "In the given example, the default value for the 'tax' attribute is 10.5, which overwrites the previously stored value of 20.2."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q014": [
+      "To apply a partial update to a stored Pydantic model, you can optionally use the HTTP method 'PATCH' instead of 'PUT'.",
+      "To apply a partial update to a stored Pydantic model, you need to retrieve the stored data.",
+      "To apply a partial update to a stored Pydantic model, you should put the retrieved data into a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, generate a dictionary without default values from the input model using 'exclude_unset'.",
+      "Using 'exclude_unset' allows you to update only the values actually set by the user, avoiding the overriding of values already stored with default values in your model.",
+      "To apply a partial update to a stored Pydantic model, create a copy of the stored model and update its attributes with the received partial updates using the 'update' parameter.",
+      "To apply a partial update to a stored Pydantic model, convert the copied model to a format that can be stored in your database, for example, using 'jsonable_encoder'.",
+      "To apply a partial update to a stored Pydantic model, save the data to your database.",
+      "To apply a partial update to a stored Pydantic model, return the updated model."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q015": [
+      "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "Pydantic has internal support for dataclasses.",
+      "FastAPI can convert standard dataclasses into Pydantic's own flavor of dataclasses.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data validation.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data serialization.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data documentation.",
+      "The functionality of Pydantic's flavor of dataclasses in FastAPI works similarly to how Pydantic models operate.",
+      "All the benefits of Pydantic are available when using dataclasses in FastAPI."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q016": [
+      "Dataclasses have been supported in FastAPI since version 0.67.0."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q017": [
+      "Using the property `.openapi_schema` can help avoid regenerating a custom OpenAPI schema on every docs request.",
+      "The `.openapi_schema` property acts as a cache to store the generated OpenAPI schema.",
+      "By caching the schema, the application generates the OpenAPI schema only once.",
+      "The cached OpenAPI schema is used for subsequent requests to the API docs."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q018": [
+      "FastAPI dev initiates development mode.",
+      "FastAPI run starts FastAPI in production mode.",
+      "In FastAPI dev, auto-reload is enabled by default.",
+      "Auto-reload automatically reloads the server when changes are made to the code in FastAPI dev.",
+      "Auto-reload is resource-intensive and should only be used for development in FastAPI dev.",
+      "In FastAPI run, auto-reload is disabled by default.",
+      "FastAPI dev listens on the IP address 127.0.0.1.",
+      "FastAPI dev allows communication only with the local machine (localhost).",
+      "FastAPI run listens on the IP address 0.0.0.0.",
+      "FastAPI run makes the application publicly accessible to anyone that can communicate with the machine.",
+      "When using FastAPI dev, the FASTAPI_ENV environment variable is set to development unless it is already set to a different value.",
+      "FastAPI run does not change the FASTAPI_ENV variable.",
+      "The FASTAPI_ENV variable must be set explicitly if the app needs to detect production mode when using FastAPI run.",
+      "FastAPI dev is tailored for development with features like auto-reload and local access.",
+      "FastAPI run is designed for production with a focus on stability and accessibility."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q019": [
+      "The 'fastapi dev' command sets the 'FASTAPI_ENV' environment variable to 'development' before importing the app.",
+      "If 'FASTAPI_ENV' is already set, the 'fastapi dev' command preserves its existing value.",
+      "The 'fastapi dev' command allows app startup code to choose development-friendly behavior.",
+      "The 'fastapi dev' command enables you to provide an app-specific environment, such as 'staging'.",
+      "The 'fastapi run' command does not set the 'FASTAPI_ENV' variable.",
+      "The 'fastapi run' command leaves the 'FASTAPI_ENV' variable unchanged.",
+      "If an app needs to detect production mode, the 'FASTAPI_ENV' variable must be set explicitly when using 'fastapi run'."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q020": [
+      "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in a pyproject.toml file.",
+      "You can specify the entrypoint in a pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "The configuration [tool.fastapi] entrypoint = \"main:app\" tells the fastapi command to import the app using the line: from main import app.",
+      "If your app is structured differently, you can adjust the entrypoint accordingly in the pyproject.toml file.",
+      "An example of adjusting the entrypoint for a differently structured app is: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "The configuration [tool.fastapi] entrypoint = \"backend.main:app\" is equivalent to the Python import statement: from backend.main import app.",
+      "Using the entrypoint in pyproject.toml is recommended because it helps avoid having to remember to pass the correct path or entrypoint every time you call the fastapi command.",
+      "Using the entrypoint in pyproject.toml ensures compatibility with other tools like the VS Code Extension or FastAPI Cloud."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q021": [
+      "To deploy a FastAPI app to FastAPI Cloud, you can use the command 'uv run fastapi deploy' in your terminal.",
+      "The command 'uv run fastapi deploy' will automatically detect your FastAPI application and deploy it to the cloud.",
+      "If you are not logged in, your browser will open to complete the authentication process during deployment to FastAPI Cloud.",
+      "Once the deployment is successful, you can access your FastAPI app at a provided URL, such as 'https://myapp.fastapicloud.dev'."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q022": [
+      "To serve a single-page app (SPA) with client-side routing using app.frontend(), you should build your frontend app using a command like npm run build.",
+      "The npm run build command generates static files in a directory, such as dist.",
+      "You can use app.frontend() to serve the generated directory containing the static files.",
+      "If your project structure has the dist directory with index.html and other assets, you can serve it using app.frontend().",
+      "To handle client-side routing properly, you need to set up a fallback to index.html.",
+      "Setting up a fallback to index.html allows the backend to serve index.html for any routes that are not actual files.",
+      "The fallback setup enables the frontend framework to manage the routing.",
+      "You can set up the fallback by using fallback=\"index.html\" in your app.frontend() call.",
+      "When a user accesses a route like /dashboard/settings, the backend will serve index.html, allowing the SPA to take over and handle the routing on the client side."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q023": [
+      "If the frontend build directory passed to app.frontend() is missing, the behavior depends on the environment variable FASTAPI_ENV.",
+      "In a development environment, FastAPI will only show a warning if the frontend build output directory is missing.",
+      "In a development environment, FastAPI allows you to start the backend before building or starting the frontend.",
+      "In any environment other than development, FastAPI raises an error when the app is created if the frontend build directory is missing.",
+      "Raising an error in non-development environments helps catch configuration errors early before deploying an app without its frontend files.",
+      "If check_dir is set to False, FastAPI will not check the directory when the app is created.",
+      "If check_dir is set to False, FastAPI will raise an error if the configured directory is still missing when a request is handled."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q024": [
+      "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API.",
+      "Hey API is a purpose-built solution for the TypeScript ecosystem.",
+      "You can use Hey API via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client.",
+      "The command npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client will generate a TypeScript SDK in the specified output directory."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q025": [
+      "Generated client method names like 'createItemItemsPost' are structured based on the OpenAPI internal operation ID for each path operation.",
+      "The operation ID includes the function name, the path, and the HTTP method/operation to ensure uniqueness across all path operations.",
+      "To make method names cleaner, you can preprocess the OpenAPI specification to remove the prefixed tag from the operation IDs.",
+      "Preprocessing involves downloading the OpenAPI JSON to a file and using a script to rename the operation IDs.",
+      "Renaming operation IDs from formats like 'items-get_items' to simpler formats like 'get_items' can result in cleaner method names.",
+      "After preprocessing the OpenAPI specification, the client generator will produce simpler method names."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q026": [
+      "In FastAPI, you should raise an HTTPException instead of returning it when handling errors.",
+      "HTTPException is a normal Python exception.",
+      "Raising an HTTPException will terminate the request immediately.",
+      "Raising an HTTPException will send the HTTP error to the client.",
+      "Returning an HTTPException instead of raising it would allow the rest of the code in the path operation function to continue running.",
+      "Allowing the rest of the code in the path operation function to continue running is not the desired behavior when handling errors in FastAPI."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q027": [
+      "You should register your exception handler for Starlette's HTTPException when using FastAPI.",
+      "Registering the exception handler for Starlette's HTTPException allows it to catch exceptions raised by Starlette's internal code.",
+      "Registering the exception handler for Starlette's HTTPException allows it to catch exceptions raised by a Starlette extension or plug-in.",
+      "FastAPI's HTTPException is typically used in user code.",
+      "The exception handler should be registered for Starlette's version of HTTPException when using FastAPI."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q028": [
+      "A single server with one IP address can serve HTTPS for multiple domains using the Server Name Indication (SNI) extension.",
+      "The Server Name Indication (SNI) extension allows a server to have several HTTPS certificates.",
+      "A server using SNI can serve multiple HTTPS domains or applications.",
+      "The server must have all the HTTPS certificates to serve multiple domains using SNI.",
+      "A server using SNI runs a single component that listens on the public IP address.",
+      "The TLS (Transport Layer Security) protocol handles encryption at the TCP level before HTTP.",
+      "Specific domain information is included in the HTTP data when using SNI.",
+      "A TLS Termination Proxy can manage HTTPS connections and certificates for multiple domains.",
+      "A TLS Termination Proxy forwards requests to the appropriate application based on the domain requested."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q029": [
+      "To make FastAPI CLI trust X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.",
+      "You can specify the IPs that the application server should trust for those forwarded headers using the `--forwarded-allow-ips` option.",
+      "If you want to trust all incoming IPs, you can set `--forwarded-allow-ips=\"*\"`.",
+      "Setting `--forwarded-allow-ips=\"*\"` is useful if the application server only receives communication from the trusted proxy."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q030": [
+      "Values read from environment variables in Python are always of type 'str'.",
+      "Environment variables are external to Python.",
+      "Environment variables must be compatible with other programs and systems.",
+      "Any conversion of environment variable values to a different type has to be done in code.",
+      "Any validation of environment variable values has to be done in code."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q031": [
+      "Using @lru_cache on a get_settings dependency ensures that the Settings object is created only once, the first time the function is called.",
+      "Using @lru_cache on a get_settings dependency avoids the overhead of reading the .env file for each request.",
+      "Reading the .env file for each request can be a costly operation.",
+      "Subsequent calls to get_settings() return the same object that was created during the first call when using @lru_cache.",
+      "Using @lru_cache on a get_settings dependency effectively behaves like a global variable.",
+      "Using @lru_cache on a get_settings dependency allows for easy overrides during testing."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q032": [
+      "FastAPI cannot be faster than Starlette because FastAPI uses Starlette as its foundation.",
+      "FastAPI uses Starlette as its foundation.",
+      "FastAPI cannot exceed the performance of Starlette.",
+      "Starlette is designed to be fast.",
+      "FastAPI adds additional features on top of Starlette.",
+      "Adding additional features on top of Starlette does not make FastAPI faster than Starlette itself."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q033": [
+      "FastAPI uses Starlette as its underlying framework.",
+      "FastAPI cannot be faster than Starlette itself.",
+      "FastAPI builds on top of Starlette by providing additional features commonly needed when building APIs.",
+      "FastAPI provides data validation as an additional feature on top of Starlette.",
+      "FastAPI provides serialization as an additional feature on top of Starlette.",
+      "FastAPI provides automatic documentation as an additional feature on top of Starlette.",
+      "FastAPI implements additional features using Python type hints.",
+      "FastAPI utilizes the Pydantic library for handling data validation.",
+      "FastAPI utilizes the Pydantic library for handling serialization."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q034": [
+      "The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E.",
+      "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is Cmd + Shift + E."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q035": [
+      "To generate diagrams with python-statemachine, you need to install the pydot package as an optional extra.",
+      "You can install the necessary dependencies to generate diagrams from your state machines by running the command: python3 -m pip install \"python-statemachine[diagrams]\"."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q036": [
+      "To get type checking and autocompletion for sm.model in a StateChart, you need to declare your model class.",
+      "You need to pass your model class as a type parameter to the StateChart to get type checking and autocompletion for sm.model.",
+      "Defining your model class, such as OrderModel, allows for type checking and autocompletion in a StateChart.",
+      "Using your model class when creating your StateChart class, such as OrderWorkflow, allows sm.model to be typed as OrderModel.",
+      "Typing sm.model as OrderModel instead of Any allows for full autocompletion and type checking in your IDE."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q037": [
+      "When bind_events_as_methods is set to True in MachineMixin, it allows events to become methods on the model itself.",
+      "Setting bind_events_as_methods to True in MachineMixin means you can call the events directly as methods of the model instance.",
+      "Calling events as methods on the model instance will trigger the corresponding state transitions in MachineMixin when bind_events_as_methods is True.",
+      "In MachineMixin, calling model.produce() will change the state of the model when bind_events_as_methods is set to True.",
+      "In MachineMixin, calling model.produce() will update the workflow_step attribute accordingly when bind_events_as_methods is set to True."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q038": [
+      "In a StateChart, putting a class in the listeners attribute registers the class itself as a listener.",
+      "Registering a class as a listener in a StateChart allows it to receive callbacks and observe the state machine's lifecycle.",
+      "Using a class as a listener in a StateChart is useful for defining reusable listeners that can be attached to multiple state machines without modifying their class definitions.",
+      "In a StateChart, putting an instance in the listeners attribute registers a specific object as a listener.",
+      "Registering an instance as a listener in a StateChart allows that particular instance to respond to callbacks and observe the state machine's lifecycle.",
+      "Using an instance as a listener in a StateChart ties the behavior to that specific instance and does not allow for reuse in the same way as a class.",
+      "Using a class as a listener in a StateChart allows for reusable listener definitions.",
+      "Using an instance as a listener in a StateChart allows for specific behavior tied to that instance."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q039": [
+      "A listener's setup() method is not called for shared listener instances.",
+      "The setup() method is only called on factory-created instances in the listeners list.",
+      "Shared listener instances are pre-built objects.",
+      "Shared listener instances do not receive setup() calls because they are assumed to be already configured."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q041": [
+      "The `allowed_events` function returns events that have at least one transition from the current state based on the state topology alone.",
+      "The `allowed_events` function does not evaluate any guards when returning events.",
+      "The `allowed_events` function does not consider whether the conditions for the transitions are satisfied.",
+      "The `enabled_events()` function returns a subset of `allowed_events`.",
+      "The `enabled_events()` function returns events where at least one transition's guards are satisfied given the provided arguments.",
+      "The `enabled_events()` function evaluates the conditions (guards) for the transitions.",
+      "The `enabled_events()` function is useful for determining which events can actually be triggered based on runtime data.",
+      "`allowed_events` provides a broader list of events based solely on state transitions.",
+      "`enabled_events()` provides a filtered list of events that takes into account the conditions that must be met for the events to be triggered."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q042": [
+      "In python-statemachine, the expression 'cond=lambda self: ...' fails because plain callables are considered unbound.",
+      "In python-statemachine, lambdas and functions defined outside the class body are considered unbound callables.",
+      "In python-statemachine, unbound callables do not have 'self' injected.",
+      "In python-statemachine, the absence of 'self' injection in unbound callables leads to a 'TypeError' when the guard is evaluated.",
+      "In python-statemachine, 'machine' should be used to receive the state machine instance instead of 'self'.",
+      "In python-statemachine, 'self' is only available when the callable resolves to a bound method.",
+      "In python-statemachine, a callable resolves to a bound method when it is an attribute of the state machine class.",
+      "In python-statemachine, a callable resolves to a bound method when it is defined in the class body and passed by reference."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q043": [
+      "Validator exceptions are not converted to error.execution events when catch_errors_as_events is set to True.",
+      "Validator exceptions always propagate directly to the caller.",
+      "Validator exceptions do not trigger error.execution transitions."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q044": [
+      "A self-transition goes from a state back to itself.",
+      "A self-transition involves exiting and re-entering the state.",
+      "A self-transition runs all exit and entry actions associated with that state.",
+      "A self-transition is useful when entering a state has side effects, such as resetting a timer.",
+      "An internal transition stays in the same state without running exit or entry actions.",
+      "In an internal transition, only the specified 'on' callback executes.",
+      "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "The key difference between a self-transition and an internal transition is that self-transitions trigger exit and entry actions, while internal transitions do not."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q045": [
+      "When an event matches transitions at multiple levels of a state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "The SCXML specification states that the most specific (deepest) matching transition wins when an event matches transitions at multiple levels of a state hierarchy."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q046": [
+      "Validation errors in python-statemachine raise the InvalidDefinition exception."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q047": [
+      "Convention-based callbacks like on_enter_<state> are not validated when a statechart is instantiated.",
+      "Convention-based callbacks like on_enter_<state> are optional by design in a statechart.",
+      "Only explicitly declared callback names passed as strings to on, cond, etc., are checked during validation in a statechart."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q048": [
+      "Invoke handlers on the sync engine run in a thread executor.",
+      "The thread executor uses loop.run_in_executor.",
+      "The thread executor is wrapped in an asyncio.Task.",
+      "Blocking I/O operations would freeze the event loop if run directly on the sync engine.",
+      "Blocking I/O operations include network calls, file access, or subprocess communication."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q049": [
+      "The 'invoke_group' function is part of the 'statemachine.invoke' module.",
+      "The 'invoke_group' function allows running multiple callables concurrently.",
+      "The 'invoke_group' function waits for all callables to complete before sending a single 'done.invoke' event.",
+      "The transition will only fire after every callable finishes when using 'invoke_group'.",
+      "The 'data' will be a list of results in the same order as the input callables when using 'invoke_group'."
+    ],
+    "20260930_114006_recursive_c1000_o150_k5.json::q051": [
+      "When a callback raises an exception in a StateChart, the exception is caught and dispatched as an internal `error.execution` event.",
+      "The `error.execution` event is handled by a transition defined for error handling in a StateChart.",
+      "Handling exceptions through `error.execution` events allows application code to avoid using try/except blocks in a StateChart.",
+      "In the CoffeeOrder statechart, if the `do_make_drink` method raises a `RuntimeError`, it is caught and handled by the `error_execution` transition."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q001": [
+      "A path operation function declared with def will be called directly as written in the code.",
+      "A path operation function declared with def will not be run in a threadpool.",
+      "If a path operation function declared with def performs blocking I/O operations, it could potentially block the event loop.",
+      "Blocking the event loop may affect the performance of the application.",
+      "If using a third-party library that does not support await, path operation functions should be declared with def to avoid compatibility issues.",
+      "If an application does not need to communicate with anything else and wait for a response, async def can be used even without await inside.",
+      "FastAPI allows mixing def and async def in path operation functions as needed."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q002": [
+      "In Python, 'async def' defines an asynchronous function.",
+      "An asynchronous function in Python allows the use of 'await' expressions within it.",
+      "When an asynchronous function is called in Python, it can pause its execution to perform other tasks while waiting for the awaited operation to complete.",
+      "Asynchronous functions in Python are particularly useful for operations that require waiting, such as I/O-bound tasks.",
+      "Asynchronous functions in Python enable the program to handle other requests while waiting for an operation to complete.",
+      "To call an 'async def' function in Python, you must use 'await' to ensure the program waits for the function to finish before proceeding.",
+      "If you try to call an 'async def' function in Python without 'await', it will not work as expected."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q003": [
+      "You cannot call an async def function without using await in Python.",
+      "Calling an async def function directly without await will not work as expected in Python.",
+      "Using await is necessary to properly call an async def function in Python.",
+      "Await tells Python to wait for the async def function to complete before proceeding."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q004": [
+      "FastAPI is based on AnyIO as its async library.",
+      "Starlette is based on AnyIO as its async library.",
+      "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "AnyIO makes FastAPI compatible with Trio.",
+      "AnyIO makes Starlette compatible with Trio."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q005": [
+      "If a database library does not support 'await', path operation functions should be declared using the 'def' syntax.",
+      "Most database libraries currently do not support using 'await'."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q006": [
+      "FastAPI does not change how utility functions are called.",
+      "Utility functions can be created with either 'def' or 'async def'.",
+      "FastAPI does not affect the way you call utility functions directly.",
+      "FastAPI calls path operation functions for you.",
+      "FastAPI calls dependencies for you."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q007": [
+      "A path operation can return a 201 'Created' status code for new items.",
+      "A path operation can return a 200 'OK' status code for updates.",
+      "You can return a JSONResponse directly to set the desired status code in a path operation.",
+      "In a path operation, you can implement logic to check if an item exists.",
+      "If an item exists, the path operation can return the item with a 200 status code.",
+      "If an item does not exist, the path operation can create the item and return it with a 201 status code.",
+      "To achieve different status codes for new and existing items, you need to import JSONResponse and set the status_code accordingly in your response."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q008": [
+      "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "FastAPI does not have a way to know beforehand what status codes you are going to return.",
+      "Additional status codes and responses won't be included in the OpenAPI schema in FastAPI.",
+      "You can document additional status codes in your code using Additional Responses in FastAPI."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q009": [
+      "In FastAPI, you can create a parameterized dependency by defining a class with a __call__ method.",
+      "A class with a __call__ method makes an instance of the class callable in FastAPI.",
+      "FastAPI can check for additional parameters and sub-dependencies when using a class with a __call__ method.",
+      "The __init__ method can be used to declare parameters for an instance of a class in FastAPI.",
+      "Parameters declared in the __init__ method can be used to parameterize a dependency in FastAPI.",
+      "An instance of a class with desired parameters can be created in FastAPI.",
+      "An instance of a class can be used in a Depends call in FastAPI instead of the class itself.",
+      "In FastAPI, you can create an instance of a class that checks for specific content in a query parameter.",
+      "An instance of a class that checks for specific content in a query parameter can be used as a dependency in a path operation function in FastAPI."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q010": [
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code after yield immediately after the path operation function finishes.",
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code before the response is sent back to the client.",
+      "In FastAPI, using Depends(scope='request') for dependencies with yield executes the exit code after the response is sent to the client.",
+      "In FastAPI, Depends(scope='request') is the default scope for dependencies with yield.",
+      "In FastAPI, when using Depends(scope='request'), resources held by the dependency remain available until the response is fully processed and sent to the client."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q011": [
+      "TestClient relies on synchronous execution.",
+      "TestClient does not work with asynchronous functions.",
+      "When tests are run asynchronously, TestClient cannot call the asynchronous FastAPI application.",
+      "AsyncClient from HTTPX should be used to test the API in async tests."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q012": [
+      "The AsyncClient does not trigger lifespan events in an application during tests.",
+      "To trigger lifespan events in an application during tests, you should use LifespanManager from the florimondmanca/asgi-lifespan package."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q013": [
+      "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data with the new data provided in the request body.",
+      "If the request body does not include all the attributes of the existing item, any omitted attributes will revert to their default values.",
+      "For example, if an item has a stored attribute 'tax' with a value of 20.2 and the PUT request only includes 'name' and 'price', the 'tax' attribute will be set to its default value of 10.5."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q014": [
+      "To apply a partial update to a stored Pydantic model, you can optionally use the HTTP method PATCH instead of PUT.",
+      "To apply a partial update to a stored Pydantic model, you need to retrieve the stored data.",
+      "To apply a partial update to a stored Pydantic model, you should put the retrieved data into a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, you generate a dictionary without default values from the input model using the exclude_unset option.",
+      "Using exclude_unset allows you to update only the values actually set by the user, instead of overriding values already stored with default values in your model.",
+      "To apply a partial update to a stored Pydantic model, you create a copy of the stored model and update its attributes with the received partial updates using the update parameter.",
+      "To apply a partial update to a stored Pydantic model, you convert the copied model to a format that can be stored in your database, for example, using the jsonable_encoder.",
+      "To apply a partial update to a stored Pydantic model, you save the updated data to your database.",
+      "To apply a partial update to a stored Pydantic model, you return the updated model."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q015": [
+      "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "Pydantic has internal support for dataclasses.",
+      "FastAPI can convert standard dataclasses into Pydantic's own flavor of dataclasses.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data validation.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data serialization.",
+      "Using Pydantic's flavor of dataclasses in FastAPI enables data documentation.",
+      "The functionality of Pydantic's flavor of dataclasses in FastAPI works similarly to how Pydantic models operate.",
+      "All the benefits of Pydantic are available when using dataclasses in FastAPI."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q016": [
+      "Dataclasses have been supported in FastAPI since version 0.67.0."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q017": [
+      "You can avoid regenerating a custom OpenAPI schema on every docs request by using the property `.openapi_schema` as a cache.",
+      "Using the property `.openapi_schema` as a cache allows your application to generate the schema only once.",
+      "The same cached schema will be used for subsequent requests to the API docs."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q018": [
+      "FastAPI dev initiates development mode.",
+      "FastAPI run starts FastAPI in production mode.",
+      "In FastAPI dev, auto-reload is enabled by default.",
+      "Auto-reload automatically reloads the server when changes are made to the code.",
+      "Auto-reload is resource-intensive and should only be used for development.",
+      "In FastAPI run, auto-reload is disabled by default.",
+      "FastAPI dev listens on the IP address 127.0.0.1.",
+      "The IP address 127.0.0.1 allows communication only with the local machine (localhost).",
+      "FastAPI run listens on the IP address 0.0.0.0.",
+      "The IP address 0.0.0.0 makes the application publicly accessible to anyone that can communicate with the machine.",
+      "When using FastAPI dev, the FASTAPI_ENV environment variable is set to development unless it is already set to a different value.",
+      "FastAPI run does not change the FASTAPI_ENV variable.",
+      "The FASTAPI_ENV variable must be set explicitly if the app needs to detect production mode when using FastAPI run.",
+      "FastAPI dev is tailored for development with features like auto-reload and local access.",
+      "FastAPI run is designed for production with a focus on stability and accessibility."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q019": [
+      "The 'fastapi dev' command sets the 'FASTAPI_ENV' environment variable to 'development' before importing the app.",
+      "If 'FASTAPI_ENV' is already set, the 'fastapi dev' command preserves its existing value.",
+      "The 'fastapi dev' command allows app startup code to choose development-friendly behavior.",
+      "The 'fastapi dev' command enables you to provide an app-specific environment such as 'staging'.",
+      "The 'fastapi run' command does not set the 'FASTAPI_ENV' variable.",
+      "The 'fastapi run' command leaves the 'FASTAPI_ENV' variable unchanged.",
+      "If an app needs to detect production mode, the 'FASTAPI_ENV' variable must be set explicitly when using 'fastapi run'."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q020": [
+      "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in a pyproject.toml file.",
+      "You can specify the entrypoint in a pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "The configuration [tool.fastapi] entrypoint = \"main:app\" tells the fastapi command to import the app using the line: from main import app.",
+      "If your app is structured differently, you can adjust the entrypoint accordingly in the pyproject.toml file.",
+      "An example of adjusting the entrypoint for a differently structured app is: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "The configuration [tool.fastapi] entrypoint = \"backend.main:app\" is equivalent to the Python import statement: from backend.main import app.",
+      "Using the entrypoint in pyproject.toml is recommended because it helps avoid having to remember to pass the correct path or entrypoint every time you call the fastapi command.",
+      "Using the entrypoint in pyproject.toml ensures compatibility with other tools like the VS Code Extension or FastAPI Cloud."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q021": [
+      "To deploy a FastAPI app to FastAPI Cloud, you can use the command 'uv run fastapi deploy' in your terminal.",
+      "The command 'uv run fastapi deploy' will automatically detect your FastAPI application and deploy it to the cloud.",
+      "If you are not logged in, your browser will open to complete the authentication process during deployment to FastAPI Cloud.",
+      "Once the deployment is successful, you can access your FastAPI app at a provided URL such as 'https://myapp.fastapicloud.dev'."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q022": [
+      "To serve a single-page app with client-side routing using app.frontend(), you need to ensure that your FastAPI application can handle routes managed by the frontend framework.",
+      "After building your frontend app, place the generated files in a directory, such as dist.",
+      "Use app.frontend() to serve the contents of the directory containing the generated files.",
+      "Serving the directory with app.frontend() allows requests for static assets like JavaScript files to be served correctly.",
+      "To handle client-side routing, set up a fallback to index.html in FastAPI.",
+      "The fallback to index.html means that if a user accesses a route like /dashboard/settings, FastAPI will serve index.html.",
+      "The frontend framework can take over routing after FastAPI serves index.html for client-side routes.",
+      "You can set up the fallback by using fallback=\"index.html\" in your app.frontend() call.",
+      "The fallback only applies to GET and HEAD requests that accept HTML.",
+      "Other request methods like POST or PUT to paths that only match the frontend fallback will return a 404 error."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q023": [
+      "If the frontend build directory passed to app.frontend() is missing and FASTAPI_ENV is set to development, FastAPI will only show a warning.",
+      "In a development environment, FastAPI allows you to start the backend before building or starting the frontend if the frontend build directory is missing.",
+      "In any environment other than development, FastAPI raises an error when the app is created if the frontend build directory is missing.",
+      "Raising an error in non-development environments helps catch configuration errors early before deploying an app without its frontend files.",
+      "If check_dir is set to False, FastAPI will not check the frontend build directory when the app is created.",
+      "FastAPI will raise an error if the frontend build directory is still missing when a request is handled, even if check_dir is set to False."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q024": [
+      "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API.",
+      "Hey API is a purpose-built solution for the TypeScript ecosystem.",
+      "Hey API can be used via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client.",
+      "Using the command npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client will generate a TypeScript SDK in the specified output directory."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q025": [
+      "Generated client method names like 'createItemItemsPost' are structured based on the OpenAPI internal operation ID for each path operation.",
+      "The operation ID includes the function name, the path, and the HTTP method/operation to ensure uniqueness across all path operations.",
+      "To make method names cleaner, you can preprocess the OpenAPI specification to remove the prefixed tag from the operation IDs.",
+      "Preprocessing involves downloading the OpenAPI JSON to a file and using a script to rename the operation IDs.",
+      "Renaming operation IDs from formats like 'items-get_items' to simpler formats like 'get_items' can result in cleaner method names.",
+      "After preprocessing the OpenAPI specification, the client generator will produce simpler method names."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q026": [
+      "In FastAPI, you should raise an HTTPException instead of returning it when handling errors.",
+      "HTTPException is a normal Python exception.",
+      "Raising an HTTPException will terminate the request immediately in FastAPI.",
+      "Raising an HTTPException will send the HTTP error to the client in FastAPI.",
+      "Returning an HTTPException instead of raising it would allow the rest of the code in the path operation function to continue running in FastAPI.",
+      "Allowing the rest of the code to run after an error is not the desired behavior when handling errors in FastAPI."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q027": [
+      "You should register your exception handler for Starlette's HTTPException.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by Starlette's internal code.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by a Starlette extension or plug-in.",
+      "FastAPI's HTTPException is normally used in your code.",
+      "The exception handler should be registered for Starlette's version of HTTPException."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q028": [
+      "A single server with one IP address can serve HTTPS for multiple domains using the Server Name Indication (SNI) extension.",
+      "The Server Name Indication (SNI) extension allows a server to have several HTTPS certificates.",
+      "A server using SNI can serve multiple HTTPS domains or applications.",
+      "The server must have all the HTTPS certificates to serve multiple domains using SNI.",
+      "A server using SNI runs a single component that listens on the public IP address.",
+      "The TLS (Transport Layer Security) protocol handles encryption at the TCP level before HTTP.",
+      "With SNI, a server can differentiate between domains based on the HTTP data sent by the client."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q029": [
+      "To make FastAPI CLI trust X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.",
+      "You can specify the IPs from which the application server should trust those forwarded headers using the `--forwarded-allow-ips` option.",
+      "If the application server is only receiving communication from the trusted proxy, you can set `--forwarded-allow-ips` to `*` to trust all incoming IPs.",
+      "Setting `--forwarded-allow-ips` to `*` will make the application server trust all incoming IPs, assuming it only receives requests from the proxy's IP."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q030": [
+      "Values read from environment variables in Python are always of type 'str'.",
+      "Environment variables are external to Python.",
+      "Environment variables must be compatible with other programs and systems.",
+      "Any conversion of environment variable values to a different type has to be done in code.",
+      "Validation of environment variable values has to be done in code."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q031": [
+      "Using @lru_cache on a get_settings dependency ensures that the Settings object is created only once, the first time the function is called.",
+      "Using @lru_cache on a get_settings dependency avoids the overhead of reading the .env file for each request.",
+      "Reading the .env file for each request can be a costly operation.",
+      "Subsequent calls to get_settings() return the same object that was created during the first call when using @lru_cache.",
+      "Using @lru_cache on a get_settings dependency is similar to using a global variable.",
+      "Using @lru_cache on a get_settings dependency allows for easier overriding during testing.",
+      "Using @lru_cache on a get_settings dependency makes it more flexible and efficient."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q032": [
+      "FastAPI uses Starlette as its foundation.",
+      "FastAPI cannot exceed the performance of Starlette.",
+      "Starlette is designed to be fast.",
+      "The FastAPI documentation states that FastAPI cannot be faster than Starlette.",
+      "The FastAPI documentation compares FastAPI's relationship with Starlette to Starlette's relationship with Uvicorn, stating that neither can be faster than their respective foundations."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q033": [
+      "FastAPI uses Starlette as its underlying framework.",
+      "FastAPI cannot be faster than Starlette itself.",
+      "FastAPI builds on top of Starlette by providing additional features commonly needed when building APIs.",
+      "FastAPI provides features such as data validation, serialization, and automatic documentation.",
+      "FastAPI implements these features using Python type hints and Pydantic.",
+      "Using Python type hints and Pydantic allows for a more intuitive development experience in FastAPI.",
+      "If one were to use Starlette directly, they would need to implement data validation and serialization manually.",
+      "Using Starlette directly or another framework would result in similar overhead as using FastAPI."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q034": [
+      "The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E.",
+      "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is Cmd + Shift + E."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q035": [
+      "To generate diagrams with python-statemachine, you need to install the 'diagrams' extra.",
+      "The 'diagrams' extra requires the 'pydot' package.",
+      "You can install the 'diagrams' extra by running the command: python3 -m pip install \"python-statemachine[diagrams]\".",
+      "The command installs the necessary dependencies for generating diagrams from state machines using python-statemachine."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q036": [
+      "To get type checking and autocompletion for sm.model in a StateChart, you need to declare your model class.",
+      "You need to pass your model class as a type parameter to the StateChart to get type checking and autocompletion for sm.model.",
+      "Defining your model class, such as OrderModel, allows for type checking and autocompletion in a StateChart.",
+      "Using your model class when defining your StateChart class, such as OrderWorkflow, allows sm.model to be typed as OrderModel.",
+      "Typing sm.model as OrderModel instead of Any allows for full autocompletion and type checking in your IDE."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q037": [
+      "When bind_events_as_methods is set to True in MachineMixin, it allows events to become methods on the model itself.",
+      "Setting bind_events_as_methods to True in MachineMixin means you can call the event methods directly on the model instance.",
+      "Calling an event method directly on the model instance will trigger the corresponding state transitions in MachineMixin when bind_events_as_methods is set to True.",
+      "In MachineMixin, if you have a method named produce, calling model.produce() will execute the transition associated with that event when bind_events_as_methods is set to True.",
+      "In MachineMixin, calling model.produce() will update the state accordingly when bind_events_as_methods is set to True."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q038": [
+      "In a StateChart, putting a class in the listeners attribute means that the class itself will be registered as a listener.",
+      "In a StateChart, registering a class as a listener allows it to receive callbacks and observe the state machine's lifecycle.",
+      "Registering a class as a listener in a StateChart is useful for defining reusable listeners that can be attached to multiple state machines without modifying their class definitions.",
+      "In a StateChart, putting an instance in the listeners attribute means that a specific object with its own state and behavior will be registered as a listener.",
+      "Registering an instance as a listener in a StateChart allows for more tailored behavior since the instance can maintain its own state and context.",
+      "Using an instance as a listener in a StateChart can be beneficial for scenarios where the listener needs to track specific information or perform actions based on its internal state.",
+      "In a StateChart, using a class as a listener allows for reusable and generic behavior.",
+      "In a StateChart, using an instance as a listener allows for specific and stateful behavior."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q039": [
+      "A listener's setup() method is not called for shared listener instances.",
+      "The setup() method is only called on factory-created instances in the listeners list.",
+      "Shared listener instances are pre-built objects.",
+      "Shared listener instances do not receive setup() calls because they are assumed to be already configured."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q041": [
+      "The `allowed_events` function returns events that have at least one transition from the current state based on the state topology alone.",
+      "The `allowed_events` function does not evaluate any guards when returning events.",
+      "The `enabled_events()` function returns a subset of `allowed_events`.",
+      "The `enabled_events()` function returns events where at least one transition's guards are satisfied given the provided arguments.",
+      "The `enabled_events()` function evaluates the conditions (guards) for the transitions.",
+      "The `allowed_events` function is based on state transitions without considering current conditions.",
+      "The `enabled_events()` function is useful for determining which events can actually be triggered based on runtime data."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q042": [
+      "In python-statemachine, the expression 'cond=lambda self: ...' fails because plain callables are considered unbound.",
+      "In python-statemachine, lambdas and functions defined outside the class body are considered unbound.",
+      "In python-statemachine, 'self' is not injected into plain callables like lambdas, leading to a TypeError when evaluated.",
+      "In python-statemachine, you should use 'machine' to receive the state machine instance instead of 'self'.",
+      "In python-statemachine, 'self' is only available when the callable resolves to a bound method.",
+      "In python-statemachine, a callable resolves to a bound method when it is an attribute of the state machine class.",
+      "In python-statemachine, a callable resolves to a bound method when it is defined in the class body and passed by reference."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q043": [
+      "Validator exceptions are not converted to error.execution events when catch_errors_as_events is set to True.",
+      "Validator exceptions always propagate directly to the caller.",
+      "Validator exceptions do not trigger error.execution transitions."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q044": [
+      "A self-transition goes from a state back to itself.",
+      "A self-transition involves exiting and re-entering the state.",
+      "A self-transition runs all exit and entry actions associated with the state.",
+      "Self-transitions are useful when entering a state has side effects, such as resetting a timer.",
+      "An internal transition stays in the same state without running exit or entry actions.",
+      "In an internal transition, only the specified 'on' callback executes.",
+      "Internal transitions are useful for pure data updates that shouldn't re-trigger entry logic.",
+      "The key difference between self-transitions and internal transitions is that self-transitions trigger exit and entry actions, while internal transitions do not."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q045": [
+      "When an event matches transitions at multiple levels of a state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "This prioritization of transitions follows the SCXML specification.",
+      "In the SCXML specification, the most specific (deepest) matching transition wins when an event matches transitions at multiple levels of a state hierarchy."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q046": [
+      "Validation errors in python-statemachine raise the InvalidDefinition exception."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q047": [
+      "Convention-based callbacks like on_enter_<state> are not validated when a statechart is instantiated.",
+      "Convention-based callbacks like on_enter_<state> are optional by design in a statechart.",
+      "Only explicitly declared callback names passed as strings to on, cond, etc., are checked during validation in a statechart."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q048": [
+      "Invoke handlers on the sync engine run in a thread executor.",
+      "The thread executor uses loop.run_in_executor.",
+      "The thread executor is wrapped in an asyncio.Task.",
+      "Blocking I/O operations would freeze the event loop if run directly.",
+      "Blocking I/O operations include network calls, file access, or subprocess communication."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q049": [
+      "The 'invoke_group' function is part of the 'statemachine.invoke' module.",
+      "The 'invoke_group' function allows running multiple callables concurrently.",
+      "The 'invoke_group' function waits for all callables to complete before sending a 'done.invoke' event.",
+      "The transition will only fire after every callable finishes when using the 'invoke_group' function.",
+      "The 'data' will be a list of results in the same order as the input callables when using the 'invoke_group' function."
+    ],
+    "20260930_153706_recursive_c1000_o150_k5.json::q051": [
+      "When a callback raises an exception in a StateChart, the exception is caught and dispatched as an internal `error.execution` event.",
+      "The `error.execution` event is handled by a transition defined for error handling in a StateChart.",
+      "Handling exceptions through `error.execution` transitions allows application code to avoid using try/except blocks in a StateChart.",
+      "In the CoffeeOrder statechart, if the `do_make_drink` method raises a `RuntimeError`, it is caught and handled by the `error_execution` transition."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q001": [
+      "A path operation function declared with def instead of async def is run in an external threadpool in FastAPI.",
+      "A path operation function declared with def instead of async def is awaited in FastAPI.",
+      "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "Using def for path operation functions that perform blocking I/O operations may lead to worse performance in FastAPI.",
+      "It is generally better to use async def for path operation functions in FastAPI unless the functions are using code that performs blocking I/O."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q002": [
+      "In Python, declaring a function with 'async def' allows it to support asynchronous operations.",
+      "Within an 'async def' function in Python, you can use the 'await' keyword to pause the execution of the function.",
+      "The 'await' keyword in an 'async def' function allows the function to wait for an asynchronous operation to complete.",
+      "Using 'async def' in Python allows the code to perform other tasks while waiting for an asynchronous operation to complete.",
+      "Using 'async def' in Python makes the code more efficient in a concurrent environment.",
+      "When you call an 'async def' function in Python, you must use 'await' to properly invoke it.",
+      "An 'async def' function in Python returns a coroutine that needs to be awaited."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q003": [
+      "You cannot call an async def function without using await in Python.",
+      "Calling an async def function without await will not work as expected in Python.",
+      "In Python, you must use await when calling an async def function.",
+      "Using await allows the program to pause the execution of the function until the awaited function completes in Python.",
+      "Using await enables other tasks to run in the meantime while the awaited function completes in Python."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q004": [
+      "FastAPI is based on the ASGI (Asynchronous Server Gateway Interface) standard as its async library.",
+      "Starlette is based on the ASGI (Asynchronous Server Gateway Interface) standard as its async library.",
+      "The ASGI standard is being developed by members of the Django core team.",
+      "FastAPI uses Starlette as its foundation.",
+      "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q005": [
+      "If a database library doesn't support using 'await', path operation functions should be declared with 'def'.",
+      "Most database libraries currently do not support 'await'."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q006": [
+      "FastAPI does not change how utility functions are called.",
+      "Utility functions in FastAPI can be defined with either 'def' or 'async def'.",
+      "FastAPI does not affect the way utility functions are called.",
+      "A utility function defined with 'def' in FastAPI will be called directly as written in the code.",
+      "A utility function created with 'async def' in FastAPI should be awaited when called in the code."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q007": [
+      "A path operation can return a 201 'Created' status code for new items.",
+      "A path operation can return a 200 'OK' status code for updates.",
+      "You can return a `Response` directly to set the desired status code in a path operation.",
+      "`JSONResponse` can be used to specify the `status_code` in a response.",
+      "When updating an item, you would return a 200 status code in a path operation.",
+      "When creating a new item, you would return a 201 status code in a path operation."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q008": [
+      "Additional status codes returned via a Response do not show up in the OpenAPI documentation.",
+      "FastAPI does not have a way to know beforehand what status codes you are going to return.",
+      "Additional responses won't be included in the OpenAPI schema in FastAPI."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q009": [
+      "To create a parameterized dependency in FastAPI, you need to define a class with a __call__ method.",
+      "The __call__ method in the class is used by FastAPI to check for additional parameters and sub-dependencies.",
+      "The class should be callable by implementing the __call__ method.",
+      "You can declare the parameters of the instance in the __init__ method of the class.",
+      "Declaring parameters in the __init__ method allows you to parameterize the dependency.",
+      "You can create an instance of the class with the desired parameters.",
+      "The instance of the class can be used as a dependency in a Depends() call in FastAPI.",
+      "Using the instance in a Depends() call allows you to utilize the parameterized dependency in your path operation function.",
+      "An example of a parameterized dependency is a class that checks if a query parameter contains some fixed content.",
+      "You can parameterize the fixed content when creating an instance of the class."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q010": [
+      "In FastAPI, Depends(scope=\"function\") executes the exit code after yield right after the path operation function is finished.",
+      "In FastAPI, Depends(scope=\"function\") executes the exit code after yield before the response is sent back to the client.",
+      "In FastAPI, Depends(scope=\"request\") executes the exit code after yield after the response is sent.",
+      "In FastAPI, Depends(scope=\"request\") is the default scope for dependencies with yield.",
+      "The distinction between Depends(scope=\"function\") and Depends(scope=\"request\") affects how resources are managed in FastAPI.",
+      "The distinction between Depends(scope=\"function\") and Depends(scope=\"request\") affects when cleanup code is run in relation to the response lifecycle in FastAPI."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q011": [
+      "The TestClient is designed to work with synchronous test functions in FastAPI.",
+      "The TestClient does not function properly when used in asynchronous test functions in FastAPI.",
+      "The TestClient cannot call the asynchronous FastAPI application properly when tests are run asynchronously.",
+      "The AsyncClient from HTTPX should be used to send asynchronous requests to a FastAPI application in tests."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q012": [
+      "The AsyncClient does not trigger lifespan events in a FastAPI application during tests.",
+      "To ensure that lifespan events are triggered in a FastAPI application during tests, you should use LifespanManager from the florimondmanca/asgi-lifespan package."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q013": [
+      "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "If the request body does not include all the attributes of the existing model, any omitted attributes will take their default values.",
+      "For example, if you update an item with a body that does not include the attribute 'tax' and it has a default value of 10.5, the stored data will be saved with this new 'tax' value.",
+      "This process effectively overwrites the existing value of the 'tax' attribute."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q014": [
+      "To apply a partial update to a stored Pydantic model, you can use the PATCH method instead of PUT.",
+      "To apply a partial update to a stored Pydantic model, you need to retrieve the stored data.",
+      "To apply a partial update to a stored Pydantic model, you should put the retrieved data into a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, you can generate a dictionary without default values from the input model using the exclude_unset option.",
+      "The exclude_unset option can be used with item.model_dump(exclude_unset=True) to create a dictionary that includes only the data set by the user, omitting default values.",
+      "To apply a partial update to a stored Pydantic model, you can create a copy of the stored model and update its attributes with the received partial updates using the update parameter.",
+      "The update parameter can be used with stored_item_model.model_copy(update=update_data) to update a stored Pydantic model with partial updates.",
+      "To apply a partial update to a stored Pydantic model, you need to convert the copied model to a format that can be stored in your database.",
+      "The jsonable_encoder can be used to convert a copied Pydantic model to a format that can be stored in a database.",
+      "To apply a partial update to a stored Pydantic model, you need to save the updated data to your database.",
+      "To apply a partial update to a stored Pydantic model, you should return the updated model.",
+      "The process of applying a partial update to a stored Pydantic model allows you to update only the values set by the user, rather than overriding existing values with defaults."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q015": [
+      "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "Pydantic has internal support for dataclasses.",
+      "FastAPI can convert standard dataclasses into Pydantic's own flavor of dataclasses.",
+      "FastAPI enables features such as data validation, data serialization, and data documentation for dataclasses.",
+      "These features are similar to what is available with Pydantic models.",
+      "You can use dataclasses in the response_model parameter in FastAPI.",
+      "Dataclasses used in the response_model parameter will be automatically converted to Pydantic dataclasses in FastAPI.",
+      "The schema of dataclasses used in the response_model parameter appears in the API documentation in FastAPI.",
+      "FastAPI allows for the combination of dataclasses with other type annotations to create complex and nested data structures."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q016": [
+      "Dataclasses have been supported in FastAPI since version 0.67.0."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q017": [
+      "Using the property `.openapi_schema` can help avoid regenerating a custom OpenAPI schema on every docs request.",
+      "The `.openapi_schema` property acts as a cache to store the generated OpenAPI schema.",
+      "By caching the schema, the application generates the OpenAPI schema only once.",
+      "The cached OpenAPI schema is used for subsequent requests after the initial generation."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q018": [
+      "The 'fastapi dev' command initiates FastAPI in development mode.",
+      "The 'fastapi run' command starts FastAPI in production mode.",
+      "In development mode, 'fastapi dev' enables auto-reload by default.",
+      "In production mode, 'fastapi run' disables auto-reload.",
+      "The 'fastapi run' command listens on the IP address '0.0.0.0', making the application publicly accessible.",
+      "The specific listening behavior for 'fastapi dev' is typically more restricted for development purposes.",
+      "The 'fastapi dev' command is intended for development purposes, allowing for quick iterations and testing.",
+      "The 'fastapi run' command is meant for deploying the application in a production environment.",
+      "Both 'fastapi dev' and 'fastapi run' commands utilize Uvicorn as the underlying server.",
+      "The configuration and features of Uvicorn differ based on whether it is used in development mode or production mode."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q019": [
+      "The 'fastapi dev' command sets the 'FASTAPI_ENV' environment variable to 'development' before importing the app.",
+      "If 'FASTAPI_ENV' is already set, the 'fastapi dev' command preserves its existing value.",
+      "The 'fastapi dev' command allows for app-specific environments like 'staging'.",
+      "The 'fastapi run' command does not set the 'FASTAPI_ENV' environment variable.",
+      "The 'fastapi run' command leaves the 'FASTAPI_ENV' environment variable unchanged.",
+      "If an app needs to detect production mode, the 'FASTAPI_ENV' environment variable must be set explicitly when using 'fastapi run'."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q020": [
+      "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in the pyproject.toml file.",
+      "You can specify the entrypoint in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "This configuration will inform the fastapi command to import the app using: from main import app.",
+      "If your app is structured differently, such as in a subdirectory, you would adjust the entrypoint accordingly.",
+      "An example of adjusting the entrypoint for an app in a subdirectory is: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "The entrypoint configuration tells the fastapi command to import the app from the specified module."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q021": [
+      "To deploy a FastAPI app to FastAPI Cloud, you can use the command 'uv run fastapi deploy' in your terminal.",
+      "The command 'uv run fastapi deploy' will automatically detect your FastAPI application and deploy it to the cloud.",
+      "If you are not logged in, your browser will open to complete the authentication process during deployment to FastAPI Cloud.",
+      "Once the deployment is successful, you can access your FastAPI app at a provided URL such as 'https://myapp.fastapicloud.dev'."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q022": [
+      "To serve a single-page app with client-side routing using app.frontend(), configure it to handle requests for paths that are not real files by serving the index.html file.",
+      "Using the fallback=\"index.html\" option in app.frontend() allows the frontend framework to manage client-side routing.",
+      "When a user accesses a URL directly, like /dashboard/settings, the backend serves the index.html file, allowing the frontend framework to take over routing.",
+      "FastAPI uses the fallback only for GET and HEAD requests that explicitly accept HTML.",
+      "Requests with methods other than GET or HEAD, such as POST or PUT, to paths that only match the frontend fallback will return a 404 status.",
+      "Regular FastAPI path operations take precedence over frontend routes when using app.frontend()."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q023": [
+      "If the frontend build directory passed to app.frontend() is missing in a development environment, FastAPI will only show a warning.",
+      "The environment variable FASTAPI_ENV must be set to development for FastAPI to show a warning if the frontend build directory is missing.",
+      "In environments other than development, FastAPI will raise an error if the frontend build directory is missing when the app is created.",
+      "Raising an error for a missing frontend build directory in non-development environments helps catch configuration errors early.",
+      "If check_dir is set to False, FastAPI will not check the frontend build directory when the app is created.",
+      "FastAPI will raise an error if the frontend build directory is missing when a request is handled, even if check_dir is set to False."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q024": [
+      "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API.",
+      "Hey API can be used via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client.",
+      "The command npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client generates a TypeScript SDK in the specified directory."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q025": [
+      "Generated client method names like 'createItemItemsPost' are structured based on the OpenAPI internal operation ID for each path operation.",
+      "OpenAPI requires that each operation ID is unique across all path operations.",
+      "The inclusion of both the tag and the function name in the method name results in less clean names.",
+      "To make method names cleaner, you can preprocess the OpenAPI specification before generating the clients.",
+      "Preprocessing involves downloading the OpenAPI JSON to a file, such as 'openapi.json'.",
+      "A script can be used to remove the prefixed tag from the operation IDs in the OpenAPI specification.",
+      "Renaming operation IDs from 'items-get_items' to 'get_items' allows the client generator to produce simpler method names."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q026": [
+      "Raising an HTTPException will terminate the request immediately.",
+      "Raising an HTTPException will send the HTTP error to the client.",
+      "Returning an HTTPException will allow the rest of the code in the path operation function to continue running.",
+      "Raising an HTTPException is the desired behavior when handling errors in a path operation function."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q027": [
+      "You should register your exception handler for Starlette's HTTPException.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by Starlette's internal code.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by a Starlette extension or plug-in.",
+      "FastAPI's HTTPException is normally used in your code.",
+      "The handler should be registered for Starlette's version of HTTPException."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q028": [
+      "A server with a single IP address can serve HTTPS for multiple domains using a TLS extension called Server Name Indication (SNI).",
+      "Server Name Indication (SNI) allows a server to have several HTTPS certificates.",
+      "Server Name Indication (SNI) enables serving multiple HTTPS domains/applications from a single server.",
+      "A single component running on the server must manage all the HTTPS parts when serving multiple domains with a single IP address.",
+      "The component managing HTTPS parts receives encrypted HTTPS requests and sends decrypted HTTP requests to the actual application.",
+      "A TLS Termination Proxy can handle HTTPS and certificates for multiple domains.",
+      "A TLS Termination Proxy transmits requests to the appropriate application.",
+      "Using a TLS Termination Proxy allows for efficient management of certificates and requests without requiring multiple IP addresses."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q029": [
+      "FastAPI CLI can be configured to trust X-Forwarded headers from a TLS termination proxy.",
+      "The CLI option '--forwarded-allow-ips' is used to specify which IPs should be trusted to send forwarded headers in FastAPI.",
+      "Setting '--forwarded-allow-ips=\"*\"' in FastAPI trusts all incoming IPs to send forwarded headers.",
+      "When FastAPI is configured to trust all incoming IPs, it is assumed that the application server only receives requests from the proxy's IP.",
+      "Configuring FastAPI to trust X-Forwarded headers allows the application to know its own public URL.",
+      "Knowing its own public URL helps FastAPI handle redirects properly."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q030": [
+      "Values read from environment variables in Python are always of type 'str'.",
+      "Environment variables are external to Python.",
+      "Environment variables must be compatible with other programs and systems.",
+      "Any conversion of environment variable values to a different type must be done in code in Python.",
+      "Validation of environment variable values must be done in code in Python."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q031": [
+      "Using @lru_cache on a get_settings dependency allows the Settings object to be created only once.",
+      "The Settings object is created the first time the get_settings function is called when using @lru_cache.",
+      "Using @lru_cache on get_settings avoids the costly operation of reading the .env file for each request.",
+      "Subsequent calls to get_settings will return the same Settings object without re-executing the internal code of the function when using @lru_cache.",
+      "Using @lru_cache on get_settings improves performance by reducing unnecessary file reads.",
+      "Using @lru_cache on get_settings allows for easy overriding of the settings during testing."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q032": [
+      "FastAPI uses Starlette as its foundation.",
+      "FastAPI cannot exceed the performance of Starlette.",
+      "Starlette is currently the fastest Python framework tested.",
+      "Starlette is only surpassed by Uvicorn in performance."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q033": [
+      "FastAPI is built on top of Starlette.",
+      "FastAPI cannot be faster than Starlette because it relies on Starlette for its core functionalities.",
+      "FastAPI adds additional features to Starlette, such as automatic data validation, serialization, and documentation.",
+      "The additional features in FastAPI are essential for building APIs.",
+      "FastAPI implements additional features using Python type hints and the Pydantic library.",
+      "The use of Python type hints and the Pydantic library enhances the usability and performance of FastAPI compared to using Starlette directly.",
+      "FastAPI has its own HTTPException class that inherits from Starlette's HTTPException.",
+      "FastAPI's HTTPException class allows any JSON-able data for the detail field.",
+      "Starlette's HTTPException class only accepts strings for the detail field."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q034": [
+      "The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E.",
+      "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is Cmd + Shift + E."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q035": [
+      "To generate diagrams with python-statemachine, you need to install the 'python-statemachine[diagrams]' extra.",
+      "The 'python-statemachine[diagrams]' extra requires 'pydot'.",
+      "You will need to have the Graphviz system package installed to generate diagrams with python-statemachine."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q036": [
+      "To get type checking and autocompletion for sm.model in a StateChart, you need to declare your model class and pass it as a type parameter to StateChart.",
+      "In the example provided, the model class is declared as OrderWorkflow and passed as a type parameter to StateChart.",
+      "By declaring the model class and passing it as a type parameter, sm.model will be typed as OrderModel instead of Any.",
+      "Typing sm.model as OrderModel allows for full autocompletion and type checking in your IDE for attributes and methods of the model.",
+      "Attributes and methods of the model that can be accessed with type checking and autocompletion include sm.model.order_id, sm.model.total, and sm.model.confirm()."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q037": [
+      "The bind_events_as_methods attribute is part of MachineMixin.",
+      "The bind_events_as_methods attribute allows events to become methods on the model itself when set to True.",
+      "When bind_events_as_methods is set to True, you can call state machine events directly as methods of the model instance.",
+      "If a model inherits from MachineMixin, you can call model.produce() to trigger the produce event.",
+      "When the produce event is triggered, the state of the model updates accordingly.",
+      "The bind_events_as_methods feature simplifies interaction with the state machine by allowing method calls instead of needing to send events explicitly through the state machine instance."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q039": [
+      "The setup() method is not called on shared listener instances.",
+      "Shared listener instances are pre-built objects.",
+      "The setup() method is only called on factory-created instances.",
+      "Factory-created instances are callable entries in the listeners list.",
+      "Shared listener instances are assumed to be already configured."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q040": [
+      "In a StateChart, the send() function places an event on the external queue.",
+      "In a StateChart, the raise_() function places an event on the internal queue.",
+      "In a StateChart, events placed on the external queue by send() are processed after the current macrostep completes.",
+      "In a StateChart, events placed on the internal queue by raise_() are processed within the current macrostep.",
+      "In a StateChart, send() is used for external events that are processed later.",
+      "In a StateChart, raise_() is used for internal events that are processed immediately.",
+      "In a StateChart, raise_() is useful for triggering follow-up transitions immediately within callbacks."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q041": [
+      "The `allowed_events` function returns events that have at least one transition from the current configuration.",
+      "The `allowed_events` function does not consider whether the guards for transitions are satisfied.",
+      "The `allowed_events` function is a cheaper check that only considers the state topology.",
+      "The `enabled_events(**kwargs)` function is a subset of `allowed_events`.",
+      "The `enabled_events(**kwargs)` function includes only those events where at least one transition's guards are satisfied given the provided arguments.",
+      "The `enabled_events(**kwargs)` function evaluates the conditions (guards) for transitions.",
+      "The `enabled_events(**kwargs)` function is useful when conditions depend on runtime data.",
+      "The `allowed_events` function checks the structure of the state machine.",
+      "The `enabled_events(**kwargs)` function checks both the structure and the conditions for transitions."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q042": [
+      "The expression 'cond=lambda self: ...' fails in python-statemachine because plain callables are called unbound.",
+      "Plain callables, like lambdas and functions defined outside the class body, are called unbound in python-statemachine.",
+      "In python-statemachine, unbound callables do not have 'self' injected.",
+      "In python-statemachine, you should use 'machine' to receive the state machine instance instead of 'self'.",
+      "In python-statemachine, 'self' is only available when the callable resolves to a bound method.",
+      "A callable resolves to a bound method in python-statemachine when it is an attribute of the state machine class.",
+      "A callable resolves to a bound method in python-statemachine when it is either referenced by name or defined in the class body and passed by reference."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q043": [
+      "Validator exceptions are not converted to error.execution events when catch_errors_as_events is set to True.",
+      "When catch_errors_as_events is set to True, the caller receives the validator exception directly.",
+      "The caller can handle the validator exception with try/except blocks."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q044": [
+      "A self-transition goes from a state back to itself.",
+      "A self-transition involves exiting and re-entering the state.",
+      "A self-transition runs all exit and entry actions.",
+      "A self-transition is useful when entering a state has side-effects, such as resetting a timer.",
+      "An internal transition stays in the same state without running exit or entry actions.",
+      "In an internal transition, only the 'on' callback executes.",
+      "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "The key difference between self-transitions and internal transitions is that self-transitions fire exit/enter callbacks, while internal transitions skip them."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q045": [
+      "When an event matches transitions at several levels of a compound state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "The SCXML specification states that the most specific (deepest) matching transition wins when an event matches transitions at multiple levels of the state hierarchy."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q046": [
+      "Python-statemachine validation errors raise InvalidDefinition exceptions."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q047": [
+      "Convention-based callbacks like on_enter_<state> are not validated when a statechart is instantiated.",
+      "Convention-based callbacks like on_enter_<state> are optional by design in a statechart.",
+      "Only explicitly declared callback names passed as strings to on, cond, etc., are checked when a statechart is instantiated."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q048": [
+      "Invoke handlers on the sync engine run in a thread executor.",
+      "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "Blocking I/O operations, such as network calls or file access, would freeze the event loop if executed directly."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q049": [
+      "The 'invoke_group' function allows you to run multiple callables concurrently.",
+      "The 'invoke_group' function waits for all callables to complete before sending a single 'done.invoke' event.",
+      "Independent invokes cause the transition to fire after the first callable finishes.",
+      "The 'invoke_group' function ensures that the transition only fires after every callable has finished.",
+      "The 'data' from 'invoke_group' will be a list of results in the same order as the input callables."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q050": [
+      "A compound state can resume the child that was active when it was exited by using a HistoryState.",
+      "When a compound state is exited, the HistoryState remembers which child was active.",
+      "The HistoryState allows the workflow to return to the specific child state that was active when the compound state is re-entered.",
+      "In the CoffeeOrder example, the resume transition goes back to the active child state using preparing.h, which represents the history state."
+    ],
+    "20261002_044015_fixed_c1000_o150_k5.json::q051": [
+      "When a callback raises an exception in a StateChart, the runtime exceptions do not crash the machine.",
+      "When a callback raises an exception in a StateChart, the exceptions become `error.execution` events.",
+      "`error.execution` events in a StateChart can be handled with regular transitions.",
+      "Handling exceptions as `error.execution` events allows the StateChart to manage errors gracefully without stopping its operation."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q001": [
+      "A path operation function declared with def instead of async def is run in an external threadpool in FastAPI.",
+      "A path operation function declared with def instead of async def is awaited in FastAPI.",
+      "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "Using def for path operation functions that perform blocking I/O operations may lead to worse performance in FastAPI compared to using async def.",
+      "It is generally better to use async def for path operation functions in FastAPI unless the functions are using code that performs blocking I/O."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q002": [
+      "In Python, 'async def' is used to define a coroutine function.",
+      "A coroutine function allows for asynchronous programming in Python.",
+      "A function defined with 'async def' can use the 'await' keyword to call other asynchronous functions.",
+      "A function defined with 'async def' can pause its execution while waiting for the result of an awaited function.",
+      "While a function defined with 'async def' is paused, other tasks can run concurrently.",
+      "In a FastAPI application, path operation functions are defined with 'async def' if they need to call other asynchronous functions using 'await'.",
+      "Using 'async def' is essential for non-blocking I/O operations, such as making requests to a database or an external API in FastAPI.",
+      "Functions defined with 'async def' can only be called within other 'async def' functions.",
+      "Functions defined with 'async def' must be awaited to execute properly."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q003": [
+      "You cannot call an async def function without using await in Python.",
+      "Calling an async def function without await will not work as expected in Python.",
+      "The code 'burgers = get_burgers(2)' will not work if get_burgers is an async def function and is called without await.",
+      "You must use await when calling an async def function in Python.",
+      "Await can only be used inside functions defined with async def in Python.",
+      "Functions defined with async def must be awaited when called in Python."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q004": [
+      "FastAPI is based on AnyIO as its async library.",
+      "Starlette is based on AnyIO as its async library.",
+      "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "AnyIO makes FastAPI compatible with Trio.",
+      "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "AnyIO makes Starlette compatible with Trio."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q005": [
+      "If a database library does not support using 'await', path operation functions should be declared using the normal 'def' syntax.",
+      "Most database libraries currently do not support 'await'.",
+      "Using 'def' is the appropriate choice for declaring path operation functions when the database library does not support 'await'."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q006": [
+      "FastAPI does not change how utility functions are called.",
+      "Utility functions in FastAPI can be defined with either 'def' or 'async def'.",
+      "FastAPI does not affect the way utility functions are called.",
+      "A utility function defined with 'def' in FastAPI will be called directly as written in the code.",
+      "A utility function created with 'async def' in FastAPI should be awaited when called in the code."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q007": [
+      "In FastAPI, a path operation can return a 201 'Created' status code for new items.",
+      "In FastAPI, a path operation can return a 200 'OK' status code for updates.",
+      "In FastAPI, you can return a Response directly, such as a JSONResponse, to set the appropriate status code.",
+      "In FastAPI, you can check whether an item exists to determine if a 200 or 201 status code should be returned.",
+      "In FastAPI, returning a 201 status code indicates that a new item was created.",
+      "In FastAPI, returning a 200 status code indicates that an existing item was updated."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q008": [
+      "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "FastAPI does not include additional status codes in the OpenAPI schema because it cannot know beforehand what you are going to return.",
+      "You can document additional status codes in your code using Additional Responses."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q009": [
+      "To create a parameterized dependency in FastAPI, you can define a class with a __call__ method.",
+      "The __call__ method in the class will be used by FastAPI to handle the dependency logic.",
+      "The class can have an __init__ method to accept parameters for parameterizing the dependency.",
+      "FastAPI will not interact with the __init__ method directly.",
+      "You will use the __init__ method directly in your code to set the parameters for the dependency.",
+      "You need to instantiate the class with the desired parameters to create a parameterized dependency in FastAPI.",
+      "The instance of the class will hold the parameterized state for the dependency in FastAPI.",
+      "You can pass the instance to Depends() in your path operation function to use it as a dependency in FastAPI.",
+      "FastAPI will call the instance with the necessary arguments when resolving the dependency.",
+      "You can create a dependency in FastAPI that checks if a query parameter q contains some fixed content.",
+      "You can parameterize the fixed content by creating an instance of your class with the desired value in FastAPI."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q010": [
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code after yield right after the path operation function is finished.",
+      "In FastAPI, using Depends(scope='function') for dependencies with yield executes the exit code before the response is sent back to the client.",
+      "In FastAPI, using Depends(scope='request') for dependencies with yield executes the exit code after the response is sent.",
+      "In FastAPI, Depends(scope='request') is the default scope for dependencies with yield."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q011": [
+      "The TestClient is designed to work with synchronous test functions in FastAPI.",
+      "The TestClient uses a mechanism to call asynchronous FastAPI applications from synchronous test functions.",
+      "The mechanism used by TestClient does not work when tests are run asynchronously.",
+      "To test the API in asynchronous test functions, you should use the AsyncClient from HTTPX."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q012": [
+      "The HTTPX AsyncClient does not trigger lifespan events in an application during tests.",
+      "To trigger lifespan events in an application during tests, you should use LifespanManager from florimondmanca/asgi-lifespan."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q013": [
+      "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "If the request body does not include all the attributes of the item, any omitted attributes will take their default values.",
+      "For example, if you update an item with a body that does not include the attribute 'tax' and the default value for 'tax' is 10.5, the stored data will be saved with this new 'tax' value.",
+      "This process can potentially overwrite the previously stored value of the 'tax' attribute."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q014": [
+      "To apply a partial update to a stored Pydantic model, you can use the PATCH method instead of PUT.",
+      "To apply a partial update to a stored Pydantic model, you need to retrieve the stored data.",
+      "To apply a partial update to a stored Pydantic model, you should put the retrieved data into a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, you can generate a dictionary without default values from the input model using the exclude_unset parameter.",
+      "Using the exclude_unset parameter allows you to update only the values actually set by the user in a Pydantic model.",
+      "Using the exclude_unset parameter avoids overriding already stored values with default values in a Pydantic model.",
+      "To apply a partial update to a stored Pydantic model, you can create a copy of the stored model and update its attributes with the received partial updates using the update parameter.",
+      "To apply a partial update to a stored Pydantic model, you should convert the copied model to a format suitable for storage in your database, such as using the jsonable_encoder.",
+      "To apply a partial update to a stored Pydantic model, you need to save the data to your database.",
+      "To apply a partial update to a stored Pydantic model, you should return the updated model.",
+      "The process of applying a partial update to a stored Pydantic model ensures that only the specified fields are updated while leaving the rest of the model intact."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q015": [
+      "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "Pydantic provides internal support for dataclasses.",
+      "When you use standard dataclasses in FastAPI, they are automatically converted to Pydantic's own flavor of dataclasses.",
+      "Using standard dataclasses in FastAPI allows you to benefit from features such as data validation, data serialization, and data documentation.",
+      "The features available with standard dataclasses in FastAPI are similar to those available with Pydantic models.",
+      "You can combine dataclasses with other type annotations to create nested data structures in FastAPI.",
+      "If you encounter issues with API documentation in FastAPI, you can use `pydantic.dataclasses` as a drop-in replacement for standard dataclasses."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q016": [
+      "Dataclasses have been supported in FastAPI since version 0.67.0."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q017": [
+      "Using the property `.openapi_schema` can help avoid regenerating a custom OpenAPI schema on every docs request.",
+      "The `.openapi_schema` property acts as a cache to store the generated OpenAPI schema.",
+      "By caching the schema, the application generates the OpenAPI schema only once.",
+      "The cached OpenAPI schema is used for subsequent requests after the initial generation."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q019": [
+      "The 'fastapi dev' command sets the 'FASTAPI_ENV' environment variable to 'development' before importing your app.",
+      "If 'FASTAPI_ENV' is already set, the 'fastapi dev' command preserves its existing value.",
+      "The 'fastapi dev' command allows your app's startup code to choose development-friendly behavior.",
+      "The 'fastapi dev' command enables you to provide an app-specific environment, such as 'staging'.",
+      "The 'fastapi run' command does not change the 'FASTAPI_ENV' variable.",
+      "If your app needs to detect production mode, you should set 'FASTAPI_ENV' explicitly when using 'fastapi run'."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q020": [
+      "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in the pyproject.toml file.",
+      "You can specify the entrypoint in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "This configuration will inform the fastapi command to import the app using: from main import app.",
+      "If your app is structured in a subdirectory, you would adjust the entrypoint accordingly, for example: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "The entrypoint configuration [tool.fastapi] entrypoint = \"backend.main:app\" is equivalent to: from backend.main import app.",
+      "Using the entrypoint in pyproject.toml is recommended because it allows other tools to find the app more easily.",
+      "Using the entrypoint in pyproject.toml is recommended compared to passing the path or --entrypoint option every time you call the fastapi command."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q021": [
+      "You can deploy a FastAPI app to FastAPI Cloud with one command.",
+      "The command to deploy a FastAPI app to FastAPI Cloud is 'uv run fastapi deploy'.",
+      "The command 'uv run fastapi deploy' will automatically detect your FastAPI application.",
+      "The command 'uv run fastapi deploy' will deploy your FastAPI application to the cloud.",
+      "If you are not logged in, your browser will open to complete the authentication process when deploying a FastAPI app to FastAPI Cloud.",
+      "Once deployed, you can access your FastAPI app at the provided URL."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q022": [
+      "To serve a single-page app with client-side routing using app.frontend(), you need to build your frontend first.",
+      "The frontend can be built using a command like npm run build.",
+      "After building the frontend, the generated files should be placed in a directory, such as dist.",
+      "The app.frontend() method is used to serve the directory containing the built frontend files.",
+      "You can specify the root path and the directory in app.frontend() like this: app.frontend('/', directory='dist').",
+      "To handle client-side routing properly, use the fallback='index.html' argument in app.frontend().",
+      "The fallback='index.html' argument ensures that when a user accesses a URL directly, the backend serves the index.html file.",
+      "The frontend framework manages the routing when index.html is served for direct URL access.",
+      "In most cases, app.frontend() can be used without specifying the fallback argument.",
+      "The fallback argument in app.frontend() defaults to fallback='auto'.",
+      "The fallback='auto' setting serves index.html when necessary."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q023": [
+      "If the frontend build directory passed to app.frontend() is missing, the behavior depends on the environment variable FASTAPI_ENV.",
+      "In a development environment, FastAPI will only show a warning if the frontend build output directory is missing.",
+      "In any environment other than development, FastAPI raises an error when the app is created if the frontend build directory is missing.",
+      "Raising an error in non-development environments helps catch configuration errors early before deploying an app without its frontend files.",
+      "If check_dir is set to True, FastAPI will always check the directory when the app is created.",
+      "If the directory is missing when a request is handled and check_dir is set to True, FastAPI will raise an error.",
+      "If check_dir is set to False, FastAPI will not check the directory at app creation.",
+      "If check_dir is set to False and the directory is still missing when a request is handled, FastAPI will raise an error."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q024": [
+      "The recommended tool for generating a TypeScript client from a FastAPI app is Hey API.",
+      "Hey API provides an optimized experience for the TypeScript ecosystem.",
+      "Hey API can be used via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client.",
+      "The command npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client generates a TypeScript SDK in the specified output directory."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q025": [
+      "Generated client method names like createItemItemsPost are structured based on the OpenAPI internal operation ID for each path operation.",
+      "OpenAPI requires that each operation ID is unique across all path operations.",
+      "The naming convention of generated client method names is influenced by the requirement for unique operation IDs in OpenAPI.",
+      "To make method names cleaner, you can preprocess the OpenAPI specification before generating the clients.",
+      "Preprocessing involves downloading the OpenAPI JSON to a file, such as openapi.json.",
+      "Modifying the operation IDs in the OpenAPI specification can lead to simpler method names in the generated clients.",
+      "An example of modifying operation IDs is renaming them from items-get_items to just get_items."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q026": [
+      "In Python, you should raise an HTTPException instead of returning it when handling errors in a path operation function.",
+      "HTTPException is a normal Python exception.",
+      "Raising an HTTPException will terminate the request immediately.",
+      "Raising an HTTPException sends the HTTP error to the client.",
+      "Returning an HTTPException instead of raising it would allow the rest of the code in the path operation function to continue running.",
+      "Allowing the rest of the code in the path operation function to continue running is not the desired behavior when handling errors."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q027": [
+      "You should register your exception handler for Starlette's HTTPException.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by Starlette's internal code.",
+      "Registering your exception handler for Starlette's HTTPException allows it to catch exceptions raised by a Starlette extension or plug-in.",
+      "FastAPI's HTTPException is normally used in your code.",
+      "The exception handler should be registered for Starlette's version of HTTPException."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q028": [
+      "A single server with one IP address can serve HTTPS for multiple domains using the Server Name Indication (SNI) extension.",
+      "The Server Name Indication (SNI) extension allows a server to have several HTTPS certificates.",
+      "The Server Name Indication (SNI) extension enables a server to serve multiple HTTPS domains or applications.",
+      "A server must have a single component running that listens on the public IP address to manage all HTTPS parts.",
+      "The component on the server handles receiving encrypted HTTPS requests and sending decrypted HTTP requests to the actual application.",
+      "A FastAPI application can be the actual application that receives decrypted HTTP requests from the server component.",
+      "The TLS Termination Proxy typically handles HTTPS connections on port 443.",
+      "The TLS Termination Proxy uses the SNI extension to determine which TLS certificate to use based on the domain requested by the client."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q029": [
+      "To make FastAPI CLI trust the X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.",
+      "The `--forwarded-allow-ips` option allows you to specify which IPs should be trusted for forwarded headers in FastAPI CLI.",
+      "If your application server is only receiving communication from a trusted proxy, you can set `--forwarded-allow-ips=\"*\"` to trust all incoming IPs.",
+      "Setting `--forwarded-allow-ips=\"*\"` is appropriate when the application server only receives requests from the proxy's IP.",
+      "This configuration helps the application to know its own public URL, whether it is using HTTPS, the domain, etc.",
+      "Knowing its own public URL is useful for handling redirects properly in FastAPI."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q030": [
+      "Values read from environment variables in Python are always of type 'str'.",
+      "Environment variables are external to Python.",
+      "Environment variables must be compatible with other programs and systems.",
+      "Any conversion of environment variable values to a different type must be done in code.",
+      "Validation of environment variable values must be done in code."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q031": [
+      "Using @lru_cache on a get_settings dependency allows the Settings object to be created only once.",
+      "The Settings object is created the first time the get_settings function is called when using @lru_cache.",
+      "Using @lru_cache on get_settings avoids the overhead of reading the .env file for each request.",
+      "Reading the .env file for each request can be a costly operation.",
+      "Subsequent calls to get_settings() return the same Settings object created during the first call when using @lru_cache.",
+      "Using @lru_cache on get_settings improves performance and efficiency."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q032": [
+      "FastAPI is built on top of Starlette.",
+      "FastAPI uses Starlette.",
+      "FastAPI cannot exceed the performance of Starlette.",
+      "FastAPI provides additional features on top of Starlette.",
+      "FastAPI cannot be faster than Starlette."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q033": [
+      "FastAPI is built on top of Starlette.",
+      "FastAPI uses Starlette as its underlying web framework.",
+      "FastAPI cannot be faster than Starlette because it adds additional features on top of it.",
+      "FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.",
+      "Starlette does not provide functionalities like data validation, serialization, and automatic documentation.",
+      "FastAPI's HTTPException class inherits from Starlette's HTTPException class.",
+      "FastAPI's HTTPException class can accept any JSON-able data for the detail field.",
+      "Starlette's HTTPException class only accepts strings for the detail field."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q034": [
+      "The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E.",
+      "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is Cmd + Shift + E."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q035": [
+      "To generate diagrams with python-statemachine, you need to install the 'diagrams' extra.",
+      "The 'diagrams' extra can be installed using the command: python3 -m pip install \"python-statemachine[diagrams]\".",
+      "The Graphviz system package is required for diagram generation with python-statemachine."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q036": [
+      "To get type checking and autocompletion for sm.model in a StateChart, you need to declare your model class and pass it as a type parameter to StateChart.",
+      "Declaring your model class and passing it as a type parameter to StateChart allows type checkers and IDEs to infer the type of sm.model.",
+      "Inferring the type of sm.model provides full autocompletion and type checking.",
+      "In the example provided, the model class is named OrderModel.",
+      "In the example provided, the StateChart is named OrderWorkflow.",
+      "By declaring the model class as a type parameter, sm.model is typed as OrderModel instead of Any.",
+      "Typing sm.model as OrderModel enables the IDE to provide autocompletion for sm.model.order_id.",
+      "Typing sm.model as OrderModel enables the IDE to provide autocompletion for sm.model.total.",
+      "Typing sm.model as OrderModel enables the IDE to provide autocompletion for sm.model.confirm()."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q037": [
+      "The bind_events_as_methods attribute is part of MachineMixin.",
+      "The bind_events_as_methods attribute allows events to become methods on the model itself when set to True.",
+      "When bind_events_as_methods is set to True, state machine events can be called directly as methods of the model instance.",
+      "In a model that inherits from MachineMixin, you can call model.produce() instead of using the state machine directly when bind_events_as_methods is set to True."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q038": [
+      "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "A class in a StateChart's listeners attribute creates a fresh instance of the listener class for each state machine instance.",
+      "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "Passing an already-built instance of a listener class in a StateChart's listeners attribute results in that instance being shared across all state machines that reference it.",
+      "A shared listener instance is useful for stateless listeners, such as a global logger.",
+      "A shared listener instance can handle events for multiple state machines.",
+      "The distinction between using a class and an instance in the listeners attribute allows for flexibility in managing listeners within state machines."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q039": [
+      "A listener's setup() method is not called for shared listener instances.",
+      "The setup() method is only called on factory-created instances in the listeners list.",
+      "Shared listener instances are pre-built objects.",
+      "Shared listener instances do not receive setup() calls because they are assumed to be already configured."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q040": [
+      "In a StateChart, send(event, **kwargs) places the event on the external queue.",
+      "In a StateChart, external events are processed after the current macrostep completes.",
+      "In a StateChart, calling send() means the event will be handled only after all current operations are finished.",
+      "In a StateChart, calling sm.send('cycle') will not affect the state until the current macrostep is complete.",
+      "In a StateChart, raise_(event, **kwargs) places the event on the internal queue.",
+      "In a StateChart, internal events are processed within the current macrostep, before any pending external events.",
+      "In a StateChart, calling sm.raise_('finish') will immediately affect the state without waiting for the current macrostep to complete.",
+      "In a StateChart, send() is used for external events processed later.",
+      "In a StateChart, raise_() is used for internal events processed immediately."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q041": [
+      "The difference between 'allowed_events' and 'enabled_events()' lies in how they evaluate transitions based on the current state of the state machine.",
+      "'allowed_events' is a property that returns events with at least one transition from the current state.",
+      "'allowed_events' does not consider whether the conditions (guards) for transitions are satisfied.",
+      "'allowed_events' only checks the state topology.",
+      "'allowed_events' is considered a cheap operation.",
+      "'enabled_events(**kwargs)' is a method that returns a subset of 'allowed_events'.",
+      "'enabled_events(**kwargs)' returns events where at least one transition's guards are satisfied given the provided arguments.",
+      "'enabled_events(**kwargs)' evaluates the conditions (guards) associated with the transitions.",
+      "It is necessary to pass any required keyword arguments that the guard conditions depend on when using 'enabled_events(**kwargs)'.",
+      "In summary, 'allowed_events' checks the possible transitions based on state alone.",
+      "In summary, 'enabled_events()' checks which transitions can actually occur based on the current conditions."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q042": [
+      "In python-statemachine, the expression 'cond=lambda self: ...' fails because plain callables are called unbound.",
+      "Plain callables, like lambdas and functions defined outside the class body, are called unbound in python-statemachine.",
+      "In python-statemachine, unbound callables do not have 'self' injected.",
+      "Using 'self' in the context of unbound callables in python-statemachine results in a 'TypeError'.",
+      "In python-statemachine, 'machine' should be used to receive the state machine instance instead of 'self'."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q043": [
+      "Validator exceptions are not converted to error.execution events when catch_errors_as_events is set to True.",
+      "When catch_errors_as_events is set to True, the caller receives the validator exception directly.",
+      "The caller can handle the validator exception with try/except blocks."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q044": [
+      "A self-transition goes from a state back to itself, exiting and re-entering the state.",
+      "A self-transition runs all exit and entry actions when it occurs.",
+      "A self-transition is useful when entering a state has side effects, such as resetting a timer.",
+      "In a state chart, a self-transition can be defined with the syntax 'retry = processing.to.itself(on=\"do_retry\")'.",
+      "In the example 'retry = processing.to.itself(on=\"do_retry\")', the 'do_retry' action will be executed each time the transition occurs.",
+      "In the example 'retry = processing.to.itself(on=\"do_retry\")', the state will exit and re-enter, allowing for any associated entry logic to run.",
+      "An internal transition stays in the same state without running exit or entry actions.",
+      "An internal transition only executes the specified 'on' callback.",
+      "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "An internal transition can be defined with the syntax 'add_item = shopping.to.itself(internal=True, on=\"do_add_item\")'.",
+      "In the example 'add_item = shopping.to.itself(internal=True, on=\"do_add_item\")', the 'do_add_item' action will execute without triggering any exit or entry actions."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q045": [
+      "When an event matches transitions at several levels of a compound state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "This prioritization of transitions follows the SCXML specification.",
+      "According to the SCXML specification, the most specific (deepest) matching transition wins when an event matches transitions at several levels of a compound state hierarchy."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q046": [
+      "Python-statemachine validation errors raise InvalidDefinition exceptions."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q047": [
+      "Convention-based callbacks like on_enter_<state> are not validated when a statechart is instantiated.",
+      "Convention-based callbacks like on_enter_<state> are optional by design in a statechart.",
+      "Only explicitly declared callback names passed as strings to on, cond, etc., are checked for validation in a statechart."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q048": [
+      "Invoke handlers on the sync engine run in a thread executor.",
+      "Invoke handlers on the sync engine use loop.run_in_executor.",
+      "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "Blocking I/O includes network calls, file access, or subprocess communication."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q049": [
+      "The 'invoke_group' function allows running multiple callables concurrently.",
+      "The 'invoke_group' function ensures that a transition only fires after every callable has completed.",
+      "The 'data' returned by 'invoke_group' will be a list of results in the same order as the input callables.",
+      "In the provided example, 'BatchLoader' is a class that uses 'invoke_group' to manage state transitions.",
+      "In the example, 'loading' is an initial state in the 'BatchLoader' class.",
+      "In the example, 'ready' is a final state in the 'BatchLoader' class.",
+      "In the example, the transition 'done_invoke_loading' moves from the 'loading' state to the 'ready' state.",
+      "In the example, the transition to the 'ready' state occurs only after both 'file_a.read_text()' and 'file_b.read_text()' have completed.",
+      "In the example, the 'on_enter_ready' method assigns the 'data' parameter to 'self.results'."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q050": [
+      "A compound state can resume the child that was active when it was exited by using a HistoryState.",
+      "When the compound state is exited, the HistoryState remembers which child was active.",
+      "The state machine can return to the remembered child when the compound state is resumed.",
+      "The example demonstrates the use of a resume transition that goes back to the history state preparing.h.",
+      "The history state preparing.h returns to the last active child state."
+    ],
+    "20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json::q051": [
+      "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "In a StateChart, when a callback raises an exception, it becomes an error.execution event.",
+      "In a StateChart, an error.execution event can be handled with regular transitions.",
+      "In a StateChart, if a callback raises a RuntimeError, the machine transitions to an error state.",
+      "In a StateChart, the error can be processed in an on_enter method for the error state.",
+      "In a StateChart, if a validator raises an exception, this exception is not converted to an error.execution event.",
+      "In a StateChart, if a validator raises an exception, it does not trigger error.execution transitions.",
+      "In a StateChart, if a validator raises an exception, the exception is propagated directly to the caller.",
+      "In a StateChart, exceptions raised by validators can be handled by the caller with a try/except block."
+    ]
+  }
+}

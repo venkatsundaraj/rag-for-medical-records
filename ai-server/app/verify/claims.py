@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 import json
 from app.lib.deps.rag_deps import _client
+from app.config import settings
 
-_EXTRACTION_MODEL = "gpt-4o-mini"
+_EXTRACTION_MODEL = settings.EXTRACTION_MODEL
 
 _CLAIM_SCHEMA = {
     "name": "claim_extraction",

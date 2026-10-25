@@ -34,10 +34,21 @@ _SYSTEM = """You are a strict fact-checker. You receive one CLAIM and numbered E
  
 Rules:
 1. JUDGE ONLY FROM THE EVIDENCE. Your own knowledge of the subject is irrelevant. A claim you know to be true is still no_evidence if the passages do not state or entail it.
-2. supported: a passage states the claim or entails it without a leap. Paraphrase is fine; an extra inference step is not.
-3. contradicted: a passage asserts something INCOMPATIBLE with the claim -- the opposite fact, a different value, a different owner, a scope the claim violates. Absence of a fact is never a contradiction.
+2. SELF-CONTAINED: resolve every pronoun and implicit reference, AND name the \
+mechanism the sentence is about. "The transition fires after both complete" \
+becomes "With invoke_group, the transition fires after both callables complete". \
+A reader who has not seen the answer must know which feature the claim is about.
+3. PRESERVE SCOPE AND CONDITIONS: qualifiers are part of the fact and stay in \
+the claim -- "on the sync engine", "for validators", "when bind_events_as_methods \
+is True", "unless X", "by default". Causal framing stays too: "run in a threadpool \
+because calling it directly would block" must not become "it blocks". Never \
+generalize beyond what the answer said.
 4. no_evidence: the passages are about the topic but do not decide this specific claim, or are about something else entirely. Choose this whenever you would have to guess.
-5. SCOPE MATTERS. "on the sync engine", "by default", "with def" are part of the claim. A passage about the async engine does not support a claim about the sync engine; it may contradict it if it states the engines differ.
+SKIP the non-factual: citation markers like [123], hedges ("I think"), refusals \
+("I don't know"), summary or transition sentences ("In summary, ..."), and pure \
+code blocks. Values and names that appear only inside the answer's own worked \
+example (a sample price, an invented class name) are illustrations, not facts: \
+mark them verifiable=false rather than rephrasing them into claims.
 6. Code blocks count as evidence: what the code demonstrably does supports a claim about it.
 7. Cite exactly one passage index (the decisive one) and quote its deciding phrase in the rationale.
 8. Always respond by calling the record_verdict tool. Never answer in prose.
@@ -60,9 +71,9 @@ def _format_evidence(evidence: list[Evidence]) -> str:
     )
 
 
-async def judge_claim(claim:str, evidence:list[Evidence], model:str = JUDGE_MODEL)->Verdict:
+async def judge_claim(claim:str, evidence:list[Evidence], model:str = JUDGE_MODEL, system:str | None = None)->Verdict:
     user = f"CLAIM:\n{claim}\n\nEVIDENCE:\n{_format_evidence(evidence)}"
-    resp = await _client.messages.create(model=model, messages=[{"role": "user", "content": user}],system=_SYSTEM, tools=[_VERDICT_TOOL], tool_choice={"type": "auto"}, max_tokens=1024, )
+    resp = await _client.messages.create(model=model, messages=[{"role": "user", "content": user}],system= system or _SYSTEM, tools=[_VERDICT_TOOL], tool_choice={"type": "auto"}, max_tokens=1024, )
 
     truncated = resp.stop_reason == "max_tokens"
     tag = "[truncated] " if truncated else ""
@@ -86,12 +97,12 @@ async def judge_claim(claim:str, evidence:list[Evidence], model:str = JUDGE_MODE
 
 
 
-async def judge_many(pairs:list[tuple[str, list[Evidence]]], model:str = JUDGE_MODEL, concurreny:int = 4):
+async def judge_many(pairs:list[tuple[str, list[Evidence]]], model:str = JUDGE_MODEL, concurreny:int = 4,system: str | None = None):
     sem = asyncio.Semaphore(concurreny)
 
     async def one(c:str, e:list[Evidence]):
         async with sem:
-            return await judge_claim(c, e, model)
+            return await judge_claim(c, e, model, system)
 
     return await asyncio.gather(*(one(c, e) for c,e in pairs))
 

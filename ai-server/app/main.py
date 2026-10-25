@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes.todo_router import todo
 from app.api.routes.rag_router import rag_router
 from app.api.routes.eval_router import  eval_router
+from app.api.routes.verify_router import  router as verify_router
 from app.config import settings
 from sqlalchemy import text
 from contextlib import asynccontextmanager
@@ -32,6 +33,7 @@ app.add_middleware(CORSMiddleware, allow_headers=["*"],allow_origins=["http://lo
 app.include_router(todo, prefix='/api',tags=["todo"] )
 app.include_router(rag_router, prefix='/api/rag',tags=["rag"] )
 app.include_router(eval_router, prefix='/api/eval',tags=["eval"] )
+app.include_router(verify_router, prefix='/api/verify',tags=["verify"] )
 
 @app.get('/')
 def hello():

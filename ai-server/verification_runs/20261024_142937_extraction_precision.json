@@ -1,0 +1,2649 @@
+{
+  "config": {
+    "verify_run": "verification_runs/20261023_163037_verify_20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json",
+    "judge_model": "claude-sonnet-5-5",
+    "timestamp": "2026-10-24T14:29:37.887105+00:00"
+  },
+  "aggregates": {
+    "claims": 329,
+    "extraction_precision": 0.9878,
+    "unfaithful": 4,
+    "unfaithful_and_flagged_e2e": 2,
+    "answers_with_unfaithful_claims": 4,
+    "answers_with_manufactured_flags": 2
+  },
+  "rows": [
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"When you declare a path operation function with normal `def` instead of `async def`, it is run in an external threadpool that is then awaited.\""
+    },
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a normal `def` function \"is run in an external threadpool that is then awaited, instead of being called directly.\" The claim is a compressed version of that and leaves out the threadpool."
+    },
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "faithful": false,
+      "answer_entailment": "contradicted",
+      "e2e_label": "contradicted",
+      "rationale": "The text says a normal `def` function \"is run in an external threadpool that is then awaited, instead of being called directly, as it would block the server\", so the threadpool prevents blocking. The claim says the opposite."
+    },
+    {
+      "qid": "q001",
+      "claim": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"using `def` for trivial compute-only functions may lead to worse performance in FastAPI compared to using `async def`\", which is the claim almost word for word."
+    },
+    {
+      "qid": "q001",
+      "claim": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says \"using `def` for trivial compute-only functions may lead to worse performance in FastAPI... especially if the functions perform blocking I/O operations,\" which covers the claim's blocking-I/O case."
+    },
+    {
+      "qid": "q001",
+      "claim": "In general, it's better to use async def for path operation functions unless the path operation functions are using code that performs blocking I/O.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"In general, it's better to use `async def` unless your *path operation functions* are using code that performs blocking I/O.\""
+    },
+    {
+      "qid": "q002",
+      "claim": "In Python, async def is used to define a coroutine function.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text begins: \"In Python, `async def` is used to define a coroutine function,\" which matches the claim directly."
+    },
+    {
+      "qid": "q002",
+      "claim": "A coroutine function allows for asynchronous programming.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"`async def` is used to define a coroutine function, which allows for asynchronous programming.\""
+    },
+    {
+      "qid": "q002",
+      "claim": "When you define a function with async def, it can use the await keyword to call other asynchronous functions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"When you define a function with `async def`, it can use the `await` keyword to call other asynchronous functions.\""
+    },
+    {
+      "qid": "q002",
+      "claim": "A function defined with async def can pause its execution while waiting for the result of an awaited function.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the function can pause its execution while waiting for the result of an awaited function,\" which matches the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "Pausing execution allows other tasks to run concurrently.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the function can pause its execution while waiting for the result of an awaited function, allowing other tasks to run concurrently,\" which matches the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "In a FastAPI application, you would define path operation functions with async def if you need to call other asynchronous functions using await.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"in a FastAPI application, you would define path operation functions with `async def` if you need to call other asynchronous functions using `await`.\""
+    },
+    {
+      "qid": "q002",
+      "claim": "Defining path operation functions with async def is essential for non-blocking I/O operations.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you would define path operation functions with `async def` if you need to call other asynchronous functions using `await`. This is essential for non-blocking I/O operations\", which matches the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "Non-blocking I/O operations include making requests to a database or an external API.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says async def is \"essential for non-blocking I/O operations, such as making requests to a database or an external API,\" which gives these as examples of non-blocking I/O."
+    },
+    {
+      "qid": "q002",
+      "claim": "Functions defined with async def can only be called within other async def functions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"functions defined with `async def` can only be called within other `async def` functions, and they must be awaited to execute properly.\""
+    },
+    {
+      "qid": "q002",
+      "claim": "Functions defined with async def must be awaited to execute properly.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"functions defined with `async def` ... must be awaited to execute properly,\" which matches the claim."
+    },
+    {
+      "qid": "q003",
+      "claim": "You cannot call an `async def` function without using `await` in Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"No, you cannot call an `async def` function without using `await`,\" which is the same as the claim."
+    },
+    {
+      "qid": "q003",
+      "claim": "If you try to call an `async def` function without `await`, it will not work as expected.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"If you try to call it without `await`, it will not work as expected.\""
+    },
+    {
+      "qid": "q003",
+      "claim": "You must use `await` when calling an `async def` function in Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"You must use `await` when calling an `async def` function\", which matches the claim."
+    },
+    {
+      "qid": "q003",
+      "claim": "The following code will not work: `burgers = get_burgers(2)`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the following code will not work:\" and then shows `burgers = get_burgers(2)`."
+    },
+    {
+      "qid": "q003",
+      "claim": "You must use `await` when calling an `async def` function, like this: `burgers = await get_burgers(2)`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"You must use `await` when calling an `async def` function, like this:\" and shows `burgers = await get_burgers(2)`."
+    },
+    {
+      "qid": "q003",
+      "claim": "`await` can only be used inside functions defined with `async def` in Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"`await` can only be used inside functions defined with `async def`\", which matches the claim."
+    },
+    {
+      "qid": "q003",
+      "claim": "Functions defined with `async def` must be awaited when called in Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"functions defined with `async def` must be awaited when called,\" which matches the claim directly."
+    },
+    {
+      "qid": "q004",
+      "claim": "FastAPI is based on AnyIO as its async library.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI and Starlette are based on AnyIO\", which gives the same claim about FastAPI and AnyIO."
+    },
+    {
+      "qid": "q004",
+      "claim": "Starlette is based on AnyIO as its async library.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI and Starlette are based on AnyIO\", which states the claim directly."
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`\", so the claim about asyncio compatibility is entailed."
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes FastAPI compatible with Trio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both ... `asyncio` and `Trio`,\" which entails the claim."
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says Starlette is \"based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`\", which includes asyncio compatibility."
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes Starlette compatible with Trio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both... asyncio and Trio,\" so AnyIO makes Starlette compatible with Trio."
+    },
+    {
+      "qid": "q005",
+      "claim": "If a database library doesn't support using await, you should declare your path operation functions using the normal def syntax.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"If your database library doesn't support using `await`, you should declare your path operation functions using the normal `def` syntax.\""
+    },
+    {
+      "qid": "q005",
+      "claim": "An example of declaring a path operation function using def syntax is: @app.get('/') def results(): results = some_library() return results.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text gives this exact code as an example of declaring a path operation function with normal `def`: \"@app.get('/') def results(): results = some_library() return results\"."
+    },
+    {
+      "qid": "q005",
+      "claim": "Most database libraries currently do not support await.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"most database libraries currently do not support `await`\", which matches the claim."
+    },
+    {
+      "qid": "q005",
+      "claim": "Using def is the appropriate choice when a database library does not support await.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"If your database library doesn't support using `await`, you should declare your path operation functions using the normal `def` syntax,\" and calls `def` \"the appropriate choice in this case.\""
+    },
+    {
+      "qid": "q006",
+      "claim": "FastAPI does not change how your own utility functions are called.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with \"No, FastAPI does not change how your own utility functions are called,\" which states the claim directly."
+    },
+    {
+      "qid": "q006",
+      "claim": "Any utility function that you create can be defined with either def or async def.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"Any utility function that you create can be defined with either `def` or `async def`.\""
+    },
+    {
+      "qid": "q006",
+      "claim": "FastAPI will not affect the way you call your utility functions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI will not affect the way you call it\" about utility functions, and also \"FastAPI does not change how your own utility functions are called.\""
+    },
+    {
+      "qid": "q006",
+      "claim": "If your utility function is a normal function defined with def, it will be called directly as you write it in your code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"If your utility function is a normal function with `def`, it will be called directly as you write it in your code.\""
+    },
+    {
+      "qid": "q006",
+      "claim": "If your utility function is created with async def, you should await that function when you call it in your code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"If it is created with `async def`, you should `await` that function when you call it in your code.\""
+    },
+    {
+      "qid": "q007",
+      "claim": "A path operation can return a 201 'Created' status code for new items in FastAPI.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a FastAPI path operation can return a 201 \"Created\" status code for new items by returning a `JSONResponse` with that status code."
+    },
+    {
+      "qid": "q007",
+      "claim": "A path operation can return a 200 'OK' status code for updates in FastAPI.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a path operation can return \"a 200 'OK' status code for updates\" by returning a JSONResponse with status code 200 when updating an existing item."
+    },
+    {
+      "qid": "q007",
+      "claim": "To return the appropriate status code based on the operation performed, a path operation can return a Response directly, such as a JSONResponse.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can return a `Response` directly, such as a `JSONResponse`, and set the appropriate status code based on the operation performed,\" which matches the claim."
+    },
+    {
+      "qid": "q007",
+      "claim": "If an item is being updated and it exists, the path operation would return a JSONResponse with a status code of 200.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if you are updating an item and it exists, you would return a `JSONResponse` with a status code of 200.\""
+    },
+    {
+      "qid": "q007",
+      "claim": "If a new item is being created that did not exist before, the path operation would return a JSONResponse with a status code of 201.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"If you are creating a new item that did not exist before, you would return a `JSONResponse` with a status code of 201.\""
+    },
+    {
+      "qid": "q007",
+      "claim": "The path operation can handle both scenarios of creating and updating items by checking whether the item exists or not.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This allows you to handle both scenarios within the same path operation by checking whether the item exists or not.\""
+    },
+    {
+      "qid": "q007",
+      "claim": "The path operation returns the corresponding status code based on whether the item exists or not.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the same path operation can handle both cases \"by checking whether the item exists or not and returning the corresponding status code accordingly.\""
+    },
+    {
+      "qid": "q008",
+      "claim": "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"additional status codes returned via a Response do not show up in the OpenAPI docs,\" which is the claim."
+    },
+    {
+      "qid": "q008",
+      "claim": "FastAPI does not include additional status codes in the OpenAPI schema.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI does not include them in the OpenAPI schema because it cannot know beforehand what you are going to return.\" Here \"them\" means the additional status codes, so the claim restates that sentence."
+    },
+    {
+      "qid": "q008",
+      "claim": "FastAPI cannot know beforehand what you are going to return.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"it cannot know beforehand what you are going to return,\" which matches the claim. The claim leaves out the context of additional status codes returned via a Response, but that context only explains the reason and doesn't change the statement."
+    },
+    {
+      "qid": "q008",
+      "claim": "You can document additional status codes in your code using Additional Responses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can document them in your code using Additional Responses,\" which states the claim directly."
+    },
+    {
+      "qid": "q009",
+      "claim": "To create a parameterized dependency in FastAPI, you can follow specific steps.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with \"To create a parameterized dependency in FastAPI, you can follow these steps:\" and then lists them, so it asserts the claim directly."
+    },
+    {
+      "qid": "q009",
+      "claim": "The first step to create a parameterized dependency in FastAPI is to create a callable class.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text lists steps for creating a parameterized dependency, and step 1 is \"Create a callable class\"."
+    },
+    {
+      "qid": "q009",
+      "claim": "A callable class in FastAPI should define a __call__ method.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Create a callable class: Define a class with a `__call__` method,\" which matches the claim that a callable class should define `__call__`."
+    },
+    {
+      "qid": "q009",
+      "claim": "The __call__ method in the callable class will be used by FastAPI to handle the dependency logic.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"Define a class with a `__call__` method. This method will be used by FastAPI to handle the dependency logic.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "The callable class can also have an __init__ method to accept parameters.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The class can also have an `__init__` method to accept parameters that will be used to parameterize the dependency.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "The parameters accepted in the __init__ method will be used to parameterize the dependency.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The class can also have an `__init__` method to accept parameters that will be used to parameterize the dependency.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "FastAPI will not interact with the __init__ method of the callable class.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"FastAPI will not interact with `__init__`, but you will use it directly in your code to set the parameters.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "You will use the __init__ method directly in your code to set the parameters of the callable class.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 2 says \"Use the `__init__` method to declare the parameters of the instance. FastAPI will not interact with `__init__`, but you will use it directly in your code to set the parameters.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "The third step to create a parameterized dependency in FastAPI is to create an instance of the callable class.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 3 in the text is \"**Create an instance**: Instantiate the class with the desired parameters,\" which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "You should instantiate the callable class with the desired parameters.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "Step 3 says \"Instantiate the class with the desired parameters,\" which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "The instance of the callable class will hold the parameterized state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 3 says \"Instantiate the class with the desired parameters. This instance will hold the parameterized state.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "The fourth step to create a parameterized dependency in FastAPI is to use the instance as a dependency.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 in the text reads \"Use the instance as a dependency: Pass the instance to `Depends()`\", which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can pass the instance of the callable class to Depends() in your path operation function.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 says \"Pass the instance to `Depends()` in your path operation function,\" which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "FastAPI will call the instance of the callable class with the necessary arguments when resolving the dependency.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 says \"FastAPI will call the instance with the necessary arguments when resolving the dependency,\" which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can create a dependency that checks if a query parameter q contains some fixed content.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can create a dependency that checks if a query parameter `q` contains some fixed content\", which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can parameterize the fixed content in the dependency by creating an instance of your class with the desired value.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can parameterize that fixed content by creating an instance of your class with the desired value.\""
+    },
+    {
+      "qid": "q010",
+      "claim": "The difference between Depends(scope=\"function\") and Depends(scope=\"request\") for dependencies with yield is in when the exit code after yield is executed.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the same sentence: \"The difference between `Depends(scope=\\\"function\\\")` and `Depends(scope=\\\"request\\\")` for dependencies with `yield` is in when the exit code after `yield` is executed.\""
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"function\"), the exit code after yield is executed right after the path operation function is finished.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When using `Depends(scope=\\\"function\\\")`, the exit code after `yield` is executed right after the *path operation function* is finished,\" which is the claim."
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"function\"), the exit code after yield is executed before the response is sent back to the client.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When using `Depends(scope=\"function\")`, the exit code after `yield` is executed right after the *path operation function* is finished, before the response is sent back to the client.\""
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"request\"), the exit code after yield is executed after the response is sent.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"when using `Depends(scope=\\\"request\\\")` (which is the default), the exit code after `yield` is executed after the response is sent.\""
+    },
+    {
+      "qid": "q010",
+      "claim": "Depends(scope=\"request\") is the default scope for dependencies with yield.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `Depends(scope=\"request\")` is \"(which is the default)\" for dependencies with `yield`."
+    },
+    {
+      "qid": "q011",
+      "claim": "You can't use the TestClient inside asynchronous test functions because it is designed to work with synchronous test functions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the same statement: \"You can't use the `TestClient` inside asynchronous test functions because it is designed to work with synchronous test functions.\""
+    },
+    {
+      "qid": "q011",
+      "claim": "The TestClient does some magic to call the asynchronous FastAPI application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"The `TestClient` does some magic to call the asynchronous FastAPI application.\""
+    },
+    {
+      "qid": "q011",
+      "claim": "The magic that the TestClient does doesn't work when the tests are run asynchronously.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"this magic doesn't work when the tests are run asynchronously,\" which is the claim stated almost word for word."
+    },
+    {
+      "qid": "q011",
+      "claim": "You should use the AsyncClient from HTTPX to test the API in your async test functions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you should use the `AsyncClient` from HTTPX to test the API in your async test functions.\""
+    },
+    {
+      "qid": "q012",
+      "claim": "The HTTPX AsyncClient does not trigger lifespan events in your application during tests.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `AsyncClient` does not trigger lifespan events in your application during tests,\" which matches the claim."
+    },
+    {
+      "qid": "q012",
+      "claim": "To ensure that lifespan events are triggered during tests, you should use LifespanManager from florimondmanca/asgi-lifespan.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"To ensure that these events are triggered, you should use `LifespanManager` from florimondmanca/asgi-lifespan\", which matches the claim."
+    },
+    {
+      "qid": "q012",
+      "claim": "LifespanManager is available at the GitHub repository florimondmanca/asgi-lifespan.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The text says to use `LifespanManager` from [florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan#usage), so it is available at that GitHub repository."
+    },
+    {
+      "qid": "q013",
+      "claim": "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text begins with nearly the same sentence: \"Updating an item with `PUT` might unintentionally overwrite a stored field because `PUT` is used to replace the existing data entirely.\""
+    },
+    {
+      "qid": "q013",
+      "claim": "If the request body does not include all the attributes of the item, any omitted attributes will take their default values.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says verbatim: \"If the request body does not include all the attributes of the item, any omitted attributes will take their default values.\""
+    },
+    {
+      "qid": "q013",
+      "claim": "If you update an item with a body that does not include the attribute 'tax', the stored data will be saved with the default value for 'tax'.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says that if you update an item with a body that does not include \"tax\", \"the stored data will be saved with this new `tax` value\" (the default, 10.5). The text ties this to PUT, but the claim's wording about updating an item matches it."
+    },
+    {
+      "qid": "q013",
+      "claim": "The default value for 'tax' is 10.5.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The text only uses 10.5 as a hypothetical (\"if ... the default value for \\\"tax\\\" is `10.5`\") in an illustrative example, so it doesn't assert that 10.5 is the actual default for 'tax'."
+    },
+    {
+      "qid": "q013",
+      "claim": "The stored data will be saved with the new tax value, potentially overwriting the previously stored value.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"the stored data will be saved with this new `tax` value, potentially overwriting the previously stored value,\" which matches the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would optionally use PATCH instead of PUT.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text lists \"(Optionally) use `PATCH` instead of `PUT`\" as step 1 of applying a partial update to a stored Pydantic model."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would retrieve the stored data.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text lists \"2. Retrieve the stored data\" as a step in applying a partial update to a stored Pydantic model."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would put the retrieved data in a Pydantic model.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 3 says \"Put that data in a Pydantic model,\" after step 2 retrieves the stored data. This matches the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would generate a dict without default values from the input model using the exclude_unset parameter.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 says to \"Generate a `dict` without default values from the input model using the `exclude_unset` parameter\" as part of applying a partial update to a stored Pydantic model."
+    },
+    {
+      "qid": "q014",
+      "claim": "Generating a dict without default values from the input model using the exclude_unset parameter allows you to update only the values actually set by the user.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 says: \"Generate a `dict` without default values from the input model using the `exclude_unset` parameter. This allows you to update only the values actually set by the user.\""
+    },
+    {
+      "qid": "q014",
+      "claim": "Generating a dict without default values from the input model using the exclude_unset parameter avoids the overriding of already stored values with default values.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 4 states: \"Generate a `dict` without default values from the input model using the `exclude_unset` parameter... avoiding the overriding of already stored values with default values.\""
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would create a copy of the stored model.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 5 says \"Create a copy of the stored model, updating its attributes with the received partial updates using the `update` parameter,\" which matches the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would update the attributes of the copied model with the received partial updates using the update parameter.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 5 says \"Create a copy of the stored model, updating its attributes with the received partial updates using the `update` parameter.\""
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would convert the copied model to a format suitable for storage in your database using the jsonable_encoder.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 6 says \"Convert the copied model to a format suitable for storage in your database, such as using the `jsonable_encoder`,\" which matches the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would save the data to your database.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 7 says \"Save the data to your database\" as one step of applying a partial update, so the claim matches the text, though it reduces the whole process to that one step."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would return the updated model.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The TEXT lists \"Return the updated model\" as step 8 of applying a partial update to a stored Pydantic model, so the claim matches that step."
+    },
+    {
+      "qid": "q014",
+      "claim": "This process ensures that only the specified fields are updated while leaving the rest of the model intact.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The TEXT ends with the same sentence: \"This process ensures that only the specified fields are updated while leaving the rest of the model intact.\""
+    },
+    {
+      "qid": "q015",
+      "claim": "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text begins \"FastAPI supports standard Python dataclasses by leveraging Pydantic, which provides internal support for dataclasses,\" which matches the claim."
+    },
+    {
+      "qid": "q015",
+      "claim": "Pydantic provides internal support for dataclasses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"leveraging Pydantic, which provides internal support for dataclasses,\" which is the claim."
+    },
+    {
+      "qid": "q015",
+      "claim": "When you use standard dataclasses in FastAPI, they are automatically converted to Pydantic's own flavor of dataclasses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When you use standard dataclasses in FastAPI, they are automatically converted to Pydantic's own flavor of dataclasses.\""
+    },
+    {
+      "qid": "q015",
+      "claim": "FastAPI allows you to benefit from features such as data validation, data serialization, and data documentation with standard dataclasses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says standard dataclasses in FastAPI are converted to Pydantic dataclasses, \"allowing you to benefit from features such as data validation, data serialization, and data documentation.\""
+    },
+    {
+      "qid": "q015",
+      "claim": "You can combine dataclasses with other type annotations to create nested data structures in FastAPI.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can combine dataclasses with other type annotations to create nested data structures,\" which matches the claim. The claim is about FastAPI, and the text is also about FastAPI."
+    },
+    {
+      "qid": "q015",
+      "claim": "If you encounter issues with API documentation in FastAPI, you can use pydantic.dataclasses as a drop-in replacement for standard dataclasses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"If you encounter issues with API documentation, you can use `pydantic.dataclasses` as a drop-in replacement for standard dataclasses.\""
+    },
+    {
+      "qid": "q016",
+      "claim": "Dataclasses have been supported in FastAPI since version 0.67.0.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"Dataclasses have been supported since FastAPI version `0.67.0`,\" which is the same as the claim."
+    },
+    {
+      "qid": "q017",
+      "claim": "You can avoid regenerating a custom OpenAPI schema on every docs request by using the property .openapi_schema as a cache.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"You can avoid regenerating a custom OpenAPI schema on every docs request by using the property `.openapi_schema` as a 'cache'\"."
+    },
+    {
+      "qid": "q017",
+      "claim": "Using the property .openapi_schema allows you to store your generated schema.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says to use the property `.openapi_schema` as a \"cache\" to store your generated schema, which is what the claim says."
+    },
+    {
+      "qid": "q017",
+      "claim": "Your application will generate the schema only once when using .openapi_schema.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says that using `.openapi_schema` as a \"cache\" means \"your application will generate the schema only once,\" which matches the claim."
+    },
+    {
+      "qid": "q017",
+      "claim": "The same cached schema will be used for subsequent requests when using .openapi_schema.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says using `.openapi_schema` as a cache means \"the same cached schema will be used for subsequent requests.\""
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command sets the FASTAPI_ENV environment variable to development before importing your app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The `fastapi dev` command sets the `FASTAPI_ENV` environment variable to `development` before importing your app,\" which is the claim almost word for word."
+    },
+    {
+      "qid": "q019",
+      "claim": "If FASTAPI_ENV is already set, its existing value is preserved by the fastapi dev command.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The `fastapi dev` command sets the `FASTAPI_ENV`... If `FASTAPI_ENV` is already set, its existing value is preserved,\" which is what the claim says."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command allows your app's startup code to choose development-friendly behavior.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says setting FASTAPI_ENV to development \"allows your app's startup code to choose development-friendly behavior\", which matches the claim."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command enables you to provide an app-specific environment, such as staging.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `fastapi dev` preserves an existing `FASTAPI_ENV`, \"still enabling you to provide an app-specific environment, such as `staging`.\""
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi run command does not change the FASTAPI_ENV variable.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `fastapi run` command does not change the `FASTAPI_ENV` variable; it leaves it unchanged.\""
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi run command leaves the FASTAPI_ENV variable unchanged.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `fastapi run` command does not change the `FASTAPI_ENV` variable; it leaves it unchanged.\""
+    },
+    {
+      "qid": "q019",
+      "claim": "If your app needs to detect production mode, you should set FASTAPI_ENV explicitly.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"if your app needs to detect production mode, you should set `FASTAPI_ENV` explicitly.\""
+    },
+    {
+      "qid": "q020",
+      "claim": "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in the pyproject.toml file.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence says: \"The recommended way to tell the `fastapi` command where your app is located is to configure the `entrypoint` in the `pyproject.toml` file.\""
+    },
+    {
+      "qid": "q020",
+      "claim": "You can specify the entrypoint in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says to configure the entrypoint in pyproject.toml and shows `[tool.fastapi]` with `entrypoint = \"main:app\"`."
+    },
+    {
+      "qid": "q020",
+      "claim": "This configuration will inform the fastapi command to import the app using from main import app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"This configuration will inform the `fastapi` command to import the app using: from main import app\", given entrypoint = \"main:app\"."
+    },
+    {
+      "qid": "q020",
+      "claim": "If your app is structured differently, such as in a subdirectory, you would adjust the entrypoint accordingly.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"If your app is structured differently, such as in a subdirectory, you would adjust the `entrypoint` accordingly.\""
+    },
+    {
+      "qid": "q020",
+      "claim": "You can specify the entrypoint for an app in a subdirectory in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says that for an app in a subdirectory you adjust the entrypoint, \"for example: [tool.fastapi] entrypoint = \\\"backend.main:app\\\"\" in pyproject.toml."
+    },
+    {
+      "qid": "q020",
+      "claim": "This configuration would be equivalent to from backend.main import app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the entrypoint \"backend.main:app\" \"would be equivalent to: from backend.main import app\"."
+    },
+    {
+      "qid": "q020",
+      "claim": "Using the entrypoint in pyproject.toml is recommended because it allows other tools to find the app more easily.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"Using the `entrypoint` in `pyproject.toml` is recommended because it allows other tools to find the app more easily.\""
+    },
+    {
+      "qid": "q020",
+      "claim": "Using the entrypoint in pyproject.toml is recommended compared to passing the path or --entrypoint option every time you call the fastapi command.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Using the `entrypoint` in `pyproject.toml` is recommended because it allows other tools to find the app more easily, compared to passing the path or `--entrypoint` option every time you call the `fastapi` command.\""
+    },
+    {
+      "qid": "q021",
+      "claim": "You can deploy your FastAPI app to FastAPI Cloud with one command.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"You can deploy your FastAPI app to FastAPI Cloud with just **one command**.\""
+    },
+    {
+      "qid": "q021",
+      "claim": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says to deploy to FastAPI Cloud with one command and shows \"$ uv run fastapi deploy\"."
+    },
+    {
+      "qid": "q021",
+      "claim": "The command '$ uv run fastapi deploy' will automatically detect your FastAPI application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This command will automatically detect your FastAPI application and deploy it to the cloud,\" which directly states the claim."
+    },
+    {
+      "qid": "q021",
+      "claim": "The command '$ uv run fastapi deploy' will deploy your FastAPI application to the cloud.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the command \"will automatically detect your FastAPI application and deploy it to the cloud,\" which matches the claim."
+    },
+    {
+      "qid": "q021",
+      "claim": "If you are not logged in, your browser will open to complete the authentication process.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"If you are not logged in, your browser will open to complete the authentication process.\""
+    },
+    {
+      "qid": "q021",
+      "claim": "Once deployed, you can access your FastAPI app at the provided URL.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Once deployed, you can access your app at the provided URL,\" which matches the claim."
+    },
+    {
+      "qid": "q022",
+      "claim": "To serve a single-page app (SPA) with client-side routing using app.frontend(), you can set it up after building your frontend.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"To serve a single-page app (SPA) with client-side routing using `app.frontend()`, you can set it up as follows: 1. After building your frontend...\", which matches the claim."
+    },
+    {
+      "qid": "q022",
+      "claim": "You can build your frontend using a command like npm run build.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"After building your frontend (for example, using a command like `npm run build`)\", which implies the frontend can be built with that command."
+    },
+    {
+      "qid": "q022",
+      "claim": "After building your frontend, place the generated files in a directory, such as dist.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 1 says \"After building your frontend (for example, using a command like `npm run build`), place the generated files in a directory, such as `dist`.\""
+    },
+    {
+      "qid": "q022",
+      "claim": "You can use the app.frontend() method to serve the directory.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Use the `app.frontend()` method to serve the directory,\" which states the claim directly."
+    },
+    {
+      "qid": "q022",
+      "claim": "You can specify the root path and the directory in app.frontend() like this: app.frontend(\"/\", directory=\"dist\").",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"You can specify the root path and the directory like this: `app.frontend(\\\"/\\\", directory=\\\"dist\\\")`.\""
+    },
+    {
+      "qid": "q022",
+      "claim": "To handle client-side routing properly, you should use the fallback=\"index.html\" argument in app.frontend().",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"To handle client-side routing properly, you should use the `fallback=\\\"index.html\\\"` argument.\" The later note that the default `fallback=\\\"auto\\\"` usually works doesn't change that this statement is in the text."
+    },
+    {
+      "qid": "q022",
+      "claim": "Using fallback=\"index.html\" ensures that when a user accesses a URL directly, the backend serves the index.html file.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 3 says the `fallback=\"index.html\"` argument \"ensures that when a user accesses a URL directly (like `/dashboard/settings`), the backend serves the `index.html` file.\""
+    },
+    {
+      "qid": "q022",
+      "claim": "When the backend serves the index.html file, the frontend framework can manage the routing.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the backend serves the `index.html` file \"allowing the frontend framework to manage the routing.\""
+    },
+    {
+      "qid": "q022",
+      "claim": "In most cases, you can simply use app.frontend(\"/\", directory=\"dist\") without specifying the fallback argument.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"In most cases, you can simply use `app.frontend(\\\"/\\\", directory=\\\"dist\\\")` without specifying the `fallback` argument, as it defaults to `fallback=\\\"auto\\\"`.\""
+    },
+    {
+      "qid": "q022",
+      "claim": "The fallback argument defaults to fallback=\"auto\" in app.frontend().",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says you can omit the `fallback` argument \"as it defaults to `fallback=\\\"auto\\\"`\", which matches the claim."
+    },
+    {
+      "qid": "q022",
+      "claim": "When fallback=\"auto\" is used, it serves index.html when necessary.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the default is `fallback=\"auto\"`, \"which serves `index.html` when necessary.\""
+    },
+    {
+      "qid": "q023",
+      "claim": "If the frontend build directory passed to app.frontend() is missing, the behavior depends on the environment variable FASTAPI_ENV.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the same sentence: \"If the frontend build directory passed to `app.frontend()` is missing, the behavior depends on the environment variable `FASTAPI_ENV`.\""
+    },
+    {
+      "qid": "q023",
+      "claim": "If FASTAPI_ENV is set to development, FastAPI will only show a warning if the frontend build output directory is missing.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"If `FASTAPI_ENV` is set to `development`, FastAPI will only show a warning if the frontend build output directory is missing.\""
+    },
+    {
+      "qid": "q023",
+      "claim": "In any other environment, FastAPI raises an error when the app is created if the frontend build directory is missing.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"In any other environment, FastAPI raises an error when the app is created\" if the frontend build directory is missing, which is the claim."
+    },
+    {
+      "qid": "q023",
+      "claim": "Raising an error when the app is created helps catch configuration errors early before deploying an app without its frontend files.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI raises an error when the app is created, which helps catch configuration errors early before deploying an app without its frontend files.\" The claim restates this. The text limits it to environments other than development, but the claim only says the error helps catch problems early, so the scope matches."
+    },
+    {
+      "qid": "q023",
+      "claim": "If check_dir is set to True, FastAPI will always check the directory when the app is created.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if `check_dir` is set to `True`, FastAPI will always check the directory when the app is created.\""
+    },
+    {
+      "qid": "q023",
+      "claim": "If the directory is missing when a request is handled and check_dir is set to True, FastAPI will raise an error.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says \"if `check_dir` is set to `True`... If the directory is missing when a request is handled, FastAPI will raise an error then,\" which matches the claim."
+    },
+    {
+      "qid": "q023",
+      "claim": "If check_dir is set to False, FastAPI will not check the directory at app creation.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"If `check_dir` is set to `False`, FastAPI will not check the directory at app creation, but will raise an error if the directory is still missing when a request is handled.\""
+    },
+    {
+      "qid": "q023",
+      "claim": "If the directory is missing when a request is handled and check_dir is set to False, FastAPI will raise an error.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"If `check_dir` is set to `False`, FastAPI will not check the directory at app creation, but will raise an error if the directory is still missing when a request is handled.\""
+    },
+    {
+      "qid": "q024",
+      "claim": "Hey API is the recommended tool for generating a TypeScript client from a FastAPI app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The text says \"The recommended tool for generating a TypeScript client from a FastAPI app is Hey API\", which is the claim."
+    },
+    {
+      "qid": "q024",
+      "claim": "Hey API provides an optimized experience for the TypeScript ecosystem.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says Hey API \"provides an optimized experience for the TypeScript ecosystem.\""
+    },
+    {
+      "qid": "q024",
+      "claim": "You can use Hey API via npx.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"You can use it via npx with the command: npx @hey-api/openapi-ts ...\", which states the claim directly."
+    },
+    {
+      "qid": "q024",
+      "claim": "The command to use Hey API via npx is `npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"You can use it via npx with the command: npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client\", which matches the claim exactly."
+    },
+    {
+      "qid": "q024",
+      "claim": "The command generates a TypeScript SDK in the specified output directory.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This will generate a TypeScript SDK in the specified output directory\" right after the npx command."
+    },
+    {
+      "qid": "q024",
+      "claim": "The specified output directory for the TypeScript SDK is `src/client`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The command uses `-o src/client` and the text says it \"will generate a TypeScript SDK in the specified output directory,\" so the specified directory is src/client."
+    },
+    {
+      "qid": "q025",
+      "claim": "Generated client method names like createItemItemsPost are structured this way because the client generator uses the OpenAPI internal operation ID for each path operation.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"Generated client method names like `createItemItemsPost` are structured this way because the client generator uses the OpenAPI internal **operation ID** for each *path operation*.\""
+    },
+    {
+      "qid": "q025",
+      "claim": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"OpenAPI requires that each operation ID is unique across all *path operations*,\" which is the claim almost word for word."
+    },
+    {
+      "qid": "q025",
+      "claim": "The requirement for unique operation IDs leads to the naming convention of generated client method names like createItemItemsPost.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"OpenAPI requires that each operation ID is unique across all path operations, which leads to this naming convention\" for names like `createItemItemsPost`."
+    },
+    {
+      "qid": "q025",
+      "claim": "You can preprocess the OpenAPI specification before generating the clients to make method names cleaner.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"To make these method names cleaner, you can preprocess the OpenAPI specification before generating the clients.\""
+    },
+    {
+      "qid": "q025",
+      "claim": "Preprocessing the OpenAPI specification involves downloading the OpenAPI JSON to a file, such as openapi.json.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says preprocessing \"involves downloading the OpenAPI JSON to a file (e.g., `openapi.json`)\", which matches the claim."
+    },
+    {
+      "qid": "q025",
+      "claim": "You can modify the operation IDs in the OpenAPI specification to remove the prefixed tag.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says you can preprocess the OpenAPI spec by \"modifying the operation IDs to remove the prefixed tag\", for example renaming `items-get_items` to `get_items`."
+    },
+    {
+      "qid": "q025",
+      "claim": "For instance, you could rename operation IDs from items-get_items to just get_items.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"For instance, you could rename operation IDs from `items-get_items` to just `get_items`.\""
+    },
+    {
+      "qid": "q025",
+      "claim": "Renaming operation IDs allows the client generator to produce simpler method names.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says renaming operation IDs from `items-get_items` to `get_items` allows \"the client generator to produce simpler method names.\""
+    },
+    {
+      "qid": "q026",
+      "claim": "You should raise an `HTTPException` in your code instead of returning it.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the claim verbatim: \"You should raise an `HTTPException` in your code instead of returning it.\""
+    },
+    {
+      "qid": "q026",
+      "claim": "Raising an `HTTPException` will terminate the request immediately.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"raising it will terminate the request immediately, sending the HTTP error to the client,\" which matches the claim."
+    },
+    {
+      "qid": "q026",
+      "claim": "Raising an `HTTPException` will send the HTTP error to the client.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"raising it will terminate the request immediately, sending the HTTP error to the client.\""
+    },
+    {
+      "qid": "q026",
+      "claim": "If you were to return an `HTTPException`, the rest of the code in your path operation function would continue to run.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The text says \"If you were to return it instead, the rest of the code in your path operation function would continue to run,\" which matches the claim."
+    },
+    {
+      "qid": "q026",
+      "claim": "Continuing to run the rest of the code in your path operation function is not the desired behavior when handling errors.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The text says that if you return the exception, \"the rest of the code in your path operation function would continue to run, which is not the desired behavior when handling errors.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "You should register your exception handler for Starlette's HTTPException.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"You should register your exception handler for Starlette's `HTTPException`.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "Registering your exception handler for Starlette's HTTPException allows your handler to catch and handle exceptions raised by Starlette's internal code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if any part of Starlette's internal code... raises a Starlette `HTTPException`, your handler will be able to catch and handle it.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "Starlette's HTTPException can be raised by a Starlette extension or plug-in.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if any part of Starlette's internal code, or a Starlette extension or plug-in, raises a Starlette `HTTPException`\", which states the claim."
+    },
+    {
+      "qid": "q027",
+      "claim": "FastAPI's HTTPException is used normally in your code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI's `HTTPException` is used normally in your code,\" which matches the claim."
+    },
+    {
+      "qid": "q027",
+      "claim": "The exception handler should be for Starlette's version of HTTPException.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the exception handler should be for Starlette's version,\" which is the claim."
+    },
+    {
+      "qid": "q028",
+      "claim": "One server with a single IP address can serve HTTPS for multiple domains by using the Server Name Indication (SNI) extension.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence says it word for word: \"One server with a single IP address can serve HTTPS for multiple domains by using the Server Name Indication (SNI) extension.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The Server Name Indication (SNI) extension allows a single server to have several HTTPS certificates.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This allows a single server to have several HTTPS certificates and serve multiple HTTPS domains/applications\" about the SNI extension."
+    },
+    {
+      "qid": "q028",
+      "claim": "The Server Name Indication (SNI) extension allows a single server to serve multiple HTTPS domains/applications.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says SNI \"allows a single server to have several HTTPS certificates and serve multiple HTTPS domains/applications.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The server must have a single component (program) running that listens on the public IP address.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"The server must have a single component (program) running that listens on the public IP address and manages all the HTTPS parts\"."
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) manages all the HTTPS parts.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The server must have a single component (program) running that listens on the public IP address and manages all the HTTPS parts.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) receives encrypted HTTPS requests.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the single component (program) manages all HTTPS parts, \"including receiving encrypted HTTPS requests\"."
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) sends decrypted HTTP requests to the actual application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the single component (program) handles \"receiving encrypted HTTPS requests and sending decrypted HTTP requests to the actual application.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The actual application can be a FastAPI application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says decrypted HTTP requests are sent \"to the actual application, such as a FastAPI application,\" which states the claim."
+    },
+    {
+      "qid": "q028",
+      "claim": "The TLS Termination Proxy is typically the process that handles the HTTPS connections on port 443.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"The TLS Termination Proxy is typically the process that handles the HTTPS connections on port 443.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The TLS Termination Proxy uses the SNI extension to determine which TLS certificate to use based on the domain requested by the client.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"It uses the SNI extension to determine which TLS certificate to use based on the domain requested by the client,\" where \"It\" is the TLS Termination Proxy."
+    },
+    {
+      "qid": "q029",
+      "claim": "To make FastAPI CLI trust the X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence states the claim verbatim: \"To make FastAPI CLI trust the X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.\""
+    },
+    {
+      "qid": "q029",
+      "claim": "The CLI option `--forwarded-allow-ips` allows you to specify which IPs should be trusted for the X-Forwarded headers.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you can use the CLI option `--forwarded-allow-ips`. This option allows you to specify which IPs should be trusted for those forwarded headers.\""
+    },
+    {
+      "qid": "q029",
+      "claim": "If your application server is only receiving communication from the trusted proxy, you can set `--forwarded-allow-ips=\"*\"` to trust all incoming IPs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if your application server is only receiving communication from the trusted proxy, you can set it to `--forwarded-allow-ips=\\\"*\\\"` to trust all incoming IPs.\""
+    },
+    {
+      "qid": "q029",
+      "claim": "Setting `--forwarded-allow-ips=\"*\"` is appropriate because the application will only receive requests from the proxy's IP.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says that if the server only gets traffic from the trusted proxy, you can set `--forwarded-allow-ips=\"*\"` \"as it will only receive requests from the proxy's IP\". The claim keeps that condition, so it is supported."
+    },
+    {
+      "qid": "q029",
+      "claim": "Trusting the X-Forwarded headers helps the application to know its own public URL.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says trusting the X-Forwarded headers via `--forwarded-allow-ips` \"helps the application to know its own public URL, whether it is using HTTPS, the domain, etc.\""
+    },
+    {
+      "qid": "q029",
+      "claim": "Knowing its own public URL is useful for handling redirects properly in FastAPI.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the configuration helps the application \"know its own public URL, whether it is using HTTPS, the domain, etc., which is useful for handling redirects properly.\""
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python will always be of type str.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Values read from environment variables in Python will always be of type `str`\", which matches the claim word for word."
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python are external to Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says environment variable values \"are external to Python and must be compatible with other programs and systems,\" which is the claim."
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python must be compatible with other programs and systems.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says env values \"are external to Python and must be compatible with other programs and systems,\" which matches the claim."
+    },
+    {
+      "qid": "q030",
+      "claim": "Any conversion to a different type or validation of values read from environment variables in Python has to be done in code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"Any conversion to a different type or validation has to be done in code,\" in the context of values read from environment variables in Python."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency is beneficial.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with \"Using `@lru_cache` on a `get_settings` dependency is beneficial because it allows the `Settings` object to be created only once,\" which states the claim directly."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency allows the Settings object to be created only once, the first time the function is called.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Using `@lru_cache` on a `get_settings` dependency... allows the `Settings` object to be created only once, the first time the function is called,\" which matches the claim."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency avoids the overhead of reading the .env file for each request.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says using `@lru_cache` on `get_settings` \"avoids the overhead of reading the `.env` file for each request,\" which is the claim."
+    },
+    {
+      "qid": "q031",
+      "claim": "Reading the .env file for each request can be a costly operation.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says caching \"avoids the overhead of reading the `.env` file for each request, which can be a costly operation,\" which states the claim directly."
+    },
+    {
+      "qid": "q031",
+      "claim": "Subsequent calls to get_settings() will return the same object that was created during the first call.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"subsequent calls to `get_settings()` will return the same object that was created during the first call.\""
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency improves performance and efficiency.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says that using `@lru_cache` on `get_settings` returns the same `Settings` object on later calls, \"thus improving performance and efficiency.\""
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot be faster than Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states directly: \"No, FastAPI cannot be faster than Starlette because FastAPI is built on top of Starlette.\""
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI is built on top of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI is built on top of Starlette,\" which is the claim stated directly."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI uses Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Since FastAPI uses Starlette\" and \"FastAPI is built on top of Starlette\", which directly states the claim."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot exceed the performance of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Since FastAPI uses Starlette, it cannot exceed its performance,\" which is the claim."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI provides additional features on top of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI does provide additional features on top of Starlette,\" which is the claim itself."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot be faster than Starlette because it is built on top of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI cannot be faster than Starlette because FastAPI is built on top of Starlette,\" which is the claim in nearly the same words."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI is built on top of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"**FastAPI** is built on top of **Starlette**\", which is the claim stated directly."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI uses Starlette as its underlying web framework.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"FastAPI is built on top of Starlette, which means it uses Starlette as its underlying web framework.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI cannot be faster than Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"This relationship implies that FastAPI cannot be faster than Starlette, as it adds additional features on top of it.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI adds additional features on top of Starlette.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says FastAPI \"adds additional features on top of it,\" meaning on top of Starlette, which is the claim."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides essential functionalities for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides data validation for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides serialization for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides automatic documentation for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have data validation functionalities.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says FastAPI provides \"data validation, serialization, and automatic documentation, which are not present in Starlette itself,\" so Starlette has no data validation."
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have serialization functionalities.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says FastAPI provides \"data validation, serialization, and automatic documentation, which are not present in Starlette itself,\" so Starlette has no serialization."
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have automatic documentation functionalities.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says FastAPI provides \"data validation, serialization, and automatic documentation, which are not present in Starlette itself,\" so Starlette has no automatic documentation."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI's HTTPException class inherits from Starlette's HTTPException.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"FastAPI's `HTTPException` class also inherits from Starlette's `HTTPException`\"."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI's HTTPException can accept any JSON-able data for the detail field.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI's version can accept any JSON-able data for the `detail` field, while Starlette's version only accepts strings.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette's HTTPException only accepts strings for the detail field.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"FastAPI's version can accept any JSON-able data for the `detail` field, while Starlette's version only accepts strings.\""
+    },
+    {
+      "qid": "q034",
+      "claim": "The keyboard shortcut for route search in the FastAPI VS Code extension is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The keyboard shortcut for route search in the FastAPI VS Code extension is Ctrl + Shift + E\", and it adds a macOS variant that the claim leaves out."
+    },
+    {
+      "qid": "q034",
+      "claim": "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"(on macOS: Cmd + Shift + E)\" as the route search shortcut in the FastAPI VS Code extension."
+    },
+    {
+      "qid": "q035",
+      "claim": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"you need to install the `diagrams` extra\" to generate diagrams with python-statemachine."
+    },
+    {
+      "qid": "q035",
+      "claim": "You can install the diagrams extra for python-statemachine using the command 'python3 -m pip install \"python-statemachine[diagrams]\"'.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says to install the `diagrams` extra using `python3 -m pip install \"python-statemachine[diagrams]\"`, which is the claim."
+    },
+    {
+      "qid": "q035",
+      "claim": "You need to have the Graphviz system package installed to generate diagrams with python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you will need to have the Graphviz system package installed, as it is required for diagram generation,\" which matches the claim."
+    },
+    {
+      "qid": "q035",
+      "claim": "Graphviz is required for diagram generation with python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"you will need to have the Graphviz system package installed, as it is required for diagram generation.\""
+    },
+    {
+      "qid": "q036",
+      "claim": "To get type checking and autocompletion for `sm.model` in a `StateChart`, you need to declare your model class.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with \"you need to declare your model class and pass it as a type parameter to `StateChart`\", so declaring the model class is a stated requirement. The claim leaves out the type-parameter step but doesn't change the meaning."
+    },
+    {
+      "qid": "q036",
+      "claim": "You need to pass your model class as a type parameter to `StateChart`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says \"you need to declare your model class and pass it as a type parameter to `StateChart`\", which is the claim's wording. The claim leaves out the purpose, \"to get type checking and autocompletion\", but the requirement itself is stated."
+    },
+    {
+      "qid": "q036",
+      "claim": "Passing your model class as a type parameter to `StateChart` allows type checkers and IDEs to infer the type of `sm.model`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"pass it as a type parameter to `StateChart`. This allows type checkers and IDEs to infer the type of `sm.model`.\""
+    },
+    {
+      "qid": "q036",
+      "claim": "Inferring the type of `sm.model` provides full autocompletion and type checking.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says declaring the model class as a type parameter \"allows type checkers and IDEs to infer the type of `sm.model`, providing full autocompletion and type checking.\""
+    },
+    {
+      "qid": "q036",
+      "claim": "An example of declaring a model class is `class OrderWorkflow(StateChart[\"OrderModel\"]):`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text gives exactly this code as its example: `class OrderWorkflow(StateChart[\"OrderModel\"]):` for passing the model class as a type parameter."
+    },
+    {
+      "qid": "q036",
+      "claim": "By declaring the model class as `OrderModel`, `sm.model` is typed as `OrderModel` instead of `Any`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"By doing this, `sm.model` is typed as `OrderModel` instead of `Any`\", after declaring the model class and passing it as a type parameter to `StateChart`."
+    },
+    {
+      "qid": "q036",
+      "claim": "Typing `sm.model` as `OrderModel` enables the IDE to provide autocompletion for `sm.model.order_id`, `sm.model.total`, and `sm.model.confirm()`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"`sm.model` is typed as `OrderModel` instead of `Any`, which enables the IDE to provide autocompletion for `sm.model.order_id`, `sm.model.total`, and `sm.model.confirm()`.\""
+    },
+    {
+      "qid": "q037",
+      "claim": "The `bind_events_as_methods` attribute in `MachineMixin` allows events to become methods on the model itself.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"The `bind_events_as_methods` attribute in `MachineMixin` allows events to become methods on the model itself.\""
+    },
+    {
+      "qid": "q037",
+      "claim": "When the `bind_events_as_methods` attribute is set to `True`, you can call state machine events directly as methods of the model instance.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"When this attribute is set to `True`, you can call state machine events directly as methods of the model instance.\""
+    },
+    {
+      "qid": "q037",
+      "claim": "If you have a model that inherits from `MachineMixin`, you can call `model.produce()` instead of using the state machine directly.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The text says events become model methods only \"When this attribute [`bind_events_as_methods`] is set to `True`\". The claim drops that condition and presents `model.produce()` as available to any `MachineMixin` model."
+    },
+    {
+      "qid": "q038",
+      "claim": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When you put a **class** in a StateChart's `listeners` attribute, it acts as a factory,\" which is the claim."
+    },
+    {
+      "qid": "q038",
+      "claim": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When you put a class in a StateChart's `listeners` attribute, it acts as a factory, creating a fresh instance of that listener class for each state machine instance.\""
+    },
+    {
+      "qid": "q038",
+      "claim": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"each state machine will have its own separate listener instance\" when a class is put in `listeners`, acting as a factory."
+    },
+    {
+      "qid": "q038",
+      "claim": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a class in `listeners` creates a separate listener instance per state machine, \"allowing for independent logging or handling of events.\""
+    },
+    {
+      "qid": "q038",
+      "claim": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if you pass an already-built **instance** of a listener class, that instance will be shared across all state machines that reference it.\""
+    },
+    {
+      "qid": "q038",
+      "claim": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a shared instance \"is useful for stateless listeners, such as a global logger, where you want to maintain a single instance that handles events for multiple state machines.\""
+    },
+    {
+      "qid": "q038",
+      "claim": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a shared instance \"is useful for stateless listeners, such as a global logger, where you want to maintain a single instance that handles events for multiple state machines.\""
+    },
+    {
+      "qid": "q038",
+      "claim": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This distinction allows for flexibility in how listeners are managed and utilized within state machines,\" which is the claim almost word for word."
+    },
+    {
+      "qid": "q039",
+      "claim": "A listener's `setup()` method is not called for shared listener instances.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"a listener's `setup()` method is not called for shared listener instances,\" which is the claim stated directly."
+    },
+    {
+      "qid": "q039",
+      "claim": "A listener's `setup()` method is only called on factory-created instances.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"The `setup()` method is only called on factory-created instances,\" which is the claim almost word for word."
+    },
+    {
+      "qid": "q039",
+      "claim": "Factory-created instances are callable entries in the `listeners` list.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"factory-created instances (callable entries in the `listeners` list)\", which states the claim directly."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances are pre-built objects.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Shared instances (pre-built objects) do not receive `setup()` calls,\" which directly equates shared instances with pre-built objects."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances do not receive `setup()` calls.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"Shared instances (pre-built objects) do not receive `setup()` calls\", which matches the claim."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances are assumed to be already configured.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says shared instances \"do not receive `setup()` calls, as they are assumed to be already configured.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "The difference between `send()` and `raise_()` on a StateChart is primarily related to how events are processed in relation to the current macrostep.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence states the claim verbatim: \"The difference between `send()` and `raise_()` on a StateChart is primarily related to how events are processed in relation to the current macrostep.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "`send(event, **kwargs)` places the event on the external queue.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"`send(event, **kwargs)` places the event on the **external queue**.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "External events are processed after the current macrostep completes.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"External events are processed after the current macrostep completes.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "If you call `send()`, the event will be handled only after all current operations are finished.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"if you call `send()`, the event will be handled only after all current operations are finished.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "Calling `sm.send(\"cycle\")` will not affect the state until the current macrostep is complete.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"calling `sm.send(\"cycle\")` will not affect the state until the current macrostep is complete.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "`raise_(event, **kwargs)` places the event on the internal queue.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"`raise_(event, **kwargs)` places the event on the **internal queue**.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "Internal events are processed within the current macrostep, before any pending external events.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states verbatim: \"Internal events are processed within the current macrostep, before any pending external events.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "It is useful to use `raise_()` when you need to trigger follow-up transitions immediately within a callback.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This is useful when you need to trigger follow-up transitions immediately within a callback\" about `raise_()`."
+    },
+    {
+      "qid": "q040",
+      "claim": "Calling `sm.raise_(\"finish\")` will immediately affect the state without waiting for the current macrostep to complete.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"calling `sm.raise_(\\\"finish\\\")` will immediately affect the state without waiting for the current macrostep to complete.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "`send()` is for external events processed later.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"In summary, `send()` is for external events processed later, while `raise_()` is for internal events processed immediately.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "`raise_()` is for internal events processed immediately.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's summary says \"`raise_()` is for internal events processed immediately,\" which matches the claim."
+    },
+    {
+      "qid": "q041",
+      "claim": "The difference between `allowed_events` and `enabled_events()` lies in how they evaluate transitions based on the current state of the state machine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the same sentence: \"The difference between `allowed_events` and `enabled_events()` lies in how they evaluate transitions based on the current state of the state machine.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` returns events that have at least one transition from the current state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `allowed_events` \"returns events that have at least one transition from the current state, regardless of whether the conditions (guards)... are satisfied.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` does not consider whether the conditions (guards) for those transitions are satisfied.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `allowed_events` returns events with a transition from the current state, \"regardless of whether the conditions (guards) for those transitions are satisfied.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` only checks the state topology.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `allowed_events` \"only checks the state topology\" and doesn't evaluate guards."
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` is considered a cheap operation.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says `allowed_events` \"only checks the state topology and is considered a cheap operation.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "`enabled_events(**kwargs)` returns a subset of `allowed_events` where at least one transition's guards are satisfied given the provided arguments.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"`enabled_events(**kwargs)`: This method returns a subset of `allowed_events` where at least one transition's guards are satisfied given the provided arguments.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "`enabled_events(**kwargs)` evaluates the conditions (guards) associated with the transitions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says of `enabled_events(**kwargs)`: \"It evaluates the conditions (guards) associated with the transitions.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "It is necessary to pass any required keyword arguments to `enabled_events(**kwargs)` that the guard conditions depend on.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says evaluating guards makes \"it necessary to pass any required keyword arguments that the guard conditions depend on.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "In summary, `allowed_events` checks the possible transitions based on state alone.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's summary says \"`allowed_events` checks the possible transitions based on state alone,\" which is the claim word for word."
+    },
+    {
+      "qid": "q041",
+      "claim": "In summary, `enabled_events()` checks which of the transitions can actually occur based on the current conditions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's summary says \"`enabled_events()` checks which of those transitions can actually occur based on the current conditions,\" which matches the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "The expression `cond=lambda self: ...` fails in python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The expression `cond=lambda self: ...` fails in python-statemachine\" because `self` is not injected into plain callables like lambdas."
+    },
+    {
+      "qid": "q042",
+      "claim": "Plain callables, like lambdas and functions defined outside the class body, are called unbound in python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"plain callables, like lambdas and functions defined outside the class body, are called **unbound**\", which is the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "In unbound callables, `self` is not injected.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says plain callables \"are called **unbound**, meaning that `self` is not injected,\" which is the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "You should use `machine` to receive the state machine instance in python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"Instead, you should use `machine` to receive the state machine instance,\" which matches the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "Using `self` in the context of `cond=lambda self: ...` results in a TypeError when evaluated in python-statemachine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"using `self` in this context results in a `TypeError` when evaluated\" for `cond=lambda self: ...` in python-statemachine."
+    },
+    {
+      "qid": "q043",
+      "claim": "Validator exceptions are not converted to error.execution events when catch_errors_as_events is True.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"validator exceptions are **not** converted to `error.execution` events even when `catch_errors_as_events = True`\", which is the claim."
+    },
+    {
+      "qid": "q043",
+      "claim": "The caller receives the exception directly when catch_errors_as_events is True.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The text only says \"validator exceptions are not converted... even when `catch_errors_as_events = True`. The caller receives the exception directly\", but the claim drops the validator-only scope and applies it to all exceptions."
+    },
+    {
+      "qid": "q043",
+      "claim": "The caller can handle the exception with try/except when catch_errors_as_events is True.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says validator exceptions are not converted to events \"even when `catch_errors_as_events = True`\" and that the caller \"can handle it with `try`/`except`.\" The claim's \"the exception\" reads as that same validator exception."
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition goes from a state back to itself, exiting and re-entering the state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states: \"A self-transition goes from a state back to itself, exiting and re-entering the state.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition runs all exit and entry actions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a self-transition exits and re-enters the state, \"which means it runs all exit and entry actions.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition is useful when entering a state has side effects, such as resetting a timer.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This is useful when entering a state has side effects, such as resetting a timer\" about self-transitions."
+    },
+    {
+      "qid": "q044",
+      "claim": "In a state chart, a self-transition can be defined with the syntax 'retry = processing.to.itself(on=\"do_retry\")'.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"in a state chart, a self-transition can be defined as follows: retry = processing.to.itself(on=\\\"do_retry\\\")\"."
+    },
+    {
+      "qid": "q044",
+      "claim": "The 'do_retry' action will be executed each time the self-transition occurs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `do_retry` action will be executed each time the transition occurs\" for the self-transition `retry`."
+    },
+    {
+      "qid": "q044",
+      "claim": "The state will exit and re-enter during a self-transition.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a self-transition goes \"from a state back to itself, exiting and re-entering the state, which means it runs all exit and entry actions.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "Any associated entry logic will run during a self-transition.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a self-transition \"runs all exit and entry actions\" and that the state re-enters, \"allowing for any associated entry logic to run.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition stays in the same state without running exit or entry actions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"an internal transition stays in the same state without running exit or entry actions; only the specified `on` callback executes.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition only executes the specified 'on' callback.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says an internal transition \"stays in the same state without running exit or entry actions; only the specified `on` callback executes.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"This is useful for pure data updates that shouldn't re-trigger entry logic\" about internal transitions."
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition can be defined with the syntax 'add_item = shopping.to.itself(internal=True, on=\"do_add_item\")'.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"An internal transition can be defined like this:\" and then shows `add_item = shopping.to.itself(internal=True, on=\"do_add_item\")`."
+    },
+    {
+      "qid": "q044",
+      "claim": "The 'do_add_item' action will execute during an internal transition without triggering any exit or entry actions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `do_add_item` action will execute without triggering any exit or entry actions\" for the internal transition defined with internal=True."
+    },
+    {
+      "qid": "q045",
+      "claim": "When an event matches transitions at several levels of a compound state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states the claim verbatim: \"transitions from descendant states take priority over transitions from ancestor states.\""
+    },
+    {
+      "qid": "q045",
+      "claim": "Transitions from descendant states take priority over transitions from ancestor states in a compound state hierarchy.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"transitions from descendant states take priority over transitions from ancestor states\" when an event matches at several levels of a compound state hierarchy."
+    },
+    {
+      "qid": "q045",
+      "claim": "The SCXML specification states that the most specific (deepest) matching transition wins when an event matches transitions at several levels of a compound state hierarchy.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This follows the SCXML specification: the most specific (deepest) matching transition wins\" when an event matches transitions at several levels of a compound state hierarchy."
+    },
+    {
+      "qid": "q045",
+      "claim": "The most specific (deepest) matching transition wins according to the SCXML specification.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"This follows the SCXML specification: the most specific (deepest) matching transition wins.\""
+    },
+    {
+      "qid": "q046",
+      "claim": "Python-statemachine validation errors raise exceptions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"Python-statemachine validation errors raise `InvalidDefinition` exceptions,\" which entails that they raise exceptions."
+    },
+    {
+      "qid": "q046",
+      "claim": "The exceptions raised by Python-statemachine validation errors are called `InvalidDefinition` exceptions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text states \"Python-statemachine validation errors raise `InvalidDefinition` exceptions,\" which matches the claim."
+    },
+    {
+      "qid": "q047",
+      "claim": "Convention-based callbacks like `on_enter_<state>` are not validated when a statechart is instantiated.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"convention-based callbacks like `on_enter_<state>` are **not** validated when a statechart is instantiated.\""
+    },
+    {
+      "qid": "q047",
+      "claim": "Convention-based callbacks like `on_enter_<state>` are optional by design.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"They are optional by design\" about convention-based callbacks like `on_enter_<state>`, which is the claim."
+    },
+    {
+      "qid": "q047",
+      "claim": "Only explicitly declared callback names are checked for validation when a statechart is instantiated.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \\\"only explicitly declared callback names (passed as strings to `on`, `cond`, etc.) are checked for validation\\\" and that convention-based callbacks are not validated at instantiation."
+    },
+    {
+      "qid": "q047",
+      "claim": "Explicitly declared callback names are passed as strings to `on`, `cond`, etc.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"only explicitly declared callback names (passed as strings to `on`, `cond`, etc.) are checked for validation,\" which states the claim."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine run in a thread executor.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text states \"Invoke handlers on the sync engine run in a **thread executor** using `loop.run_in_executor`\", which is the claim."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine run using loop.run_in_executor.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says \"Invoke handlers on the sync engine run in a thread executor using `loop.run_in_executor`\", which is the claim."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says invoke handlers on the sync engine run in a thread executor via `loop.run_in_executor`, \"wrapped in an `asyncio.Task`.\""
+    },
+    {
+      "qid": "q048",
+      "claim": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says handlers run in a thread executor because \"blocking I/O ... would freeze the event loop if run directly,\" which matches the claim in the sync-engine context."
+    },
+    {
+      "qid": "q048",
+      "claim": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"blocking I/O (such as network calls, file access, or subprocess communication)\", which gives the same examples the claim lists."
+    },
+    {
+      "qid": "q049",
+      "claim": "To wait for multiple invoke handlers to all finish before transitioning, you can use the invoke_group function.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence says: \"To wait for multiple invoke handlers to all finish before transitioning, you can use the `invoke_group` function.\""
+    },
+    {
+      "qid": "q049",
+      "claim": "The invoke_group function allows you to run multiple callables concurrently.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"This allows you to run multiple callables concurrently\", which matches the claim directly."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition only fires after every callable has completed when using invoke_group.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says invoke_group \"ensures that the transition only fires after every callable has completed.\""
+    },
+    {
+      "qid": "q049",
+      "claim": "The data returned by invoke_group will be a list of results.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The `data` returned will be a list of results in the same order as the input callables,\" which entails the claim."
+    },
+    {
+      "qid": "q049",
+      "claim": "The list of results from invoke_group will be in the same order as the input callables.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"The `data` returned will be a list of results in the same order as the input callables.\""
+    },
+    {
+      "qid": "q049",
+      "claim": "In the provided example, the BatchLoader class defines a state chart.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The example code shows `class BatchLoader(StateChart):`, so BatchLoader is a state chart that defines states and transitions."
+    },
+    {
+      "qid": "q049",
+      "claim": "The loading state in the BatchLoader class is set as the initial state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example code shows `loading = State(initial=True, invoke=invoke_group(...))` in the BatchLoader class, so loading is the initial state."
+    },
+    {
+      "qid": "q049",
+      "claim": "The loading state in the BatchLoader class uses invoke_group to invoke file_a.read_text() and file_b.read_text().",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example code shows BatchLoader's `loading` State with `invoke=invoke_group(lambda: file_a.read_text(), lambda: file_b.read_text())`, which matches the claim."
+    },
+    {
+      "qid": "q049",
+      "claim": "The ready state in the BatchLoader class is defined as a final state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example code defines `ready = State(final=True)` in the BatchLoader class, so ready is a final state."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition from loading to ready is named done_invoke_loading.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example code defines `done_invoke_loading = loading.to(ready)`, so the loading-to-ready transition is named done_invoke_loading."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition to the ready state will only occur after both file_a.read_text() and file_b.read_text() have completed.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "contradicted",
+      "rationale": "The text says \"the transition to the `ready` state will only occur after both `file_a.read_text()` and `file_b.read_text()` have completed.\""
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class assigns the data to self.results.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example code in the text defines BatchLoader.on_enter_ready(self, data=None, **kwargs) with the body \"self.results = data\"."
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class accepts data as a parameter.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The example defines `def on_enter_ready(self, data=None, **kwargs)` inside `BatchLoader`, so the method accepts `data`."
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class accepts additional keyword arguments as parameters.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The example defines `def on_enter_ready(self, data=None, **kwargs)`, so the method accepts additional keyword arguments via **kwargs."
+    },
+    {
+      "qid": "q050",
+      "claim": "A compound state can resume the child that was active when it was exited by using a HistoryState.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text's first sentence states the claim verbatim: \"A compound state can resume the child that was active when it was exited by using a `HistoryState`.\""
+    },
+    {
+      "qid": "q050",
+      "claim": "When the compound state is exited, the HistoryState remembers which child was active.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says: \"When the compound state is exited, the `HistoryState` remembers which child was active.\""
+    },
+    {
+      "qid": "q050",
+      "claim": "The state machine can return to the active child when the compound state is resumed.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the HistoryState \"remembers which child was active, allowing the state machine to return to that child when the compound state is resumed.\""
+    },
+    {
+      "qid": "q050",
+      "claim": "The example demonstrates that the resume transition goes back to the history state preparing.h.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the `resume` transition goes back to the history state `preparing.h`\" in the example."
+    },
+    {
+      "qid": "q050",
+      "claim": "The history state preparing.h returns to the last active child state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the `resume` transition goes back to the history state `preparing.h`, \"which returns to the last active child state.\""
+    },
+    {
+      "qid": "q051",
+      "claim": "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text opens with the same sentence: \"When a callback raises an exception in a `StateChart`, the runtime exception does not crash the machine.\""
+    },
+    {
+      "qid": "q051",
+      "claim": "When a callback raises an exception in a StateChart, the runtime exception becomes an error.execution event.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"When a callback raises an exception in a `StateChart`... it becomes an `error.execution` event that can be handled with regular transitions.\""
+    },
+    {
+      "qid": "q051",
+      "claim": "The error.execution event can be handled with regular transitions in a StateChart.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says the exception \"becomes an `error.execution` event that can be handled with regular transitions\" in a `StateChart`."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The text says \"if a callback raises a `RuntimeError`, the machine transitions to an error state,\" which matches the claim's scope of a callback in a StateChart."
+    },
+    {
+      "qid": "q051",
+      "claim": "The error can be processed in an on_enter method for the error state in a StateChart.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"the machine transitions to an error state, and the error can be processed in an `on_enter` method for that state\" in a StateChart."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, this exception is not converted to an error.execution event.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if a validator raises an exception, this exception is not converted to an `error.execution` event\"."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, it does not trigger error.execution transitions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a validator exception \"is not converted to an `error.execution` event, and it does not trigger `error.execution` transitions.\""
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, the exception is propagated directly to the caller.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says \"if a validator raises an exception... the exception is propagated directly to the caller\", which matches the claim."
+    },
+    {
+      "qid": "q051",
+      "claim": "The caller can handle the propagated exception from a validator in a StateChart with a try/except block.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The text says a validator's exception \"is propagated directly to the caller, allowing them to handle it with a `try`/`except` block.\""
+    }
+  ]
+}
