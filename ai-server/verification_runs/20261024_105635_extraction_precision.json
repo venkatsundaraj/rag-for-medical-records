@@ -1,0 +1,2649 @@
+{
+  "config": {
+    "verify_run": "verification_runs/20261023_163037_verify_20261002_055656_fixed_c1000_o150_hybrid_rerank_k5.json",
+    "judge_model": "claude-sonnet-5-5",
+    "timestamp": "2026-10-24T10:56:35.525191+00:00"
+  },
+  "aggregates": {
+    "claims": 329,
+    "extraction_precision": 0.1429,
+    "unfaithful": 282,
+    "unfaithful_and_flagged_e2e": 16,
+    "answers_with_unfaithful_claims": 49,
+    "answers_with_manufactured_flags": 10
+  },
+  "rows": [
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it is run in an external threadpool.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states: \"When you declare a *path operation function* with normal `def` instead of `async def`, it is run in an external threadpool that is then awaited.\""
+    },
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it is awaited instead of being called directly.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says a normal `def` path operation function \"is run in an external threadpool that is then awaited, instead of being called directly,\" which matches the claim's contrast between being awaited and being called directly."
+    },
+    {
+      "qid": "q001",
+      "claim": "When you declare a path operation function with normal def instead of async def, it blocks the server.",
+      "faithful": false,
+      "answer_entailment": "contradicted",
+      "e2e_label": "contradicted",
+      "rationale": "The passage says a normal `def` function \"is run in an external threadpool that is then awaited, instead of being called directly, as it would block the server\", so `def` does not block the server. The threadpool is used to avoid blocking."
+    },
+    {
+      "qid": "q001",
+      "claim": "Using def for trivial compute-only functions may lead to worse performance in FastAPI compared to using async def.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labelled \"answer under test\", so it is the answer restating the claim and not a documentation source, and it cannot be used to verify itself."
+    },
+    {
+      "qid": "q001",
+      "claim": "Using def for trivial compute-only functions may lead to worse performance in FastAPI if the functions perform blocking I/O operations.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself. Its own wording, \"better to use `async def` unless your *path operation functions* are using code that performs blocking I/O\", doesn't back the claim that blocking I/O makes `def` perform worse."
+    },
+    {
+      "qid": "q001",
+      "claim": "In general, it's better to use async def for path operation functions unless the path operation functions are using code that performs blocking I/O.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states: \"In general, it's better to use `async def` unless your *path operation functions* are using code that performs blocking I/O,\" which matches the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "In Python, async def is used to define a coroutine function.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"async def is used to define a coroutine function\"). It isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q002",
+      "claim": "A coroutine function allows for asynchronous programming.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, which says \"`async def` is used to define a coroutine function, which allows for asynchronous programming.\" That is the text being checked, not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q002",
+      "claim": "When you define a function with async def, it can use the await keyword to call other asynchronous functions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" and repeats the claim (\"it can use the `await` keyword to call other asynchronous functions\"). It isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q002",
+      "claim": "A function defined with async def can pause its execution while waiting for the result of an awaited function.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"the function can pause its execution while waiting for the result of an awaited function\"). It isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q002",
+      "claim": "Pausing execution allows other tasks to run concurrently.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"the function can pause its execution... allowing other tasks to run concurrently\"), not documentation, so it can't independently verify the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "In a FastAPI application, you would define path operation functions with async def if you need to call other asynchronous functions using await.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"you would define path operation functions with `async def` if you need to call other asynchronous functions using `await`\"). It isn't documentation, so it can't independently verify itself, and the cited sources [6132][6112] weren't supplied."
+    },
+    {
+      "qid": "q002",
+      "claim": "Defining path operation functions with async def is essential for non-blocking I/O operations.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't be used to check the claim. It restates the claim (\"This is essential for non-blocking I/O operations\") without any independent source."
+    },
+    {
+      "qid": "q002",
+      "claim": "Non-blocking I/O operations include making requests to a database or an external API.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"non-blocking I/O operations, such as making requests to a database or an external API\"). It is not documentation, and the sources it cites ([6132][6112]) were not provided, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "Functions defined with async def can only be called within other async def functions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely repeats the claim (\"can only be called within other `async def` functions\"). That is circular, not independent documentation, so it can't confirm or refute the claim."
+    },
+    {
+      "qid": "q002",
+      "claim": "Functions defined with async def must be awaited to execute properly.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it only repeats the claim (\"they must be awaited to execute properly [6132]\"). Using it as proof would be circular, and the cited sources are not provided."
+    },
+    {
+      "qid": "q003",
+      "claim": "You cannot call an `async def` function without using `await` in Python.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"No, you cannot call an `async def` function without using `await`\"). That is circular, and no documentation passage is supplied to check it."
+    },
+    {
+      "qid": "q003",
+      "claim": "If you try to call an `async def` function without `await`, it will not work as expected.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, and it only restates the claim (\"it will not work as expected\"). The documents it cites, [6132][6112], were not provided."
+    },
+    {
+      "qid": "q003",
+      "claim": "You must use `await` when calling an `async def` function in Python.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"You must use `await` when calling an `async def` function\"). It cites [6132][6112], but those sources aren't supplied, so the claim has no independent documentation support."
+    },
+    {
+      "qid": "q003",
+      "claim": "The following code will not work: `burgers = get_burgers(2)`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"the following code will not work: burgers = get_burgers(2)\". That is the claim restated, not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q003",
+      "claim": "You must use `await` when calling an `async def` function, like this: `burgers = await get_burgers(2)`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"You must use `await` when calling an `async def` function\"). That is circular and not documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q003",
+      "claim": "`await` can only be used inside functions defined with `async def` in Python.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"`await` can only be used inside functions defined with `async def`\". Using it to verify the claim would be circular, and no documentation passage is provided to back it up."
+    },
+    {
+      "qid": "q003",
+      "claim": "Functions defined with `async def` must be awaited when called in Python.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely repeats the claim (\"functions defined with `async def` must be awaited\") and cites sources [6132][6112] that aren't supplied, so no independent documentation settles it."
+    },
+    {
+      "qid": "q004",
+      "claim": "FastAPI is based on AnyIO as its async library.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q004",
+      "claim": "Starlette is based on AnyIO as its async library.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes FastAPI compatible with Python's standard library asyncio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes FastAPI compatible with Trio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes Starlette compatible with Python's standard library asyncio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states Starlette is \"based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q004",
+      "claim": "AnyIO makes Starlette compatible with Trio.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"FastAPI and Starlette are based on AnyIO, which makes them compatible with both Python's standard library `asyncio` and `Trio`.\""
+    },
+    {
+      "qid": "q005",
+      "claim": "If a database library doesn't support using await, you should declare your path operation functions using the normal def syntax.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"you should declare your path operation functions using the normal `def` syntax\") and cites [6113][6112], which aren't supplied, so it can't count as independent evidence."
+    },
+    {
+      "qid": "q005",
+      "claim": "An example of declaring a path operation function using def syntax is: @app.get('/') def results(): results = some_library() return results.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage gives this exact code: \"@app.get('/') def results(): results = some_library() return results\" as an example of declaring a path operation function with normal `def` syntax."
+    },
+    {
+      "qid": "q005",
+      "claim": "Most database libraries currently do not support await.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"most database libraries currently do not support `await`\"), not an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q005",
+      "claim": "Using def is the appropriate choice when a database library does not support await.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"If your database library doesn't support using `await`, you should declare your path operation functions using the normal `def` syntax,\" and calls `def` \"the appropriate choice in this case.\""
+    },
+    {
+      "qid": "q006",
+      "claim": "FastAPI does not change how your own utility functions are called.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"FastAPI does not change how your own utility functions are called\") and cites passages [6139][6138] that were not supplied, so no independent documentation supports it."
+    },
+    {
+      "qid": "q006",
+      "claim": "Any utility function that you create can be defined with either def or async def.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it repeats the claim (\"Any utility function that you create can be defined with either `def` or `async def`\") and only cites [6139][6138], which aren't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q006",
+      "claim": "FastAPI will not affect the way you call your utility functions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"FastAPI will not affect the way you call it\") and cites passages [6139][6138] that aren't supplied, so it can't verify itself."
+    },
+    {
+      "qid": "q006",
+      "claim": "If your utility function is a normal function defined with def, it will be called directly as you write it in your code.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"it will be called directly as you write it in your code\"). It is not documentation, so it can't verify itself, and the sources it cites ([6139][6138]) aren't supplied."
+    },
+    {
+      "qid": "q006",
+      "claim": "If your utility function is created with async def, you should await that function when you call it in your code.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"you should `await` that function\") and cites documentation [6139][6138] that isn't supplied, so no independent documentation backs it."
+    },
+    {
+      "qid": "q007",
+      "claim": "A path operation can return a 201 'Created' status code for new items in FastAPI.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it only repeats the claim (\"return a `JSONResponse` with a status code of 201\"), so it can't verify itself."
+    },
+    {
+      "qid": "q007",
+      "claim": "A path operation can return a 200 'OK' status code for updates in FastAPI.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself; the documentation it cites ([6265]) isn't supplied."
+    },
+    {
+      "qid": "q007",
+      "claim": "To return the appropriate status code based on the operation performed, a path operation can return a Response directly, such as a JSONResponse.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which repeats the claim (\"you can return a `Response` directly, such as a `JSONResponse`\") and cites [6265], a source that isn't supplied, so it can't verify itself."
+    },
+    {
+      "qid": "q007",
+      "claim": "If an item is being updated and it exists, the path operation would return a JSONResponse with a status code of 200.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so its statement \"if you are updating an item and it exists, you would return a `JSONResponse` with a status code of 200\" repeats the claim and can't verify it."
+    },
+    {
+      "qid": "q007",
+      "claim": "If a new item is being created that did not exist before, the path operation would return a JSONResponse with a status code of 201.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it just restates the claim (\"you would return a `JSONResponse` with a status code of 201\"), so it can't verify itself."
+    },
+    {
+      "qid": "q007",
+      "claim": "The path operation can handle both scenarios of creating and updating items by checking whether the item exists or not.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely repeats the claim and isn't documentation, so no source evidence decides it."
+    },
+    {
+      "qid": "q007",
+      "claim": "The path operation returns the corresponding status code based on whether the item exists or not.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"checking whether the item exists or not and returning the corresponding status code\"). It isn't documentation, so it can't independently verify itself."
+    },
+    {
+      "qid": "q008",
+      "claim": "Additional status codes returned via a Response do not show up in the OpenAPI docs.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"do not show up in the OpenAPI docs\"), not a documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q008",
+      "claim": "FastAPI does not include additional status codes in the OpenAPI schema.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't independently verify itself even though it says \"do not show up in the OpenAPI docs\"."
+    },
+    {
+      "qid": "q008",
+      "claim": "FastAPI cannot know beforehand what you are going to return.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states FastAPI does not include them in the schema \"because it cannot know beforehand what you are going to return.\""
+    },
+    {
+      "qid": "q008",
+      "claim": "You can document additional status codes in your code using Additional Responses.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"you can document them in your code using Additional Responses\", which is the claim itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "To create a parameterized dependency in FastAPI, you can follow specific steps.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify the claim that \"you can follow these steps\" to make a parameterized dependency."
+    },
+    {
+      "qid": "q009",
+      "claim": "The first step to create a parameterized dependency in FastAPI is to create a callable class.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"answer under test\"), not a documentation source, so it can't verify its own claim that step 1 is \"Create a callable class\"."
+    },
+    {
+      "qid": "q009",
+      "claim": "A callable class in FastAPI should define a __call__ method.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so using its \"Define a class with a `__call__` method\" line to verify the claim would be circular."
+    },
+    {
+      "qid": "q009",
+      "claim": "The __call__ method in the callable class will be used by FastAPI to handle the dependency logic.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify its own statement that \"This method will be used by FastAPI to handle the dependency logic.\""
+    },
+    {
+      "qid": "q009",
+      "claim": "The callable class can also have an __init__ method to accept parameters.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"The class can also have an `__init__` method to accept parameters\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "The parameters accepted in the __init__ method will be used to parameterize the dependency.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"accept parameters that will be used to parameterize the dependency\"), but a source can't verify itself, and no documentation passage is given."
+    },
+    {
+      "qid": "q009",
+      "claim": "FastAPI will not interact with the __init__ method of the callable class.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"FastAPI will not interact with `__init__`\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "You will use the __init__ method directly in your code to set the parameters of the callable class.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so its line \"you will use it directly in your code to set the parameters\" can't verify itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "The third step to create a parameterized dependency in FastAPI is to create an instance of the callable class.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (item 3 reads \"Create an instance\"), which is the source of the claim and not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "You should instantiate the callable class with the desired parameters.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "no_evidence",
+      "rationale": "The only passage is the answer under test, not documentation; it states the claim itself (\"Instantiate the class with the desired parameters\"), so it cannot serve as independent evidence."
+    },
+    {
+      "qid": "q009",
+      "claim": "The instance of the callable class will hold the parameterized state.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"This instance will hold the parameterized state\"; that is the claim restated, not documentation that verifies it."
+    },
+    {
+      "qid": "q009",
+      "claim": "The fourth step to create a parameterized dependency in FastAPI is to use the instance as a dependency.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage lists step \"4. **Use the instance as a dependency**: Pass the instance to `Depends()`\", which matches the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can pass the instance of the callable class to Depends() in your path operation function.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"Pass the instance to `Depends()`\"), not documentation, so it can't verify itself and no independent source settles the claim."
+    },
+    {
+      "qid": "q009",
+      "claim": "FastAPI will call the instance of the callable class with the necessary arguments when resolving the dependency.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"FastAPI will call the instance with the necessary arguments\"). It isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can create a dependency that checks if a query parameter q contains some fixed content.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently support or contradict the claim; no documentation evidence is provided."
+    },
+    {
+      "qid": "q009",
+      "claim": "You can parameterize the fixed content in the dependency by creating an instance of your class with the desired value.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it cannot verify its own statement that you \"parameterize that fixed content by creating an instance of your class with the desired value\"."
+    },
+    {
+      "qid": "q010",
+      "claim": "The difference between Depends(scope=\"function\") and Depends(scope=\"request\") for dependencies with yield is in when the exit code after yield is executed.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"is in when the exit code after `yield` is executed\"). It isn't documentation, so it can't be used to check itself."
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"function\"), the exit code after yield is executed right after the path operation function is finished.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself (it merely repeats \"executed right after the path operation function is finished\" and cites [6291], which isn't supplied)."
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"function\"), the exit code after yield is executed before the response is sent back to the client.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"executed right after the path operation function is finished, before the response is sent\") but only cites [6291], which isn't supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q010",
+      "claim": "When using Depends(scope=\"request\"), the exit code after yield is executed after the response is sent.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"executed after the response is sent\") and so can't be used to verify it."
+    },
+    {
+      "qid": "q010",
+      "claim": "Depends(scope=\"request\") is the default scope for dependencies with yield.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"(which is the default)\" but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q011",
+      "claim": "You can't use the TestClient inside asynchronous test functions because it is designed to work with synchronous test functions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"You can't use the `TestClient` inside asynchronous test functions...\") and isn't documentation, so it can't support itself."
+    },
+    {
+      "qid": "q011",
+      "claim": "The TestClient does some magic to call the asynchronous FastAPI application.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"does some magic to call the asynchronous FastAPI application\") but isn't documentation, and the sources it cites ([6108][6109]) aren't supplied."
+    },
+    {
+      "qid": "q011",
+      "claim": "The magic that the TestClient does doesn't work when the tests are run asynchronously.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"this magic doesn't work when the tests are run asynchronously\") and is not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q011",
+      "claim": "You should use the AsyncClient from HTTPX to test the API in your async test functions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"you should use the `AsyncClient` from HTTPX\") and cites sources [6108][6109] that aren't supplied, so no documentation passage backs it up."
+    },
+    {
+      "qid": "q012",
+      "claim": "The HTTPX AsyncClient does not trigger lifespan events in your application during tests.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"No, the `AsyncClient` does not trigger lifespan events\") and is not independent documentation, so nothing in the corpus settles it."
+    },
+    {
+      "qid": "q012",
+      "claim": "To ensure that lifespan events are triggered during tests, you should use LifespanManager from florimondmanca/asgi-lifespan.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"you should use `LifespanManager` from florimondmanca/asgi-lifespan\"). It is not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q012",
+      "claim": "LifespanManager is available at the GitHub repository florimondmanca/asgi-lifespan.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The passage says to use `LifespanManager` from [florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan#usage), which places it at that GitHub repository."
+    },
+    {
+      "qid": "q013",
+      "claim": "Updating an item with PUT might unintentionally overwrite a stored field because PUT is used to replace the existing data entirely.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim and cites [6042][6043], which aren't provided, so nothing independent supports or contradicts it."
+    },
+    {
+      "qid": "q013",
+      "claim": "If the request body does not include all the attributes of the item, any omitted attributes will take their default values.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"any omitted attributes will take their default values\"), so it can't be used to verify itself, and no documentation passage is supplied."
+    },
+    {
+      "qid": "q013",
+      "claim": "If you update an item with a body that does not include the attribute 'tax', the stored data will be saved with the default value for 'tax'.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"the stored data will be saved with this new `tax` value\") and cites sources [6042][6043] that were not supplied. It is not independent documentation, so it cannot verify itself."
+    },
+    {
+      "qid": "q013",
+      "claim": "The default value for 'tax' is 10.5.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The passage only uses 10.5 as a hypothetical (\"if ... the default value for \\\"tax\\\" is `10.5`\"), so it doesn't establish the actual default. It is also the answer under test, not documentation."
+    },
+    {
+      "qid": "q013",
+      "claim": "The stored data will be saved with the new tax value, potentially overwriting the previously stored value.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"the stored data will be saved with this new `tax` value\") and cites [6042][6043], which aren't supplied, so nothing independent decides it."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would optionally use PATCH instead of PUT.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"(Optionally) use `PATCH` instead of `PUT`\"). It is not independent documentation, so it cannot verify itself."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would retrieve the stored data.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so its step \"2. Retrieve the stored data.\" would be circular support and can't verify the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would put the retrieved data in a Pydantic model.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"Put that data in a Pydantic model\"), which repeats the claim and is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would generate a dict without default values from the input model using the exclude_unset parameter.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify itself; no documentation passage states that `exclude_unset` generates a dict without default values."
+    },
+    {
+      "qid": "q014",
+      "claim": "Generating a dict without default values from the input model using the exclude_unset parameter allows you to update only the values actually set by the user.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"Generate a `dict` without default values... using the `exclude_unset` parameter\") and isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q014",
+      "claim": "Generating a dict without default values from the input model using the exclude_unset parameter avoids the overriding of already stored values with default values.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so its line \"avoiding the overriding of already stored values with default values\" repeats the claim and can't verify it."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would create a copy of the stored model.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it says \"Create a copy of the stored model,\" but it can't verify itself, so no independent evidence settles the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would update the attributes of the copied model with the received partial updates using the update parameter.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"updating its attributes with the received partial updates using the `update` parameter\"). It isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would convert the copied model to a format suitable for storage in your database using the jsonable_encoder.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (step 6 repeats the claim), not documentation, so it can't independently support the claim."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would save the data to your database.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Step 7 of the listed procedure reads \"Save the data to your database,\" so saving to the database is stated as part of applying a partial update."
+    },
+    {
+      "qid": "q014",
+      "claim": "To apply a partial update to a stored Pydantic model, you would return the updated model.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself; its step 8 \"Return the updated model\" is just the last of eight steps, not a documented fact about applying the update."
+    },
+    {
+      "qid": "q014",
+      "claim": "This process ensures that only the specified fields are updated while leaving the rest of the model intact.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which is the source of the claim rather than independent documentation, so no evidence can confirm or contradict that this process updates only the specified fields."
+    },
+    {
+      "qid": "q015",
+      "claim": "FastAPI supports standard Python dataclasses by leveraging Pydantic.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't independently support the claim even though it says \"FastAPI supports standard Python dataclasses by leveraging Pydantic\"."
+    },
+    {
+      "qid": "q015",
+      "claim": "Pydantic provides internal support for dataclasses.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"Pydantic, which provides internal support for dataclasses\"), but using it to verify itself would be circular, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q015",
+      "claim": "When you use standard dataclasses in FastAPI, they are automatically converted to Pydantic's own flavor of dataclasses.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so using its statement \"automatically converted to Pydantic's own flavor of dataclasses\" would be circular."
+    },
+    {
+      "qid": "q015",
+      "claim": "FastAPI allows you to benefit from features such as data validation, data serialization, and data documentation with standard dataclasses.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself even though it repeats the claim (\"benefit from features such as data validation, data serialization, and data documentation\")."
+    },
+    {
+      "qid": "q015",
+      "claim": "You can combine dataclasses with other type annotations to create nested data structures in FastAPI.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it repeats the claim (\"you can combine dataclasses with other type annotations\") but that can't verify itself."
+    },
+    {
+      "qid": "q015",
+      "claim": "If you encounter issues with API documentation in FastAPI, you can use pydantic.dataclasses as a drop-in replacement for standard dataclasses.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim; it is not documentation evidence, so nothing independent supports or contradicts it."
+    },
+    {
+      "qid": "q016",
+      "claim": "Dataclasses have been supported in FastAPI since version 0.67.0.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"Dataclasses have been supported since FastAPI version `0.67.0`\"), not documentation, so it can't verify itself and nothing independent settles the claim."
+    },
+    {
+      "qid": "q017",
+      "claim": "You can avoid regenerating a custom OpenAPI schema on every docs request by using the property .openapi_schema as a cache.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself; it only cites \"[6255]\", which isn't supplied."
+    },
+    {
+      "qid": "q017",
+      "claim": "Using the property .openapi_schema allows you to store your generated schema.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify that `.openapi_schema` is used as a \"cache\" to store the generated schema."
+    },
+    {
+      "qid": "q017",
+      "claim": "Your application will generate the schema only once when using .openapi_schema.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states: \"using the property `.openapi_schema` as a 'cache'... your application will generate the schema only once.\""
+    },
+    {
+      "qid": "q017",
+      "claim": "The same cached schema will be used for subsequent requests when using .openapi_schema.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"the same cached schema will be used for subsequent requests\") and cites [6255], a source not in the evidence. No documentation passage backs it."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command sets the FASTAPI_ENV environment variable to development before importing your app.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"sets the `FASTAPI_ENV` environment variable to `development`\"). It isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q019",
+      "claim": "If FASTAPI_ENV is already set, its existing value is preserved by the fastapi dev command.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"its existing value is preserved\") but is not documentation, so it can't independently verify it."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command allows your app's startup code to choose development-friendly behavior.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"This allows your app's startup code to choose development-friendly behavior\"). It is not documentation, so it cannot verify itself, and no independent evidence is given."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi dev command enables you to provide an app-specific environment, such as staging.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It cites [6283] and [6284], which aren't supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi run command does not change the FASTAPI_ENV variable.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, and the cited documents [6283] and [6284] were not supplied, so nothing independent shows what `fastapi run` does to FASTAPI_ENV."
+    },
+    {
+      "qid": "q019",
+      "claim": "The fastapi run command leaves the FASTAPI_ENV variable unchanged.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, which repeats the claim (\"does not change the `FASTAPI_ENV` variable\") but is not documentation, and the sources it cites ([6283], [6284]) were not supplied."
+    },
+    {
+      "qid": "q019",
+      "claim": "If your app needs to detect production mode, you should set FASTAPI_ENV explicitly.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"you should set `FASTAPI_ENV` explicitly\") and cites [6283][6284], which aren't supplied, so nothing independent confirms it."
+    },
+    {
+      "qid": "q020",
+      "claim": "The recommended way to tell the fastapi command where your app is located is to configure the entrypoint in the pyproject.toml file.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"The recommended way to tell the `fastapi` command...\") and cites sources [6281][6282] that aren't supplied, so no documentation passage backs it up."
+    },
+    {
+      "qid": "q020",
+      "claim": "You can specify the entrypoint in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"main:app\".",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"answer under test\", which is the text being checked and not a documentation source, so it can't verify the claim."
+    },
+    {
+      "qid": "q020",
+      "claim": "This configuration will inform the fastapi command to import the app using from main import app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage shows `entrypoint = \"main:app\"` and says \"This configuration will inform the `fastapi` command to import the app using: from main import app\"."
+    },
+    {
+      "qid": "q020",
+      "claim": "If your app is structured differently, such as in a subdirectory, you would adjust the entrypoint accordingly.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify the claim. It repeats the sentence \"you would adjust the `entrypoint` accordingly\" and that would be circular."
+    },
+    {
+      "qid": "q020",
+      "claim": "You can specify the entrypoint for an app in a subdirectory in the pyproject.toml file like this: [tool.fastapi] entrypoint = \"backend.main:app\".",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage shows \"[tool.fastapi] entrypoint = \\\"backend.main:app\\\"\" as the setting for an app in a subdirectory, equivalent to \"from backend.main import app\"."
+    },
+    {
+      "qid": "q020",
+      "claim": "This configuration would be equivalent to from backend.main import app.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage shows `entrypoint = \"backend.main:app\"` and states \"This would be equivalent to: from backend.main import app\"."
+    },
+    {
+      "qid": "q020",
+      "claim": "Using the entrypoint in pyproject.toml is recommended because it allows other tools to find the app more easily.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't independently verify that the entrypoint is recommended because other tools can find the app more easily."
+    },
+    {
+      "qid": "q020",
+      "claim": "Using the entrypoint in pyproject.toml is recommended compared to passing the path or --entrypoint option every time you call the fastapi command.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"recommended ... compared to passing the path or `--entrypoint` option every time\"). It cites [6281][6282], but those passages weren't supplied, so nothing independent confirms the claim."
+    },
+    {
+      "qid": "q021",
+      "claim": "You can deploy your FastAPI app to FastAPI Cloud with one command.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify the claim. It just repeats \"with just one command\" and cites [6025], which isn't in the evidence."
+    },
+    {
+      "qid": "q021",
+      "claim": "The command to deploy a FastAPI app to FastAPI Cloud is '$ uv run fastapi deploy'.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't independently confirm that \"$ uv run fastapi deploy\" is the deploy command."
+    },
+    {
+      "qid": "q021",
+      "claim": "The command '$ uv run fastapi deploy' will automatically detect your FastAPI application.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so its statement \"This command will automatically detect your FastAPI application\" can't independently verify the claim."
+    },
+    {
+      "qid": "q021",
+      "claim": "The command '$ uv run fastapi deploy' will deploy your FastAPI application to the cloud.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"You can deploy your FastAPI app to FastAPI Cloud with just one command\" and gives `$ uv run fastapi deploy`, adding that it will \"deploy it to the cloud.\""
+    },
+    {
+      "qid": "q021",
+      "claim": "If you are not logged in, your browser will open to complete the authentication process.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"If you are not logged in, your browser will open...\") but is not independent documentation, so it cannot verify itself."
+    },
+    {
+      "qid": "q021",
+      "claim": "Once deployed, you can access your FastAPI app at the provided URL.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"Once deployed, you can access your app at the provided URL\") and cites [6025], which isn't supplied, so nothing independent supports it."
+    },
+    {
+      "qid": "q022",
+      "claim": "To serve a single-page app (SPA) with client-side routing using app.frontend(), you can set it up after building your frontend.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself and the corpus never confirms that app.frontend() serves an SPA after a build."
+    },
+    {
+      "qid": "q022",
+      "claim": "You can build your frontend using a command like npm run build.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"using a command like `npm run build`\", but it is not documentation and can't verify its own claim."
+    },
+    {
+      "qid": "q022",
+      "claim": "After building your frontend, place the generated files in a directory, such as dist.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and cites [6257] without showing that source, so no documentation evidence supports or contradicts it."
+    },
+    {
+      "qid": "q022",
+      "claim": "You can use the app.frontend() method to serve the directory.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely restates the claim (\"Use the `app.frontend()` method to serve the directory\"). It is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q022",
+      "claim": "You can specify the root path and the directory in app.frontend() like this: app.frontend(\"/\", directory=\"dist\").",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim and cites passages like [6261] that aren't supplied, so nothing independent supports `app.frontend(\"/\", directory=\"dist\")`."
+    },
+    {
+      "qid": "q022",
+      "claim": "To handle client-side routing properly, you should use the fallback=\"index.html\" argument in app.frontend().",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify that fallback=\"index.html\" is the right way to handle client-side routing."
+    },
+    {
+      "qid": "q022",
+      "claim": "Using fallback=\"index.html\" ensures that when a user accesses a URL directly, the backend serves the index.html file.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't confirm itself. It contains the same sentence (\"the backend serves the `index.html` file\"), but no documentation passage backs it up."
+    },
+    {
+      "qid": "q022",
+      "claim": "When the backend serves the index.html file, the frontend framework can manage the routing.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"the backend serves the `index.html` file, allowing the frontend framework to manage the routing\"), but an answer can't verify itself, so nothing in the corpus decides it."
+    },
+    {
+      "qid": "q022",
+      "claim": "In most cases, you can simply use app.frontend(\"/\", directory=\"dist\") without specifying the fallback argument.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It says the argument \"defaults to `fallback=\\\"auto\\\"`\", but the cited passages [6257]–[6261] aren't supplied, so nothing independent confirms it."
+    },
+    {
+      "qid": "q022",
+      "claim": "The fallback argument defaults to fallback=\"auto\" in app.frontend().",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which asserts \"it defaults to `fallback=\\\"auto\\\"`\" but cites documentation passages (e.g. [6261]) that were not supplied, so no documentation settles the claim."
+    },
+    {
+      "qid": "q022",
+      "claim": "When fallback=\"auto\" is used, it serves index.html when necessary.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. Its line \"it defaults to `fallback=\\\"auto\\\"`, which serves `index.html` when necessary\" cites [6261], and that source isn't supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q023",
+      "claim": "If the frontend build directory passed to app.frontend() is missing, the behavior depends on the environment variable FASTAPI_ENV.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and is not documentation, so no real source supports or contradicts it."
+    },
+    {
+      "qid": "q023",
+      "claim": "If FASTAPI_ENV is set to development, FastAPI will only show a warning if the frontend build output directory is missing.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which repeats the claim (\"FastAPI will only show a warning...\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q023",
+      "claim": "In any other environment, FastAPI raises an error when the app is created if the frontend build directory is missing.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source; it repeats the claim (\"In any other environment, FastAPI raises an error when the app is created\") but cites [6262], which isn't supplied, so nothing independent decides it."
+    },
+    {
+      "qid": "q023",
+      "claim": "Raising an error when the app is created helps catch configuration errors early before deploying an app without its frontend files.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which isn't a documentation source. It can't confirm its own claim, and no documentation says that raising an error at app creation helps catch configuration errors early."
+    },
+    {
+      "qid": "q023",
+      "claim": "If check_dir is set to True, FastAPI will always check the directory when the app is created.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so nothing in the evidence states or contradicts what `check_dir=True` does."
+    },
+    {
+      "qid": "q023",
+      "claim": "If the directory is missing when a request is handled and check_dir is set to True, FastAPI will raise an error.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the \"answer under test\" itself, not documentation, so it can't verify its own assertion (\"If the directory is missing when a request is handled, FastAPI will raise an error then\"). The evidence contains no independent source."
+    },
+    {
+      "qid": "q023",
+      "claim": "If check_dir is set to False, FastAPI will not check the directory at app creation.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify its own claim about `check_dir=False`; no real documentation evidence was given."
+    },
+    {
+      "qid": "q023",
+      "claim": "If the directory is missing when a request is handled and check_dir is set to False, FastAPI will raise an error.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, and it can't verify itself. The cited passages [6262] and [6263] are not included."
+    },
+    {
+      "qid": "q024",
+      "claim": "Hey API is the recommended tool for generating a TypeScript client from a FastAPI app.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "no_evidence",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"The recommended tool... is Hey API\"). It is not documentation, so it can't verify itself, and the cited sources [6243][6242] were not supplied."
+    },
+    {
+      "qid": "q024",
+      "claim": "Hey API provides an optimized experience for the TypeScript ecosystem.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"provides an optimized experience for the TypeScript ecosystem\") but cannot be used to verify it."
+    },
+    {
+      "qid": "q024",
+      "claim": "You can use Hey API via npx.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. Its text (\"You can use it via npx\") repeats the claim, so it can't independently verify it."
+    },
+    {
+      "qid": "q024",
+      "claim": "The command to use Hey API via npx is `npx @hey-api/openapi-ts -i http://localhost:8000/openapi.json -o src/client`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"answer under test\", so it repeats the claim and isn't documentation. Using it to confirm the claim would be circular, and no documentation passage is supplied."
+    },
+    {
+      "qid": "q024",
+      "claim": "The command generates a TypeScript SDK in the specified output directory.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It says \"This will generate a TypeScript SDK in the specified output directory\", but that only repeats the claim and the cited sources [6243][6242] aren't provided."
+    },
+    {
+      "qid": "q024",
+      "claim": "The specified output directory for the TypeScript SDK is `src/client`.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The command uses `-o src/client` and the passage says it \"will generate a TypeScript SDK in the specified output directory\", so the output directory is `src/client`."
+    },
+    {
+      "qid": "q025",
+      "claim": "Generated client method names like createItemItemsPost are structured this way because the client generator uses the OpenAPI internal operation ID for each path operation.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"the client generator uses the OpenAPI internal operation ID\"), and no documentation passage independently confirms it."
+    },
+    {
+      "qid": "q025",
+      "claim": "OpenAPI requires that each operation ID is unique across all path operations.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"OpenAPI requires that each operation ID is unique\") and cites [6245], which isn't supplied, so it gives no independent documentation support."
+    },
+    {
+      "qid": "q025",
+      "claim": "The requirement for unique operation IDs leads to the naming convention of generated client method names like createItemItemsPost.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself even though it says \"OpenAPI requires that each operation ID is unique... which leads to this naming convention\"."
+    },
+    {
+      "qid": "q025",
+      "claim": "You can preprocess the OpenAPI specification before generating the clients to make method names cleaner.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently support the claim even though it says \"you can preprocess the OpenAPI specification before generating the clients.\""
+    },
+    {
+      "qid": "q025",
+      "claim": "Preprocessing the OpenAPI specification involves downloading the OpenAPI JSON to a file, such as openapi.json.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"downloading the OpenAPI JSON to a file (e.g., `openapi.json`)\"), so it can't verify itself, and no documentation passage is provided."
+    },
+    {
+      "qid": "q025",
+      "claim": "You can modify the operation IDs in the OpenAPI specification to remove the prefixed tag.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so repeating \"modifying the operation IDs to remove the prefixed tag\" is circular and gives no independent evidence."
+    },
+    {
+      "qid": "q025",
+      "claim": "For instance, you could rename operation IDs from items-get_items to just get_items.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it just repeats the claim (\"rename operation IDs from `items-get_items` to just `get_items`\"). Circular text can't verify it."
+    },
+    {
+      "qid": "q025",
+      "claim": "Renaming operation IDs allows the client generator to produce simpler method names.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify its own statement (\"allowing the client generator to produce simpler method names\"); the cited docs [6245], [6248], [6249] aren't provided."
+    },
+    {
+      "qid": "q026",
+      "claim": "You should raise an `HTTPException` in your code instead of returning it.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"You should raise an `HTTPException` in your code instead of returning it\") and is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q026",
+      "claim": "Raising an `HTTPException` will terminate the request immediately.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"raising it will terminate the request immediately\") but cites sources [6299][6300] that weren't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q026",
+      "claim": "Raising an `HTTPException` will send the HTTP error to the client.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"raising it will terminate the request immediately, sending the HTTP error to the client.\""
+    },
+    {
+      "qid": "q026",
+      "claim": "If you were to return an `HTTPException`, the rest of the code in your path operation function would continue to run.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "no_evidence",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"the rest of the code in your path operation function would continue to run\") and cites sources [6299][6300] that are not provided. Using it to verify itself is circular, and no documentation passage settles the claim."
+    },
+    {
+      "qid": "q026",
+      "claim": "Continuing to run the rest of the code in your path operation function is not the desired behavior when handling errors.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "no_evidence",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"which is not the desired behavior when handling errors\") and cites sources [6299][6300] that aren't provided, so no documentation evidence settles it."
+    },
+    {
+      "qid": "q027",
+      "claim": "You should register your exception handler for Starlette's HTTPException.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it repeats the claim (\"You should register your exception handler for Starlette's `HTTPException`\") and can't verify it."
+    },
+    {
+      "qid": "q027",
+      "claim": "Registering your exception handler for Starlette's HTTPException allows your handler to catch and handle exceptions raised by Starlette's internal code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"if any part of Starlette's internal code... raises a Starlette `HTTPException`, your handler will be able to catch and handle it.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "Starlette's HTTPException can be raised by a Starlette extension or plug-in.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"if any part of Starlette's internal code, or a Starlette extension or plug-in, raises a Starlette `HTTPException`, your handler will be able to catch and handle it.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "FastAPI's HTTPException is used normally in your code.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states: \"FastAPI's `HTTPException` is used normally in your code, but the exception handler should be for Starlette's version.\""
+    },
+    {
+      "qid": "q027",
+      "claim": "The exception handler should be for Starlette's version of HTTPException.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"the exception handler should be for Starlette's version\". It is not a documentation source, so using it would be circular, and the source it cites ([6307]) isn't supplied."
+    },
+    {
+      "qid": "q028",
+      "claim": "One server with a single IP address can serve HTTPS for multiple domains by using the Server Name Indication (SNI) extension.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and is not independent documentation, so nothing in the evidence decides it."
+    },
+    {
+      "qid": "q028",
+      "claim": "The Server Name Indication (SNI) extension allows a single server to have several HTTPS certificates.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"allows a single server to have several HTTPS certificates\"), so it is circular and not documentation evidence."
+    },
+    {
+      "qid": "q028",
+      "claim": "The Server Name Indication (SNI) extension allows a single server to serve multiple HTTPS domains/applications.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"(the answer) — answer under test\", which is the text being checked and not a documentation source, so it can't support itself, even though it says \"serve multiple HTTPS domains/applications\"."
+    },
+    {
+      "qid": "q028",
+      "claim": "The server must have a single component (program) running that listens on the public IP address.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"must have a single component (program) running that listens on the public IP address\"). It isn't an independent documentation source, so it can't verify itself."
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) manages all the HTTPS parts.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"answer under test\", so it is the answer being checked and not documentation. Using it to confirm its own wording (\"manages all the HTTPS parts\") would be circular, and no documentation passage is provided."
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) receives encrypted HTTPS requests.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"The server must have a single component (program) running that listens on the public IP address and manages all the HTTPS parts, including receiving encrypted HTTPS requests\"."
+    },
+    {
+      "qid": "q028",
+      "claim": "The single component (program) sends decrypted HTTP requests to the actual application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states the single component manages the HTTPS parts, \"including receiving encrypted HTTPS requests and sending decrypted HTTP requests to the actual application.\""
+    },
+    {
+      "qid": "q028",
+      "claim": "The actual application can be a FastAPI application.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says the component sends \"decrypted HTTP requests to the actual application, such as a FastAPI application,\" so the actual application can be a FastAPI application."
+    },
+    {
+      "qid": "q028",
+      "claim": "The TLS Termination Proxy is typically the process that handles the HTTPS connections on port 443.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which just repeats the claim (\"The TLS Termination Proxy is typically the process that handles the HTTPS connections on port 443\"). It is not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q028",
+      "claim": "The TLS Termination Proxy uses the SNI extension to determine which TLS certificate to use based on the domain requested by the client.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which just repeats the claim (\"It uses the SNI extension to determine which TLS certificate to use\"). It is not independent documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q029",
+      "claim": "To make FastAPI CLI trust the X-Forwarded headers from a TLS termination proxy, you can use the CLI option `--forwarded-allow-ips`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which restates the claim and is not documentation, so nothing in the evidence independently establishes that `--forwarded-allow-ips` does this."
+    },
+    {
+      "qid": "q029",
+      "claim": "The CLI option `--forwarded-allow-ips` allows you to specify which IPs should be trusted for the X-Forwarded headers.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which restates the claim (\"This option allows you to specify which IPs should be trusted\"). It isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q029",
+      "claim": "If your application server is only receiving communication from the trusted proxy, you can set `--forwarded-allow-ips=\"*\"` to trust all incoming IPs.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and isn't documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q029",
+      "claim": "Setting `--forwarded-allow-ips=\"*\"` is appropriate because the application will only receive requests from the proxy's IP.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which is the claim's source and not independent documentation, so no evidence in the corpus supports or contradicts the claim."
+    },
+    {
+      "qid": "q029",
+      "claim": "Trusting the X-Forwarded headers helps the application to know its own public URL.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim, so it is not independent documentation evidence. It doesn't show that trusting X-Forwarded headers lets the app know its public URL."
+    },
+    {
+      "qid": "q029",
+      "claim": "Knowing its own public URL is useful for handling redirects properly in FastAPI.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it just repeats the claim (\"useful for handling redirects properly [6209]\"). The cited source [6209] isn't provided, so nothing independent supports or contradicts the claim."
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python will always be of type str.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"will always be of type `str`\") and so can't verify itself, and no documentation passage is provided."
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python are external to Python.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says values from environment variables \"are external to Python and must be compatible with other programs and systems.\""
+    },
+    {
+      "qid": "q030",
+      "claim": "Values read from environment variables in Python must be compatible with other programs and systems.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says environment variable values \"are external to Python and must be compatible with other programs and systems.\""
+    },
+    {
+      "qid": "q030",
+      "claim": "Any conversion to a different type or validation of values read from environment variables in Python has to be done in code.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"Any conversion to a different type or validation has to be done in code\") and cites a source, [6029], that isn't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency is beneficial.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim and cites sources [6041][6038][6037] that aren't supplied, so it can't be used to verify itself."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency allows the Settings object to be created only once, the first time the function is called.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"allows the `Settings` object to be created only once\"). It is circular and not documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency avoids the overhead of reading the .env file for each request.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, which just repeats the claim (\"avoids the overhead of reading the `.env` file for each request\"). It isn't documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q031",
+      "claim": "Reading the .env file for each request can be a costly operation.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which repeats the claim (\"reading the `.env` file for each request, which can be a costly operation\"). It isn't documentation, so citing it would be circular, and it gives no independent support."
+    },
+    {
+      "qid": "q031",
+      "claim": "Subsequent calls to get_settings() will return the same object that was created during the first call.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"subsequent calls to `get_settings()` will return the same object\"), so it can't verify itself and no documentation passage is supplied."
+    },
+    {
+      "qid": "q031",
+      "claim": "Using @lru_cache on a get_settings dependency improves performance and efficiency.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (source: \"the answer\"), not a documentation source. It restates the claim and cites [6041][6038][6037], which aren't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot be faster than Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"FastAPI cannot be faster than Starlette\") and cites passages [6072][6073], which are not supplied, so the claim has no independent support."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI is built on top of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. Its phrase \"FastAPI is built on top of Starlette\" just repeats the claim, so it can't verify it."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI uses Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It just repeats the claim (\"Since FastAPI uses Starlette\"), so it can't verify itself, and the sources it cites ([6072][6073]) weren't supplied."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot exceed the performance of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it just restates the claim (\"FastAPI cannot be faster than Starlette\"). That is circular, and no documentation passage is supplied to decide the claim."
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI provides additional features on top of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself even though it says \"FastAPI does provide additional features on top of Starlette.\""
+    },
+    {
+      "qid": "q032",
+      "claim": "FastAPI cannot be faster than Starlette because it is built on top of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely repeats the claim (\"FastAPI cannot be faster than Starlette because FastAPI is built on top of Starlette\"). It is not documentation, so it can't confirm the claim."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI is built on top of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"FastAPI is built on top of Starlette\"), not a documentation source, so using it to verify the claim would be circular."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI uses Starlette as its underlying web framework.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"answer under test\"), not documentation. It repeats the claim (\"built on top of Starlette\"), but using it to verify itself is circular, so no independent source settles the claim."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI cannot be faster than Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it only says the relationship \"implies that FastAPI cannot be faster than Starlette\", which is a hedged inference and not an independent statement."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI adds additional features on top of Starlette.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says FastAPI \"adds additional features on top of it\". That is the claim restated, not documentation from the corpus, so it can't verify itself."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides essential functionalities for building APIs.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"FastAPI provides essential functionalities for building APIs\"). It is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides data validation for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides serialization for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Passage states \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI provides automatic documentation for building APIs.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "Passage states \"FastAPI provides essential functionalities for building APIs, such as data validation, serialization, and automatic documentation.\""
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have data validation functionalities.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (it says validation is \"not present in Starlette itself\"), so it is circular and not documentation. The cited sources [6071][6072][6307] are not supplied, so nothing independent settles the claim."
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have serialization functionalities.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It says serialization is \"not present in Starlette itself\", but that is the claim restated, so it can't verify itself."
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette does not have automatic documentation functionalities.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so using its statement that automatic documentation is \"not present in Starlette itself\" would be circular, and no documentation settles the claim."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI's HTTPException class inherits from Starlette's HTTPException.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which merely repeats the claim (\"also inherits from Starlette's `HTTPException`\"). It is not documentation, so it cannot verify itself."
+    },
+    {
+      "qid": "q033",
+      "claim": "FastAPI's HTTPException can accept any JSON-able data for the detail field.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"can accept any JSON-able data for the `detail` field\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q033",
+      "claim": "Starlette's HTTPException only accepts strings for the detail field.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"Starlette's version only accepts strings\") without independent documentation, and the sources it cites ([6071][6072][6307]) aren't supplied, so using it would be circular."
+    },
+    {
+      "qid": "q034",
+      "claim": "The keyboard shortcut for route search in the FastAPI VS Code extension is <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"answer under test\"), not a documentation source, so nothing independent supports or contradicts it."
+    },
+    {
+      "qid": "q034",
+      "claim": "On macOS, the keyboard shortcut for route search in the FastAPI VS Code extension is <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so using it to support the claim would be circular. It asserts \"on macOS: Cmd + Shift + E\", but nothing independent confirms it."
+    },
+    {
+      "qid": "q035",
+      "claim": "To generate diagrams with python-statemachine, you need to install the diagrams extra.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"answer under test\", which just restates the claim and isn't documentation, so it can't verify it."
+    },
+    {
+      "qid": "q035",
+      "claim": "You can install the diagrams extra for python-statemachine using the command 'python3 -m pip install \"python-statemachine[diagrams]\"'.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"(the answer) — answer under test\", so it is the text being checked and not documentation. It can't verify itself, and the documentation it cites ([6285][6223]) isn't provided."
+    },
+    {
+      "qid": "q035",
+      "claim": "You need to have the Graphviz system package installed to generate diagrams with python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"you will need to have the Graphviz system package installed\" but cites documentation ([6285][6223]) that was not supplied, so no documentation settles the claim."
+    },
+    {
+      "qid": "q035",
+      "claim": "Graphviz is required for diagram generation with python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself; the sources it cites ([6285][6223]) aren't supplied."
+    },
+    {
+      "qid": "q036",
+      "claim": "To get type checking and autocompletion for `sm.model` in a `StateChart`, you need to declare your model class.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and it cites [6238][6239] without supplying them. Using it would be circular, so no documentation evidence settles the claim."
+    },
+    {
+      "qid": "q036",
+      "claim": "You need to pass your model class as a type parameter to `StateChart`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test (source: \"(the answer) — answer under test\"), not documentation, so it can't independently verify the claim that passing the model class as a type parameter is needed."
+    },
+    {
+      "qid": "q036",
+      "claim": "Passing your model class as a type parameter to `StateChart` allows type checkers and IDEs to infer the type of `sm.model`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"This allows type checkers and IDEs to infer the type of `sm.model`\") but is not documentation, so it can't independently verify it."
+    },
+    {
+      "qid": "q036",
+      "claim": "Inferring the type of `sm.model` provides full autocompletion and type checking.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", not documentation, so it can't verify itself; no corpus passage states that inferring the type of `sm.model` gives full autocompletion and type checking."
+    },
+    {
+      "qid": "q036",
+      "claim": "An example of declaring a model class is `class OrderWorkflow(StateChart[\"OrderModel\"]):`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't verify itself. It contains the code `class OrderWorkflow(StateChart[\"OrderModel\"]):`, but that is circular."
+    },
+    {
+      "qid": "q036",
+      "claim": "By declaring the model class as `OrderModel`, `sm.model` is typed as `OrderModel` instead of `Any`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, which repeats the claim (\"`sm.model` is typed as `OrderModel` instead of `Any`\"). It isn't documentation, so it can't confirm itself."
+    },
+    {
+      "qid": "q036",
+      "claim": "Typing `sm.model` as `OrderModel` enables the IDE to provide autocompletion for `sm.model.order_id`, `sm.model.total`, and `sm.model.confirm()`.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"enables the IDE to provide autocompletion for `sm.model.order_id`...\") and is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q037",
+      "claim": "The `bind_events_as_methods` attribute in `MachineMixin` allows events to become methods on the model itself.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" restating the claim, not documentation, so it can't independently support or contradict it."
+    },
+    {
+      "qid": "q037",
+      "claim": "When the `bind_events_as_methods` attribute is set to `True`, you can call state machine events directly as methods of the model instance.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim. It is not documentation, and it cites [6102][6103], which aren't provided, so nothing in the evidence decides the claim."
+    },
+    {
+      "qid": "q037",
+      "claim": "If you have a model that inherits from `MachineMixin`, you can call `model.produce()` instead of using the state machine directly.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"you can call `model.produce()` instead of using the state machine directly\") and citing documents [6102][6103] that aren't supplied, so no documentation evidence settles it."
+    },
+    {
+      "qid": "q038",
+      "claim": "Putting a class in a StateChart's listeners attribute acts as a factory.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"it acts as a factory\"). It is not documentation, so it cannot verify itself."
+    },
+    {
+      "qid": "q038",
+      "claim": "When a class is put in a StateChart's listeners attribute, it creates a fresh instance of that listener class for each state machine instance.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"(the answer) — answer under test\", so it restates the claim and is not documentation that could verify it."
+    },
+    {
+      "qid": "q038",
+      "claim": "Each state machine will have its own separate listener instance when a class is used in the listeners attribute.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't independently confirm that a class in `listeners` creates a separate instance per state machine."
+    },
+    {
+      "qid": "q038",
+      "claim": "Using a class in the listeners attribute allows for independent logging or handling of events for each state machine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it cannot verify itself. The documentation passages it cites ([6171][6220]) were not supplied."
+    },
+    {
+      "qid": "q038",
+      "claim": "Passing an already-built instance of a listener class to a StateChart's listeners attribute shares that instance across all state machines that reference it.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so using its statement that an instance \"will be shared across all state machines that reference it\" as proof would be circular."
+    },
+    {
+      "qid": "q038",
+      "claim": "Sharing an instance of a listener class across state machines is useful for stateless listeners.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"(the answer) — answer under test\", so it is the text being checked and not documentation. Using it to confirm \"This is useful for stateless listeners\" would be circular, and no documentation passage settles the claim."
+    },
+    {
+      "qid": "q038",
+      "claim": "A global logger is an example of a stateless listener that benefits from sharing a single instance across multiple state machines.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"useful for stateless listeners, such as a global logger\") but cites sources [6171][6220] that weren't supplied, so nothing independent confirms it."
+    },
+    {
+      "qid": "q038",
+      "claim": "The distinction between using a class and an instance in the listeners attribute allows for flexibility in how listeners are managed and utilized within state machines.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"This distinction allows for flexibility...\") and isn't documentation, so it can't independently support it."
+    },
+    {
+      "qid": "q039",
+      "claim": "A listener's `setup()` method is not called for shared listener instances.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim and citing sources ([6177][6176]) that aren't supplied, so no documentation evidence settles it."
+    },
+    {
+      "qid": "q039",
+      "claim": "A listener's `setup()` method is only called on factory-created instances.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"only called on factory-created instances\") and cites [6177][6176]. It isn't documentation and can't verify itself, so the claim is unsettled."
+    },
+    {
+      "qid": "q039",
+      "claim": "Factory-created instances are callable entries in the `listeners` list.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"callable entries in the `listeners` list\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances are pre-built objects.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"Shared instances (pre-built objects)\". That is the claim restated, not independent documentation, and the sources it cites ([6177][6176]) are not provided."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances do not receive `setup()` calls.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"Shared instances (pre-built objects) do not receive `setup()` calls\") but isn't documentation, and the sources it cites ([6177][6176]) aren't supplied."
+    },
+    {
+      "qid": "q039",
+      "claim": "Shared instances are assumed to be already configured.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states shared instances \"do not receive `setup()` calls, as they are assumed to be already configured.\""
+    },
+    {
+      "qid": "q040",
+      "claim": "The difference between `send()` and `raise_()` on a StateChart is primarily related to how events are processed in relation to the current macrostep.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"The difference between `send()` and `raise_()`...\") and is not documentation, so it cannot support the claim."
+    },
+    {
+      "qid": "q040",
+      "claim": "`send(event, **kwargs)` places the event on the external queue.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"places the event on the external queue\") but isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q040",
+      "claim": "External events are processed after the current macrostep completes.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it repeats the claim (\"External events are processed after the current macrostep completes\") and cannot verify itself."
+    },
+    {
+      "qid": "q040",
+      "claim": "If you call `send()`, the event will be handled only after all current operations are finished.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it repeats the claim (\"the event will be handled only after all current operations are finished\") but nothing independent backs it, so citing it would be circular."
+    },
+    {
+      "qid": "q040",
+      "claim": "Calling `sm.send(\"cycle\")` will not affect the state until the current macrostep is complete.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it repeats the claim (\"calling `sm.send(\\\"cycle\\\")` will not affect the state until the current macrostep is complete [6269]\") and cites a source that was not supplied."
+    },
+    {
+      "qid": "q040",
+      "claim": "`raise_(event, **kwargs)` places the event on the internal queue.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"places the event on the **internal queue**\") but is not documentation, so it can't independently verify itself."
+    },
+    {
+      "qid": "q040",
+      "claim": "Internal events are processed within the current macrostep, before any pending external events.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"Internal events are processed within the current macrostep, before any pending external events\"), so it can't verify itself."
+    },
+    {
+      "qid": "q040",
+      "claim": "It is useful to use `raise_()` when you need to trigger follow-up transitions immediately within a callback.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"useful when you need to trigger follow-up transitions immediately within a callback\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q040",
+      "claim": "Calling `sm.raise_(\"finish\")` will immediately affect the state without waiting for the current macrostep to complete.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which is circular and not documentation, and the cited sources [6269] and [6270] are not supplied, so nothing independent settles the claim."
+    },
+    {
+      "qid": "q040",
+      "claim": "`send()` is for external events processed later.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"`send()` is for external events processed later\"). That is circular, and no documentation passage is supplied to check it."
+    },
+    {
+      "qid": "q040",
+      "claim": "`raise_()` is for internal events processed immediately.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, which is the text being checked and not documentation, so it can't confirm its own statement that \"raise_() is for internal events processed immediately.\""
+    },
+    {
+      "qid": "q041",
+      "claim": "The difference between `allowed_events` and `enabled_events()` lies in how they evaluate transitions based on the current state of the state machine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"The difference between `allowed_events` and `enabled_events()` lies in how they evaluate transitions\"), so it is circular and not documentation evidence."
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` returns events that have at least one transition from the current state.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so its statement that `allowed_events` \"returns events that have at least one transition from the current state\" cannot be used to verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` does not consider whether the conditions (guards) for those transitions are satisfied.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"regardless of whether the conditions (guards) for those transitions are satisfied\". It is the source of the claim, not independent documentation, so it can't verify itself, and the documents it cites ([6271], [6179]) weren't supplied."
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` only checks the state topology.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"It only checks the state topology\" but is the text being checked, not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "`allowed_events` is considered a cheap operation.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. Its phrase \"considered a cheap operation\" is the claim being checked, so it can't verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "`enabled_events(**kwargs)` returns a subset of `allowed_events` where at least one transition's guards are satisfied given the provided arguments.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it just repeats the claim (\"returns a subset of `allowed_events` where at least one transition's guards are satisfied\"), so it can't verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "`enabled_events(**kwargs)` evaluates the conditions (guards) associated with the transitions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"It evaluates the conditions (guards) associated with the transitions\". That is the claim restated, not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "It is necessary to pass any required keyword arguments to `enabled_events(**kwargs)` that the guard conditions depend on.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"making it necessary to pass any required keyword arguments\") but is not documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q041",
+      "claim": "In summary, `allowed_events` checks the possible transitions based on state alone.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"checks the possible transitions based on state alone\") and cites sources [6271][6179] that aren't supplied, so it can't count as independent documentation."
+    },
+    {
+      "qid": "q041",
+      "claim": "In summary, `enabled_events()` checks which of the transitions can actually occur based on the current conditions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so repeating \"enabled_events() checks which of those transitions can actually occur\" is circular and can't verify the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "The expression `cond=lambda self: ...` fails in python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so repeating \"fails... because plain callables... are called unbound\" is circular and can't verify the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "Plain callables, like lambdas and functions defined outside the class body, are called unbound in python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It restates the claim (\"called **unbound**\") and cites [6184], which isn't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q042",
+      "claim": "In unbound callables, `self` is not injected.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, and it defers to an unprovided source [6184]. Using it to back the claim would be circular."
+    },
+    {
+      "qid": "q042",
+      "claim": "You should use `machine` to receive the state machine instance in python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"you should use `machine` to receive the state machine instance\"). It is not documentation, so it can't verify the claim."
+    },
+    {
+      "qid": "q042",
+      "claim": "Using `self` in the context of `cond=lambda self: ...` results in a TypeError when evaluated in python-statemachine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" itself, not documentation, and it cites [6184], which isn't supplied. It can't be used to verify its own claim that `self` \"results in a `TypeError`\"."
+    },
+    {
+      "qid": "q043",
+      "claim": "Validator exceptions are not converted to error.execution events when catch_errors_as_events is True.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and cites [6190], a source not supplied. It isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q043",
+      "claim": "The caller receives the exception directly when catch_errors_as_events is True.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The passage only says validator exceptions aren't converted (\"The caller receives the exception directly\") even with catch_errors_as_events = True, so it doesn't settle the broader, unscoped claim."
+    },
+    {
+      "qid": "q043",
+      "claim": "The caller can handle the exception with try/except when catch_errors_as_events is True.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"can handle it with `try`/`except`\") and cites [6190], which isn't supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition goes from a state back to itself, exiting and re-entering the state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"A **self-transition** goes from a state back to itself, exiting and re-entering the state, which means it runs all exit and entry actions.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition runs all exit and entry actions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"answer under test\"), not a documentation source, so it can't independently verify its own statement that a self-transition \"runs all exit and entry actions.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "A self-transition is useful when entering a state has side effects, such as resetting a timer.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It repeats the claim (\"useful when entering a state has side effects, such as resetting a timer\"), so using it as evidence would be circular, and no corpus passage settles the claim."
+    },
+    {
+      "qid": "q044",
+      "claim": "In a state chart, a self-transition can be defined with the syntax 'retry = processing.to.itself(on=\"do_retry\")'.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"retry = processing.to.itself(on=\\\"do_retry\\\")\") but isn't documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q044",
+      "claim": "The 'do_retry' action will be executed each time the self-transition occurs.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify that \"the `do_retry` action will be executed each time the transition occurs\"."
+    },
+    {
+      "qid": "q044",
+      "claim": "The state will exit and re-enter during a self-transition.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states \"A self-transition goes from a state back to itself, exiting and re-entering the state, which means it runs all exit and entry actions.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "Any associated entry logic will run during a self-transition.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says a self-transition \"exit[s] and re-enter[s] the state, which means it runs all exit and entry actions,\" allowing \"any associated entry logic to run.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition stays in the same state without running exit or entry actions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"an internal transition stays in the same state without running exit or entry actions; only the specified `on` callback executes.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition only executes the specified 'on' callback.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"only the specified `on` callback executes\" but is the text being checked, not independent documentation, so it can't verify itself."
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition is useful for pure data updates that shouldn't re-trigger entry logic.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source, so it can't be used to confirm its own sentence \"useful for pure data updates that shouldn't re-trigger entry logic.\""
+    },
+    {
+      "qid": "q044",
+      "claim": "An internal transition can be defined with the syntax 'add_item = shopping.to.itself(internal=True, on=\"do_add_item\")'.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"add_item = shopping.to.itself(internal=True, on=\\\"do_add_item\\\")\") and cites sources [6053] and [6054] that aren't supplied, so there is no independent documentation to check it against."
+    },
+    {
+      "qid": "q044",
+      "claim": "The 'do_add_item' action will execute during an internal transition without triggering any exit or entry actions.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage states an internal transition \"stays in the same state without running exit or entry actions; only the specified `on` callback executes,\" and its example `shopping.to.itself(internal=True, on=\"do_add_item\")` shows `do_add_item` runs \"without triggering any exit or entry actions.\""
+    },
+    {
+      "qid": "q045",
+      "claim": "When an event matches transitions at several levels of a compound state hierarchy, transitions from descendant states take priority over transitions from ancestor states.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"transitions from descendant states take priority\"), and its cited source [6058] isn't supplied, so no documentation backs it."
+    },
+    {
+      "qid": "q045",
+      "claim": "Transitions from descendant states take priority over transitions from ancestor states in a compound state hierarchy.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"transitions from descendant states take priority\") and cites an external source [6058] that isn't supplied; it can't verify itself."
+    },
+    {
+      "qid": "q045",
+      "claim": "The SCXML specification states that the most specific (deepest) matching transition wins when an event matches transitions at several levels of a compound state hierarchy.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"the most specific (deepest) matching transition wins [6058]\") and cites a source that isn't supplied, so no independent documentation backs the claim."
+    },
+    {
+      "qid": "q045",
+      "claim": "The most specific (deepest) matching transition wins according to the SCXML specification.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"the most specific (deepest) matching transition wins [6058]\"), which is circular, and the cited source [6058] isn't provided, so no documentation backs it."
+    },
+    {
+      "qid": "q046",
+      "claim": "Python-statemachine validation errors raise exceptions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"validation errors raise `InvalidDefinition` exceptions [6060]\"), which restates the claim rather than documenting it, so it isn't independent evidence."
+    },
+    {
+      "qid": "q046",
+      "claim": "The exceptions raised by Python-statemachine validation errors are called `InvalidDefinition` exceptions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"validation errors raise `InvalidDefinition` exceptions [6060]\"), not documentation. Its cited source [6060] isn't supplied, so nothing independent confirms or refutes the claim."
+    },
+    {
+      "qid": "q047",
+      "claim": "Convention-based callbacks like `on_enter_<state>` are not validated when a statechart is instantiated.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test restating the claim (\"are **not** validated when a statechart is instantiated\"). It is not documentation, and the source it cites, [6067], isn't provided, so nothing independent settles the claim."
+    },
+    {
+      "qid": "q047",
+      "claim": "Convention-based callbacks like `on_enter_<state>` are optional by design.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which says \"They are optional by design\" and cites [6067], a source that isn't supplied. That makes it circular, and nothing in the documentation corpus confirms the claim."
+    },
+    {
+      "qid": "q047",
+      "claim": "Only explicitly declared callback names are checked for validation when a statechart is instantiated.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"only explicitly declared callback names ... are checked for validation\") and cites [6067], a passage not supplied, so no documentation backs it."
+    },
+    {
+      "qid": "q047",
+      "claim": "Explicitly declared callback names are passed as strings to `on`, `cond`, etc.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"passed as strings to `on`, `cond`, etc.\") and cites [6067], a source that isn't provided, so no documentation backs it."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine run in a thread executor.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the \"answer under test,\" which restates the claim (\"run in a **thread executor** using `loop.run_in_executor`\") and is not independent documentation, so nothing in the corpus settles it."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine run using loop.run_in_executor.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is labeled \"answer under test\", so it restates the claim (\"run in a thread executor using `loop.run_in_executor`\") and is not documentation that could verify it."
+    },
+    {
+      "qid": "q048",
+      "claim": "Invoke handlers on the sync engine are wrapped in an asyncio.Task.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"wrapped in an `asyncio.Task`\") and cites a source [6145] that isn't provided, so no independent documentation supports it."
+    },
+    {
+      "qid": "q048",
+      "claim": "Blocking I/O would freeze the event loop if run directly on the sync engine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test, not documentation. It cites \"[6145]\", which isn't supplied, so the claim is only restated and not independently supported."
+    },
+    {
+      "qid": "q048",
+      "claim": "Blocking I/O includes network calls, file access, or subprocess communication.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which repeats the claim (\"network calls, file access, or subprocess communication\") and cites an outside source [6145] that isn't provided, so it can't verify itself."
+    },
+    {
+      "qid": "q049",
+      "claim": "To wait for multiple invoke handlers to all finish before transitioning, you can use the invoke_group function.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\" restating the claim, not documentation, so nothing in the corpus confirms that `invoke_group` exists or what it does."
+    },
+    {
+      "qid": "q049",
+      "claim": "The invoke_group function allows you to run multiple callables concurrently.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It does say \"run multiple callables concurrently\", but using it to verify the claim would be circular, so the documentation evidence is missing."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition only fires after every callable has completed when using invoke_group.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", which is the claim's own source and not documentation. It can't independently verify that the transition \"only fires after every callable has completed\"."
+    },
+    {
+      "qid": "q049",
+      "claim": "The data returned by invoke_group will be a list of results.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which is the text being checked and not independent documentation. Its code only does `self.results = data` and doesn't show that `data` is a list."
+    },
+    {
+      "qid": "q049",
+      "claim": "The list of results from invoke_group will be in the same order as the input callables.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"a list of results in the same order as the input callables\") but can't confirm itself."
+    },
+    {
+      "qid": "q049",
+      "claim": "In the provided example, the BatchLoader class defines a state chart.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The example code shows `class BatchLoader(StateChart):` with states `loading` and `ready` and a transition, so BatchLoader defines a state chart."
+    },
+    {
+      "qid": "q049",
+      "claim": "The loading state in the BatchLoader class is set as the initial state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The BatchLoader code defines `loading = State(initial=True, ...)`, so loading is the initial state."
+    },
+    {
+      "qid": "q049",
+      "claim": "The loading state in the BatchLoader class uses invoke_group to invoke file_a.read_text() and file_b.read_text().",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation. It can't be used to verify its own BatchLoader example, and no documentation passage confirms that `loading` uses `invoke_group` with `file_a.read_text()` and `file_b.read_text()`."
+    },
+    {
+      "qid": "q049",
+      "claim": "The ready state in the BatchLoader class is defined as a final state.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The code defines `ready = State(final=True)` in `class BatchLoader(StateChart)`, so ready is a final state."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition from loading to ready is named done_invoke_loading.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (`done_invoke_loading = loading.to(ready)`), not documentation, so it can't independently verify the claim."
+    },
+    {
+      "qid": "q049",
+      "claim": "The transition to the ready state will only occur after both file_a.read_text() and file_b.read_text() have completed.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "contradicted",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify its own claim about invoke_group and the transition to ready."
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class assigns the data to self.results.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The code in the BatchLoader class defines `def on_enter_ready(self, data=None, **kwargs): self.results = data`, which assigns data to self.results."
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class accepts data as a parameter.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The code defines `def on_enter_ready(self, data=None, **kwargs):` inside class BatchLoader, so it accepts `data` as a parameter."
+    },
+    {
+      "qid": "q049",
+      "claim": "The on_enter_ready method in the BatchLoader class accepts additional keyword arguments as parameters.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "no_evidence",
+      "rationale": "The code defines `def on_enter_ready(self, data=None, **kwargs)` in class BatchLoader, so it accepts additional keyword arguments via **kwargs."
+    },
+    {
+      "qid": "q050",
+      "claim": "A compound state can resume the child that was active when it was exited by using a HistoryState.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"A compound state can resume the child that was active...\") and cites a source [6229] that isn't provided, so no independent documentation backs it."
+    },
+    {
+      "qid": "q050",
+      "claim": "When the compound state is exited, the HistoryState remembers which child was active.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is labeled \"answer under test\", so it is the answer being checked and not documentation. It repeats the claim (\"the `HistoryState` remembers which child was active\"), which would be circular support, so the corpus evidence doesn't settle it."
+    },
+    {
+      "qid": "q050",
+      "claim": "The state machine can return to the active child when the compound state is resumed.",
+      "faithful": true,
+      "answer_entailment": "supported",
+      "e2e_label": "supported",
+      "rationale": "The passage says \"the `HistoryState` remembers which child was active, allowing the state machine to return to that child when the compound state is resumed.\""
+    },
+    {
+      "qid": "q050",
+      "claim": "The example demonstrates that the resume transition goes back to the history state preparing.h.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim (\"the `resume` transition goes back to the history state `preparing.h`\") and cites [6229], a source not supplied, so no documentation or example code decides it."
+    },
+    {
+      "qid": "q050",
+      "claim": "The history state preparing.h returns to the last active child state.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", not documentation. It merely restates the claim (\"returns to the last active child state\"), so using it would be circular, and no documentation passage settles the claim."
+    },
+    {
+      "qid": "q051",
+      "claim": "When a callback raises an exception in a StateChart, the runtime exception does not crash the machine.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, which restates the claim and is not documentation, so no independent source supports or contradicts it."
+    },
+    {
+      "qid": "q051",
+      "claim": "When a callback raises an exception in a StateChart, the runtime exception becomes an error.execution event.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't independently verify that a callback exception \"becomes an `error.execution` event\"."
+    },
+    {
+      "qid": "q051",
+      "claim": "The error.execution event can be handled with regular transitions in a StateChart.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test (\"it becomes an `error.execution` event that can be handled with regular transitions\"), which is not an independent documentation source. Using it to support the claim would be circular."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a callback raises a RuntimeError in a StateChart, the machine transitions to an error state.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "no_evidence",
+      "rationale": "The only passage is the answer under test, not a documentation source. It repeats the claim (\"the machine transitions to an error state\") and cites [6232], which was not supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q051",
+      "claim": "The error can be processed in an on_enter method for the error state in a StateChart.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, and the passage it cites ([6232]) was not supplied, so nothing independent decides the claim."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, this exception is not converted to an error.execution event.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the \"answer under test\", not documentation, and it merely restates the claim (\"if a validator raises an exception, this exception is not converted to an `error.execution` event\"); the documentation passages it cites ([6190], [6189]) were not supplied."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, it does not trigger error.execution transitions.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation; it repeats the claim (\"not converted to an `error.execution` event\") and cites sources [6190][6189] that were not supplied, so using it would be circular."
+    },
+    {
+      "qid": "q051",
+      "claim": "If a validator raises an exception in a StateChart, the exception is propagated directly to the caller.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself. Its statement \"the exception is propagated directly to the caller\" is the claim restated, and no documentation passage backs it."
+    },
+    {
+      "qid": "q051",
+      "claim": "The caller can handle the propagated exception from a validator in a StateChart with a try/except block.",
+      "faithful": false,
+      "answer_entailment": "no_evidence",
+      "e2e_label": "supported",
+      "rationale": "The only passage is the answer under test, not documentation, so it can't verify itself, and the sources it cites ([6190][6189]) aren't provided."
+    }
+  ]
+}

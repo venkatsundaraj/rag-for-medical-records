@@ -1,0 +1,2276 @@
+{
+  "config": {
+    "search": "hybrid",
+    "ks": [
+      3,
+      5
+    ],
+    "strategy": "fixed_c1000_o150",
+    "claims_file": "data/golden/claims.jsonl",
+    "timestamp": "2026-10-20T05:42:53.245805+00:00"
+  },
+  "aggregates": {
+    "claims_scored": 69,
+    "mean_retrieval_ms": 538.2553,
+    "evidence_recall_at_3": 0.7971,
+    "hit_at_3": 0.7971,
+    "hit_at_3_contradicted": 0.75,
+    "hit_at_3_supported": 0.8485,
+    "evidence_recall_at_5": 0.913,
+    "hit_at_5": 0.913,
+    "hit_at_5_contradicted": 0.8889,
+    "hit_at_5_supported": 0.9394
+  },
+  "rows": [
+    {
+      "claim_id": "c001",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "FastAPI and Starlette are based on the ASGI standard as their async library.",
+      "retrieved_ids": [
+        74,
+        73,
+        48,
+        75,
+        71
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 2664,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c002",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "ASGI is being developed by Django core team members.",
+      "retrieved_ids": [
+        74,
+        51,
+        212,
+        68,
+        52
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "tutorial.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 376,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c003",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "ASGI improves interoperability between tools in the Python ecosystem.",
+      "retrieved_ids": [
+        68,
+        70,
+        69,
+        74,
+        73
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 315,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c004",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "FastAPI uses Starlette as its foundation.",
+      "retrieved_ids": [
+        72,
+        64,
+        74,
+        48,
+        71
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 590,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c005",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "Starlette is a lightweight ASGI framework/toolkit designed for building high-performance asyncio services.",
+      "retrieved_ids": [
+        73,
+        74,
+        48,
+        71,
+        72
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 580,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c006",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "FastAPI and Starlette are based on AnyIO.",
+      "retrieved_ids": [
+        109,
+        73,
+        48,
+        74,
+        72
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 406,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c007",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "AnyIO makes FastAPI compatible with both asyncio and Trio.",
+      "retrieved_ids": [
+        109,
+        110,
+        73,
+        75,
+        76
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 354,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c008",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "Invoke handlers on the sync engine run in a thread executor using loop.run_in_executor.",
+      "retrieved_ids": [
+        121,
+        87,
+        133,
+        132,
+        122
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "async-tests.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 858,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c009",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "On the sync engine, invoke handlers are wrapped in an asyncio.Task.",
+      "retrieved_ids": [
+        121,
+        133,
+        87,
+        122,
+        132
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "invoke.md",
+        "async-tests.md",
+        "invoke.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 387,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c010",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "On the async engine, sync invoke handlers run in a thread executor via loop.run_in_executor wrapped in an asyncio.Task.",
+      "retrieved_ids": [
+        121,
+        122,
+        132,
+        133,
+        87
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "async-tests.md"
+      ],
+      "retrieval_ms": 448,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c011",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "A thread executor is used because blocking I/O would freeze the event loop if run directly.",
+      "retrieved_ids": [
+        121,
+        122,
+        92,
+        87,
+        91
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "invoke.md",
+        "async.md",
+        "async-tests.md",
+        "async.md"
+      ],
+      "retrieval_ms": 340,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c012",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "A path operation function declared with def is called directly and is not run in a threadpool.",
+      "retrieved_ids": [
+        113,
+        115,
+        89,
+        88,
+        112
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 623,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c013",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "A def utility function you call yourself is called directly, not in a threadpool.",
+      "retrieved_ids": [
+        115,
+        114,
+        113,
+        16,
+        273
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "async.md",
+        "settings.md",
+        "advanced-dependencies.md"
+      ],
+      "retrieval_ms": 331,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c014",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "A def path operation function is run in an external threadpool that is then awaited.",
+      "retrieved_ids": [
+        113,
+        115,
+        89,
+        114,
+        88
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 374,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c015",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "For trivial compute-only path operation functions, async def is generally better in FastAPI.",
+      "retrieved_ids": [
+        113,
+        115,
+        112,
+        114,
+        89
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 333,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c016",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "A def path operation function that performs blocking I/O will block FastAPI's event loop.",
+      "retrieved_ids": [
+        113,
+        115,
+        112,
+        89,
+        114
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 338,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c017",
+      "label": "no_evidence",
+      "origin": "harvested",
+      "claim": "FastAPI is optimized for asynchronous operations.",
+      "retrieved_ids": [
+        89,
+        102,
+        49,
+        112,
+        110
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "async.md",
+        "benchmarks.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 524
+    },
+    {
+      "claim_id": "c018",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "fastapi dev does not specify a default listening address.",
+      "retrieved_ids": [
+        260,
+        258,
+        256,
+        259,
+        257
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 338,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c019",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "fastapi dev listens on 127.0.0.1 by default.",
+      "retrieved_ids": [
+        259,
+        260,
+        258,
+        256,
+        255
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 531,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c020",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "fastapi run listens on 0.0.0.0, making the application publicly accessible to anyone that can communicate with the machine.",
+      "retrieved_ids": [
+        260,
+        255,
+        259,
+        256,
+        76
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 781,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c021",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "Both fastapi dev and fastapi run use Uvicorn as the underlying server.",
+      "retrieved_ids": [
+        75,
+        76,
+        47,
+        64,
+        256
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 358,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c022",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "Auto-reload is resource-intensive and should only be used for development.",
+      "retrieved_ids": [
+        259,
+        258,
+        255,
+        256,
+        260
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 326,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c023",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "FastAPI cannot be faster than Starlette.",
+      "retrieved_ids": [
+        48,
+        74,
+        73,
+        76,
+        64
+      ],
+      "retrieved_sources": [
+        "benchmarks.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 475,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c024",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "FastAPI uses Pydantic for data validation and serialization.",
+      "retrieved_ids": [
+        116,
+        72,
+        66,
+        74,
+        67
+      ],
+      "retrieved_sources": [
+        "dataclasses.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 308,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c025",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "Putting a class in a StateChart's listeners attribute registers the class itself as the listener.",
+      "retrieved_ids": [
+        146,
+        145,
+        42,
+        196,
+        251
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "validations.md",
+        "tutorial.md",
+        "statechart.md"
+      ],
+      "retrieval_ms": 829,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c026",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "A listener defined by an instance in the listeners attribute is tied to that specific instance and cannot be reused in the same way as a class.",
+      "retrieved_ids": [
+        146,
+        145,
+        150,
+        147,
+        251
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "statechart.md"
+      ],
+      "retrieval_ms": 556,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c027",
+      "label": "contradicted",
+      "origin": "harvested",
+      "claim": "A pre-built listener instance in the listeners attribute maintains its own state, which allows more tailored behavior.",
+      "retrieved_ids": [
+        145,
+        146,
+        148,
+        251,
+        150
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "statechart.md",
+        "listeners.md"
+      ],
+      "retrieval_ms": 533,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c028",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "A class in the listeners attribute acts as a factory that creates a fresh listener for each state machine instance.",
+      "retrieved_ids": [
+        146,
+        145,
+        149,
+        196,
+        251
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "tutorial.md",
+        "statechart.md"
+      ],
+      "retrieval_ms": 689,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c029",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "You can deploy to FastAPI Cloud with the command uv run fastapi deploy.",
+      "retrieved_ids": [
+        1,
+        2,
+        253,
+        260,
+        76
+      ],
+      "retrieved_sources": [
+        "fastapicloud.md",
+        "fastapicloud.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 394,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c030",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "OpenAPI requires each operation ID to be unique across all path operations.",
+      "retrieved_ids": [
+        222,
+        221,
+        223,
+        224,
+        230
+      ],
+      "retrieved_sources": [
+        "generate-clients.md",
+        "generate-clients.md",
+        "generate-clients.md",
+        "generate-clients.md",
+        "extending-openapi.md"
+      ],
+      "retrieval_ms": 844,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c031",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "The diagrams extra of python-statemachine installs pydot.",
+      "retrieved_ids": [
+        261,
+        262,
+        80,
+        187,
+        79
+      ],
+      "retrieved_sources": [
+        "installation.md",
+        "installation.md",
+        "integrations.md",
+        "tutorial.md",
+        "integrations.md"
+      ],
+      "retrieval_ms": 344,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c032",
+      "label": "supported",
+      "origin": "harvested",
+      "claim": "When a StateChart callback raises, the error can be handled by transitioning to an error state whose on_enter callback receives the error.",
+      "retrieved_ids": [
+        42,
+        166,
+        208,
+        30,
+        31
+      ],
+      "retrieved_sources": [
+        "validations.md",
+        "guards.md",
+        "tutorial.md",
+        "transitions.md",
+        "transitions.md"
+      ],
+      "retrieval_ms": 328,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c033",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "fastapi run listens on 127.0.0.1 by default.",
+      "retrieved_ids": [
+        259,
+        260,
+        256,
+        255,
+        76
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 545,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c034",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "fastapi run sets FASTAPI_ENV to production.",
+      "retrieved_ids": [
+        259,
+        260,
+        253,
+        238,
+        256
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "frontend.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 331,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c035",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "fastapi dev overwrites FASTAPI_ENV with development even if it is already set.",
+      "retrieved_ids": [
+        258,
+        238,
+        259,
+        253,
+        260
+      ],
+      "retrieved_sources": [
+        "fastapi-cli.md",
+        "frontend.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 327,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c036",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "With Depends(scope=\"request\"), the exit code after yield runs before the response is sent.",
+      "retrieved_ids": [
+        267,
+        269,
+        268,
+        272,
+        266
+      ],
+      "retrieved_sources": [
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md"
+      ],
+      "retrieval_ms": 318,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c037",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Depends(scope=\"function\") is the default scope for dependencies with yield.",
+      "retrieved_ids": [
+        267,
+        266,
+        271,
+        272,
+        269
+      ],
+      "retrieved_sources": [
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md",
+        "advanced-dependencies.md"
+      ],
+      "retrieval_ms": 341,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c038",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "HTTPX's AsyncClient triggers the app's lifespan events automatically.",
+      "retrieved_ids": [
+        84,
+        83,
+        85,
+        86,
+        87
+      ],
+      "retrieved_sources": [
+        "async-tests.md",
+        "async-tests.md",
+        "async-tests.md",
+        "async-tests.md",
+        "async-tests.md"
+      ],
+      "retrieval_ms": 326,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c039",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "FastAPI supports dataclasses since version 0.100.0.",
+      "retrieved_ids": [
+        120,
+        116,
+        118,
+        119,
+        117
+      ],
+      "retrieved_sources": [
+        "dataclasses.md",
+        "dataclasses.md",
+        "dataclasses.md",
+        "dataclasses.md",
+        "dataclasses.md"
+      ],
+      "retrieval_ms": 331,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c040",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "FastAPI's HTTPException only accepts strings for the detail field.",
+      "retrieved_ids": [
+        283,
+        277,
+        282,
+        276,
+        280
+      ],
+      "retrieved_sources": [
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md"
+      ],
+      "retrieval_ms": 308,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c041",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Pydantic Settings reads environment variables case-sensitively.",
+      "retrieved_ids": [
+        5,
+        12,
+        4,
+        7,
+        6
+      ],
+      "retrieved_sources": [
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md"
+      ],
+      "retrieval_ms": 591,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c042",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "With @lru_cache on get_settings, a new Settings object is created for each request.",
+      "retrieved_ids": [
+        14,
+        13,
+        6,
+        17,
+        10
+      ],
+      "retrieved_sources": [
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md"
+      ],
+      "retrieval_ms": 409,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c043",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "FastAPI's default OpenAPI specification version is 3.0.2.",
+      "retrieved_ids": [
+        56,
+        229,
+        218,
+        228,
+        217
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "extending-openapi.md",
+        "generate-clients.md",
+        "extending-openapi.md",
+        "generate-clients.md"
+      ],
+      "retrieval_ms": 330,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c044",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "app.frontend()'s index.html fallback also applies to POST and PUT requests.",
+      "retrieved_ids": [
+        235,
+        236,
+        240,
+        237,
+        234
+      ],
+      "retrieved_sources": [
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md"
+      ],
+      "retrieval_ms": 889,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c045",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Frontend files served by app.frontend() take precedence over FastAPI path operations.",
+      "retrieved_ids": [
+        239,
+        233,
+        234,
+        237,
+        235
+      ],
+      "retrieved_sources": [
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md"
+      ],
+      "retrieval_ms": 824,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c046",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Let's Encrypt certificates are valid for about one year.",
+      "retrieved_ids": [
+        174,
+        182,
+        181,
+        170,
+        173
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 332,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c047",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "HTTPS encryption happens at the HTTP level.",
+      "retrieved_ids": [
+        171,
+        178,
+        170,
+        179,
+        173
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 386,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c048",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "send() places the event on the internal queue.",
+      "retrieved_ids": [
+        245,
+        246,
+        247,
+        188,
+        207
+      ],
+      "retrieved_sources": [
+        "statechart.md",
+        "statechart.md",
+        "statechart.md",
+        "tutorial.md",
+        "tutorial.md"
+      ],
+      "retrieval_ms": 732,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c049",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "allowed_events evaluates guard conditions before listing an event.",
+      "retrieved_ids": [
+        155,
+        163,
+        154,
+        162,
+        249
+      ],
+      "retrieved_sources": [
+        "guards.md",
+        "guards.md",
+        "guards.md",
+        "guards.md",
+        "statechart.md"
+      ],
+      "retrieval_ms": 591,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 0.0,
+      "hit_at_5": false
+    },
+    {
+      "claim_id": "c050",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Conditions are evaluated before validators on the same transition.",
+      "retrieved_ids": [
+        168,
+        155,
+        24,
+        154,
+        167
+      ],
+      "retrieved_sources": [
+        "guards.md",
+        "guards.md",
+        "transitions.md",
+        "guards.md",
+        "guards.md"
+      ],
+      "retrieval_ms": 634,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c051",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "An internal transition runs the state's exit and entry actions.",
+      "retrieved_ids": [
+        29,
+        30,
+        23,
+        31,
+        40
+      ],
+      "retrieved_sources": [
+        "transitions.md",
+        "transitions.md",
+        "transitions.md",
+        "transitions.md",
+        "validations.md"
+      ],
+      "retrieval_ms": 1014,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c052",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "When transitions match at several hierarchy levels, the ancestor state's transition takes priority.",
+      "retrieved_ids": [
+        34,
+        157,
+        35,
+        23,
+        156
+      ],
+      "retrieved_sources": [
+        "transitions.md",
+        "guards.md",
+        "transitions.md",
+        "transitions.md",
+        "guards.md"
+      ],
+      "retrieval_ms": 803,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c053",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "With invoke_group, the first callable to finish triggers the done.invoke transition.",
+      "retrieved_ids": [
+        122,
+        139,
+        127,
+        121,
+        138
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 301,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c054",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "On the async engine, coroutine invoke handlers run in a thread executor.",
+      "retrieved_ids": [
+        121,
+        122,
+        133,
+        131,
+        132
+      ],
+      "retrieved_sources": [
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 521,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c055",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "A listener's setup() method is called on shared pre-built listener instances.",
+      "retrieved_ids": [
+        153,
+        145,
+        150,
+        146,
+        152
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "listeners.md"
+      ],
+      "retrieval_ms": 416,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c056",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Child class listeners are placed before parent class listeners.",
+      "retrieved_ids": [
+        150,
+        146,
+        145,
+        149,
+        147
+      ],
+      "retrieved_sources": [
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "listeners.md",
+        "listeners.md"
+      ],
+      "retrieval_ms": 290,
+      "recall_at_3": 0.0,
+      "hit_at_3": false,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c057",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Convention-based callbacks like on_enter_<state> are validated at instance creation.",
+      "retrieved_ids": [
+        42,
+        43,
+        36,
+        164,
+        45
+      ],
+      "retrieved_sources": [
+        "validations.md",
+        "validations.md",
+        "validations.md",
+        "guards.md",
+        "validations.md"
+      ],
+      "retrieval_ms": 525,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c058",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "Unless conditions allow the transition only if all of them evaluate to True.",
+      "retrieved_ids": [
+        155,
+        156,
+        168,
+        154,
+        164
+      ],
+      "retrieved_sources": [
+        "guards.md",
+        "guards.md",
+        "guards.md",
+        "guards.md",
+        "guards.md"
+      ],
+      "retrieval_ms": 433,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c059",
+      "label": "contradicted",
+      "origin": "synthetic",
+      "claim": "The Let's Encrypt project was started by the Python Software Foundation.",
+      "retrieved_ids": [
+        173,
+        174,
+        182,
+        52,
+        181
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "alternatives.md",
+        "https.md"
+      ],
+      "retrieval_ms": 794,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c060",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "Let's Encrypt is a project from the Linux Foundation.",
+      "retrieved_ids": [
+        174,
+        173,
+        182,
+        170,
+        181
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 318,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c061",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "FastAPI CLI's --forwarded-allow-ips option controls which IPs are trusted to send X-Forwarded headers.",
+      "retrieved_ids": [
+        185,
+        184,
+        183,
+        186,
+        260
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "fastapi-cli.md"
+      ],
+      "retrieval_ms": 908,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c062",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "A PUT body that omits a stored field causes that field to be overwritten with the model's default value.",
+      "retrieved_ids": [
+        21,
+        18,
+        22,
+        19,
+        20
+      ],
+      "retrieved_sources": [
+        "body-updates.md",
+        "body-updates.md",
+        "body-updates.md",
+        "body-updates.md",
+        "body-updates.md"
+      ],
+      "retrieval_ms": 307,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c063",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "Raising HTTPException inside a utility function terminates the request without running the rest of the path operation.",
+      "retrieved_ids": [
+        275,
+        276,
+        280,
+        274,
+        282
+      ],
+      "retrieved_sources": [
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md",
+        "handling-errors.md"
+      ],
+      "retrieval_ms": 512,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c064",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "Every python-statemachine validation error is raised as InvalidDefinition.",
+      "retrieved_ids": [
+        36,
+        38,
+        41,
+        43,
+        44
+      ],
+      "retrieved_sources": [
+        "validations.md",
+        "validations.md",
+        "validations.md",
+        "validations.md",
+        "validations.md"
+      ],
+      "retrieval_ms": 524,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c065",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "Lambdas used as conditions are called unbound, so self is not injected into them.",
+      "retrieved_ids": [
+        160,
+        155,
+        16,
+        154,
+        162
+      ],
+      "retrieved_sources": [
+        "guards.md",
+        "guards.md",
+        "settings.md",
+        "guards.md",
+        "guards.md"
+      ],
+      "retrieval_ms": 702,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c066",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "If a condition raises an exception, enabled_events() treats the event as enabled.",
+      "retrieved_ids": [
+        163,
+        164,
+        247,
+        248,
+        162
+      ],
+      "retrieved_sources": [
+        "guards.md",
+        "guards.md",
+        "statechart.md",
+        "statechart.md",
+        "guards.md"
+      ],
+      "retrieval_ms": 628,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c067",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "Delays on the sync engine block the calling thread until they elapse.",
+      "retrieved_ids": [
+        247,
+        131,
+        92,
+        91,
+        121
+      ],
+      "retrieved_sources": [
+        "statechart.md",
+        "invoke.md",
+        "async.md",
+        "async.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 830,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c068",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "A self-transition exits and re-enters the state, running exit and entry actions.",
+      "retrieved_ids": [
+        29,
+        30,
+        31,
+        23,
+        34
+      ],
+      "retrieved_sources": [
+        "transitions.md",
+        "transitions.md",
+        "transitions.md",
+        "transitions.md",
+        "transitions.md"
+      ],
+      "retrieval_ms": 590,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c069",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "app.frontend() does not perform server-side rendering.",
+      "retrieved_ids": [
+        240,
+        233,
+        235,
+        236,
+        234
+      ],
+      "retrieved_sources": [
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md",
+        "frontend.md"
+      ],
+      "retrieval_ms": 527,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c070",
+      "label": "supported",
+      "origin": "synthetic",
+      "claim": "FastAPI's automatic documentation is generated at startup and adds no runtime overhead.",
+      "retrieved_ids": [
+        49,
+        217,
+        52,
+        218,
+        61
+      ],
+      "retrieved_sources": [
+        "benchmarks.md",
+        "generate-clients.md",
+        "alternatives.md",
+        "generate-clients.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 301,
+      "recall_at_3": 1.0,
+      "hit_at_3": true,
+      "recall_at_5": 1.0,
+      "hit_at_5": true
+    },
+    {
+      "claim_id": "c071",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "FastAPI returns HTTP 422 by default for request validation errors.",
+      "retrieved_ids": [
+        282,
+        274,
+        49,
+        235,
+        243
+      ],
+      "retrieved_sources": [
+        "handling-errors.md",
+        "handling-errors.md",
+        "benchmarks.md",
+        "frontend.md",
+        "additional-status-codes.md"
+      ],
+      "retrieval_ms": 397
+    },
+    {
+      "claim_id": "c072",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "functools.lru_cache has a default maxsize of 128.",
+      "retrieved_ids": [
+        17,
+        14,
+        13,
+        15,
+        46
+      ],
+      "retrieved_sources": [
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "benchmarks.md"
+      ],
+      "retrieval_ms": 531
+    },
+    {
+      "claim_id": "c073",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "HTTP status code 418 means \"I'm a teapot\".",
+      "retrieved_ids": [
+        179,
+        180,
+        276,
+        184,
+        274
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "handling-errors.md",
+        "https.md",
+        "handling-errors.md"
+      ],
+      "retrieval_ms": 703
+    },
+    {
+      "claim_id": "c074",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Let's Encrypt issues certificates using the ACME protocol.",
+      "retrieved_ids": [
+        174,
+        173,
+        182,
+        181,
+        170
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 315
+    },
+    {
+      "claim_id": "c075",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "In TLS, the SNI hostname is sent unencrypted in the ClientHello.",
+      "retrieved_ids": [
+        171,
+        177,
+        172,
+        176,
+        178
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 912
+    },
+    {
+      "claim_id": "c076",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Traefik is written in Go.",
+      "retrieved_ids": [
+        112,
+        173,
+        53,
+        62,
+        109
+      ],
+      "retrieved_sources": [
+        "async.md",
+        "https.md",
+        "alternatives.md",
+        "alternatives.md",
+        "async.md"
+      ],
+      "retrieval_ms": 814
+    },
+    {
+      "claim_id": "c077",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "HAProxy is written in C.",
+      "retrieved_ids": [
+        184,
+        173,
+        186,
+        183,
+        185
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 327
+    },
+    {
+      "claim_id": "c078",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Caddy enables HTTPS automatically by default.",
+      "retrieved_ids": [
+        170,
+        173,
+        178,
+        174,
+        186
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 356
+    },
+    {
+      "claim_id": "c079",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "HTTP/2 multiplexes multiple requests over a single TCP connection.",
+      "retrieved_ids": [
+        179,
+        172,
+        171,
+        180,
+        178
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 317
+    },
+    {
+      "claim_id": "c080",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Pydantic v2's model_dump() replaces the v1 .dict() method.",
+      "retrieved_ids": [
+        20,
+        21,
+        117,
+        120,
+        118
+      ],
+      "retrieved_sources": [
+        "body-updates.md",
+        "body-updates.md",
+        "dataclasses.md",
+        "dataclasses.md",
+        "dataclasses.md"
+      ],
+      "retrieval_ms": 434
+    },
+    {
+      "claim_id": "c081",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "pydantic-core, the validation engine of Pydantic v2, is written in Rust.",
+      "retrieved_ids": [
+        67,
+        116,
+        63,
+        17,
+        72
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "dataclasses.md",
+        "alternatives.md",
+        "settings.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 615
+    },
+    {
+      "claim_id": "c082",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "The PATCH HTTP method is defined in RFC 5789.",
+      "retrieved_ids": [
+        19,
+        22,
+        18,
+        179,
+        178
+      ],
+      "retrieved_sources": [
+        "body-updates.md",
+        "body-updates.md",
+        "body-updates.md",
+        "https.md",
+        "https.md"
+      ],
+      "retrieval_ms": 406
+    },
+    {
+      "claim_id": "c083",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "pytest-asyncio is an alternative to the AnyIO pytest plugin for running async tests.",
+      "retrieved_ids": [
+        83,
+        110,
+        109,
+        85,
+        84
+      ],
+      "retrieved_sources": [
+        "async-tests.md",
+        "async.md",
+        "async.md",
+        "async-tests.md",
+        "async-tests.md"
+      ],
+      "retrieval_ms": 816
+    },
+    {
+      "claim_id": "c084",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "HTTPX supports HTTP/2.",
+      "retrieved_ids": [
+        179,
+        184,
+        84,
+        74,
+        172
+      ],
+      "retrieved_sources": [
+        "https.md",
+        "https.md",
+        "async-tests.md",
+        "alternatives.md",
+        "https.md"
+      ],
+      "retrieval_ms": 319
+    },
+    {
+      "claim_id": "c085",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "OpenAPI 3.1 is fully aligned with JSON Schema draft 2020-12.",
+      "retrieved_ids": [
+        62,
+        56,
+        218,
+        70,
+        228
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "generate-clients.md",
+        "alternatives.md",
+        "extending-openapi.md"
+      ],
+      "retrieval_ms": 915
+    },
+    {
+      "claim_id": "c086",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Python daemon threads are stopped abruptly when the interpreter exits.",
+      "retrieved_ids": [
+        270,
+        256,
+        269,
+        106,
+        111
+      ],
+      "retrieved_sources": [
+        "advanced-dependencies.md",
+        "fastapi-cli.md",
+        "advanced-dependencies.md",
+        "async.md",
+        "async.md"
+      ],
+      "retrieval_ms": 363
+    },
+    {
+      "claim_id": "c087",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "SCXML is a W3C Recommendation.",
+      "retrieved_ids": [
+        59,
+        47,
+        74,
+        60,
+        75
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "benchmarks.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 454
+    },
+    {
+      "claim_id": "c088",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "FastAPI was created by Sebastián Ramírez.",
+      "retrieved_ids": [
+        71,
+        72,
+        52,
+        64,
+        61
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 476
+    },
+    {
+      "claim_id": "c089",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Uvicorn uses uvloop as its event loop when uvloop is installed.",
+      "retrieved_ids": [
+        75,
+        47,
+        255,
+        64,
+        122
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "benchmarks.md",
+        "fastapi-cli.md",
+        "alternatives.md",
+        "invoke.md"
+      ],
+      "retrieval_ms": 416
+    },
+    {
+      "claim_id": "c090",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "python-dotenv is not required when environment variables are set directly in the shell.",
+      "retrieved_ids": [
+        12,
+        5,
+        4,
+        11,
+        13
+      ],
+      "retrieved_sources": [
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md",
+        "settings.md"
+      ],
+      "retrieval_ms": 571
+    },
+    {
+      "claim_id": "c091",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Starlette's TestClient was based on the requests library before switching to HTTPX.",
+      "retrieved_ids": [
+        74,
+        84,
+        70,
+        71,
+        73
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "async-tests.md",
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md"
+      ],
+      "retrieval_ms": 985
+    },
+    {
+      "claim_id": "c092",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Graphviz's dot language uses -> to declare directed edges.",
+      "retrieved_ids": [
+        198,
+        199,
+        39,
+        38,
+        25
+      ],
+      "retrieved_sources": [
+        "tutorial.md",
+        "tutorial.md",
+        "validations.md",
+        "validations.md",
+        "transitions.md"
+      ],
+      "retrieval_ms": 309
+    },
+    {
+      "claim_id": "c093",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Hey API's openapi-ts can generate Zod schemas.",
+      "retrieved_ids": [
+        218,
+        219,
+        217,
+        62,
+        225
+      ],
+      "retrieved_sources": [
+        "generate-clients.md",
+        "generate-clients.md",
+        "generate-clients.md",
+        "alternatives.md",
+        "generate-clients.md"
+      ],
+      "retrieval_ms": 1034
+    },
+    {
+      "claim_id": "c094",
+      "label": "no_evidence",
+      "origin": "synthetic",
+      "claim": "Django REST Framework supports browsable HTML API pages out of the box.",
+      "retrieved_ids": [
+        51,
+        55,
+        52,
+        212,
+        235
+      ],
+      "retrieved_sources": [
+        "alternatives.md",
+        "alternatives.md",
+        "alternatives.md",
+        "tutorial.md",
+        "frontend.md"
+      ],
+      "retrieval_ms": 547
+    }
+  ]
+}

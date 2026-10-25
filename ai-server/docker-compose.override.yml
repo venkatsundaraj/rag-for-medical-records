@@ -4,6 +4,9 @@
 # NEVER loaded on the server -- dev conveniences live here, production
 # truth lives in the base file.
 services:
+  db:
+    ports:
+      - "127.0.0.1:5432:5432" # host scripts (python -m app...) reach db via localhost
   api:
     ports:
       - "8000:8000" # direct access for curl/dashboard on the Mac
